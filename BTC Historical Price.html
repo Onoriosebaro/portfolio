@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Bitcoin Historical Data Analysis - Baro Monarch Onoriose</title>
+  <meta name="description" content="A Power BI dashboard analyzing Bitcoin's historical market data at 1-min intervals from Jan 2012 to March 2021, detailing trends by price, volume, and time.">
+  <meta name="keywords" content="Power BI, Data Analysis, Bitcoin, Cryptocurrency, Financial Analysis, Market Trends, Data Cleaning, Data Visualization">
+
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  </head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html#portfolio" class="logo d-flex align-items-center">
+        <h1 class="sitename">Baro Monarch Onoriose</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Bitcoin Historical Data Analysis</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#portfolio">Baro</a></li>
+            <li class="current">Power BI Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div><section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/bhd.png" alt="Bitcoin Historical Data Analysis Power BI Dashboard Overview">
+                </div>
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Data Analytics / Financial Analysis / Cryptocurrency</li>
+                <li><strong>Client/Context</strong>: Quantum Analysis/Market Trend Analysis & Research</li>
+                <li><strong>Project Date</strong>: December 2023</li>
+                <li><strong>Tools Used</strong>: Power BI (Power Query, DAX)</li>
+                <li><strong>Data Source</strong>: Bitcoin Historical Data (Jan 2012 - March 2021)</li>
+                <li><strong>Project URL</strong>: <a href="#" target="_blank" rel="noopener noreferrer">View Live Dashboard (If available)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+              <h2 class="text-3xl font-bold mb-4">Bitcoin Historical Data Analysis: Unveiling Market Trends and Volatility</h2>
+
+              <h2 class="text-3xl font-bold mb-4">Summary</h2>
+              <p>This Power BI project presents a comprehensive analysis of Bitcoin's historical market data at 1-minute intervals from January 2012 to March 2021. Leveraging a rich dataset including Open, High, Low, Close (OHLC) prices, Volume in BTC, Volume in indicated currency, and Weighted Bitcoin Price, the dashboard provides critical insights into Bitcoin's market behavior and evolution. The project involved robust data cleaning and transformation using Power Query to handle missing timestamps and NaN values. The analysis focuses on key metrics such as total trades, trading volumes, price trends, and the distribution of trading activity by year, month, and quarter. This dashboard aims to provide researchers, analysts, and cryptocurrency enthusiasts with a clear, interactive view of Bitcoin's past performance and underlying market dynamics.</p>
+
+              <h2 class="text-3xl font-bold mb-4">1. Introduction: Understanding Bitcoin's Market Evolution</h2>
+              <p>Bitcoin, as the pioneering cryptocurrency, has dramatically influenced the financial landscape since its inception in 2009. Its decentralized nature and blockchain technology have fostered a unique market. Analyzing its historical data is crucial for understanding its growth, volatility, and market cycles. The dataset, sourced from various exchanges, offers granular 1-minute interval data, presenting both a challenge due to its raw nature (missing timestamps, NaNs) and a rich opportunity for deep market insights. This project tackles these data complexities to transform raw market data into actionable intelligence, revealing key trends and patterns over nearly a decade.</p>
+
+              <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
+              <p>The primary objectives for this Power BI project were defined to provide comprehensive insights into Bitcoin's historical market dynamics:</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Overall Objectives:</h3>
+              <ul>
+                <li>To perform robust exploratory analysis of historical Bitcoin market data to identify significant price and volume trends.</li>
+                <li>To address complex data quality challenges** inherent in high-frequency financial data (missing timestamps, NaNs) through comprehensive cleaning and transformation.</li>
+                <li>To provide actionable insights into Bitcoin's market performance, including its highest and lowest price points, trading volume distribution, and weighted price trends.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Project Goals & Deliverables:</h3>
+              <ol class="list-decimal list-inside ml-4">
+                <li><strong>Overall Market Statistics Overview</strong>: Display key metrics such as Total No. of Trades, Total Volume (BTC), Total Volume (Currency), Highest Price of Bitcoin, and Lowest Price of Bitcoin.</li>
+                <li><strong>Trend of Average Weighted Price by Year</strong>: Visualize the yearly trend of Bitcoin's average weighted price to observe its growth trajectory.</li>
+                <li><strong>Total Volume (BTC) by Year</strong>: Analyze the distribution of Bitcoin trading volume across different years.</li>
+                <li><strong>Min and Max of Low and High by Year and Month</strong>: Track the minimum low and maximum high prices over time to understand price volatility.</li>
+                <li><strong>Total Volume (Currency) by Quarter</strong>: Identify quarterly patterns in trading volume denominated in currency.</li>
+                <li><strong>Interactive Date Filtering</strong>: Allow users to filter data by specific date ranges.</li>
+                <li><strong>Interactive Price Range Filtering</strong>: Enable filtering based on 'Highs' (price range) to focus on specific price behaviors.</li>
+              </ol>
+
+              <h2 class="text-3xl font-bold mb-4">3. Data Scope & Metrics</h2>
+              <p>The analysis leveraged a granular dataset of Bitcoin's market activity at 1-minute intervals.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Data Source:</h3>
+              <ul>
+                <li><strong>Global Shark Attack File (Historical Data)</strong>: This dataset provides details on shark attacks including location, activity, victim info (name, gender, age), shark species, etc.</li>
+                <li><strong>Bitcoin Historical Data (Jan 2012 - March 2021)</strong>: CSV files containing minute-to-minute updates from select Bitcoin exchanges, including OHLC (Open, High, Low, Close), Volume in BTC and indicated currency, and weighted bitcoin price. Timestamps are in Unix time.</li>
+                <li><strong>Key Columns Relevant to Analysis:</strong>
+                  <ul>
+                    <li>`Timestamp` (Unix time)</li>
+                    <li>`Open`, `High`, `Low`, `Close` (OHLC prices)</li>
+                    <li>`Volume_BTC` (Volume in Bitcoin)</li>
+                    <li>`Volume_Currency` (Volume in indicated currency)</li>
+                    <li>`Weighted_Price` (Weighted Bitcoin Price)</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Data Points & Metrics Captured and Displayed:</h3>
+              <ul>
+                <li><strong>Total No. of Trades</strong>: 3,613,765</li>
+                <li><strong>Total Volume (BTC)</strong>: 33.69M BTC</li>
+                <li><strong>Total Volume (Currency)</strong>: $150.92Bn</li>
+                <li><strong>Highest Price of Bitcoin</strong>: $61.78K</li>
+                <li><strong>Lowest Price of Bitcoin</strong>: $1.5</li>
+                <li><strong>Trend of Avg Weighted Price by Year</strong>: Shows a dramatic increase, especially from 2017 onwards, reaching $5,747.89 in 2020.</li>
+                <li><strong>Total Volume (BTC) by Year</strong>: High volumes in 2013 (5.03M BTC), 2014 (5.53M BTC), 2017 (4.7M BTC), and 2018 (3.93M BTC).</li>
+                <li><strong>Min of Low and Max of High by Year and Month</strong>: Visualizes the widening gap between min low and max high prices, indicating increased volatility over the years, particularly from 2017-2020.</li>
+                <li><strong>Total Volume (Currency) by Quarter</strong>: Quarter 1 (40.76%) and Quarter 4 (25.23%) show the highest trading volumes.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Insights Derived from Data:</h3>
+              <ul>
+                <li>Bitcoin has experienced exponential price growth, with its average weighted price skyrocketing in recent years (2017-2020).</li>
+                <li>Despite price fluctuations, trading volume in BTC has remained substantial, with peaks in early years (2013-2014) and later significant activity (2017-2018).</li>
+                <li>The volatility of Bitcoin has increased significantly over time, as evidenced by the widening range between the minimum low and maximum high prices.</li>
+                <li>Trading activity tends to be higher in the first and fourth quarters of the year, suggesting potential seasonal patterns or end-of-year/start-of-year market dynamics.</li>
+                <li>The journey from a lowest price of $1.5 to a highest of $61.78K highlights Bitcoin's immense appreciation and market capitalization growth over the analyzed period.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">4. Dashboard Design & Key Insights</h2>
+              <p>The "Analysis of Bitcoin Historical Data" dashboard is designed to provide a comprehensive, interactive overview of Bitcoin's market performance.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Dashboard Features and Key Insights:</h3>
+
+              <h4 class="text-xl font-semibold mb-2">4.1 Executive Summary & Key Performance Indicators (KPIs)</h4>
+              <p>Prominent KPIs at the top provide an immediate snapshot of overall market activity:</p>
+              <ul>
+                <li><strong>Total No. of Trades</strong>: 3,613,765</li>
+                <li><strong>Total Volume (BTC)</strong>: 33.69M BTC</li>
+                <li><strong>Total Volume (Currency)</strong>: $150.92Bn</li>
+                <li><strong>Highest Price of Bitcoin</strong>: $61.78K</li>
+                <li><strong>Lowest Price of Bitcoin</strong>: $1.5</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.2 Price and Volume Trends</h4>
+              <ul>
+                <li><strong>Trend of Avg Weighted Price by Year (Line Chart)</strong>: This chart clearly visualizes Bitcoin's parabolic growth, especially notable from 2017 onwards, reaching high values in 2020 and 2021.</li>
+                <li><strong>Total Volume (BTC) by Year (Bar Chart)</strong>: Illustrates the annual distribution of Bitcoin trading volume, showing peaks in early years (2013-2014) and strong activity in later years (2017-2018), indicating consistent market liquidity.</li>
+                <li><strong>Min of Low and Max of High by Year and Month (Area Chart)</strong>: This dual-axis chart effectively highlights increasing price volatility, with the spread between the minimum low and maximum high prices widening over time, particularly in the later years of the dataset.</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.3 Quarterly Volume Distribution</h4>
+              <ul>
+                <li><strong>Total Volume (Currency) by Quarter (Donut Chart)</strong>: This chart provides insight into seasonal trading patterns, showing that Q1 accounts for the largest share (40.76%) of total currency volume, followed by Q4 (25.23%).</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.4 Interactive Filters</h4>
+              <ul>
+                <li><strong>Date Slicer</strong>: Allows users to dynamically select a date range (e.g., "01/01/2012 - 31/03/2021") to focus the analysis on specific periods.</li>
+                <li><strong>Highs Slicer</strong>: Enables filtering by a specific range of Bitcoin 'High' prices, facilitating in-depth analysis of market behavior within certain price thresholds.</li>
+              </ul>
+              <p>The interactive elements and clear visualizations empower users to deep dive into Bitcoin's historical performance, understand its market dynamics, and observe volatility trends.</p>
+
+              <h2 class="text-3xl font-bold mb-4">5. Technical Approach & Tools</h2>
+              <p>The project involved crucial data cleaning and transformation steps to handle the high-frequency, sometimes inconsistent nature of financial market data, followed by robust analysis in Power BI:</p>
+
+              <ul>
+                <li><strong>Data Acquisition & Ingestion</strong>: Bitcoin historical data, provided as CSV files at 1-minute intervals, was imported into Power BI Desktop.</li>
+                <li><strong>Data Cleaning & Transformation (Power Query in Power BI)</strong>: Power Query Editor was essential for preparing the raw dataset.
+                  <ul>
+                    <li><strong>Handling Missing Values & Inconsistencies</strong>: Addressed `NaN` values and potential missing timestamps (as noted in the data context: "Timestamps without any trades or activity have their data fields filled with NaNs. If a timestamp is missing, or if there are jumps, this may be because the exchange (or its API) was down...") by employing appropriate fill-down/up methods or interpolation as suitable for time-series financial data.</li>
+                    <li><strong>Timestamp Conversion</strong>: Converted Unix timestamps to a standard datetime format for proper time-series analysis and visualization.</li>
+                    <li><strong>Data Type Standardization</strong>: Ensured all numerical columns (OHLC, Volume, Weighted Price) were correctly typed to facilitate accurate calculations.</li>
+                    <li><strong>Deduplication</strong>: Verified and removed any duplicate entries to ensure data integrity and avoid erroneous calculations.</li>
+                    <li><strong>Custom Columns for Time Intelligence</strong>: Created columns for 'Year' and 'Quarter' to enable granular temporal analysis and visualization.</li>
+                  </ul>
+                </li>
+                <li><strong>DAX (Data Analysis Expressions) Calculations</strong>: DAX measures were created to compute key business metrics and aggregations:
+                  <ul>
+                    <li>`Total no of trades = COUNTROWS(TradesTable)`</li>
+                    <li>`Total Volume_BTC = SUM(TradesTable[Volume_BTC])`</li>
+                    <li>`Total Volume_Currency = SUM(TradesTable[Volume_Currency])`</li>
+                    <li>`Highest Price of Bitcoin = MAXX(ALL(TradesTable), TradesTable[High])`</li>
+                    <li>`Lowest Price of Bitcoin = MINX(ALL(TradesTable), TradesTable[Low])`</li>
+                    <li>Measures for average weighted price, and aggregation of volume by year and quarter.</li>
+                  </ul>
+                </li>
+                <li><strong>Data Visualization & Dashboarding (Power BI Desktop)</strong>: The dashboard was designed with a focus on clear and intuitive representation of financial trends:
+                  <ul>
+                    <li><strong>KPI Cards</strong>: Utilized for high-level summaries of key market metrics.</li>
+                    <li><strong>Line Charts</strong>: For visualizing average weighted price trends and min/max price ranges over time, effectively showing growth and volatility.</li>
+                    <li><strong>Bar Charts</strong>: Used to display total volume by year.</li>
+                    <li><strong>Donut Chart</strong>: For a clear representation of currency volume distribution by quarter.</li>
+                    <li><strong>Slicers</strong>: Implemented for dynamic filtering by date ranges and price 'Highs', providing interactive exploration capabilities.</li>
+                  </ul>
+                </li>
+                <li><strong>Publishing & Sharing (Power BI Service)</strong>: The final interactive report was published to the Power BI Service for wider access and sharing with stakeholders interested in cryptocurrency market analysis.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">6. Impact & Business Value</h2>
+              <p>This Power BI dashboard for Bitcoin Historical Data Analysis delivers significant value to various stakeholders:</p>
+              <ul>
+                <li><strong>Market Trend Identification</strong>: Enables quick identification of Bitcoin's historical price appreciation and trading volume trends, crucial for investors and analysts.</li>
+                <li><strong>Volatility Assessment</strong>: Provides clear insights into Bitcoin's price volatility over time, aiding risk assessment for potential investments.</li>
+                <li><strong>Informed Decision Making</strong>: Equips financial analysts, traders, and researchers with a data-driven tool to understand market cycles and make more informed decisions.</li>
+                <li><strong>Resource for Research</strong>: Serves as a valuable resource for academic and independent researchers studying cryptocurrency markets and blockchain technology.</li>
+                <li><strong>Demonstration of Data Handling Skills</strong>: Showcases advanced data cleaning and transformation capabilities, particularly in managing high-frequency, often messy, financial time-series data.</li>
+                <li><strong>Seasonal Pattern Recognition</strong>: Highlights periods of higher trading activity (e.g., Q1 and Q4), which can inform trading strategies or market predictions.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">7. Conclusion</h2>
+              <p>This Power BI project successfully provides a robust and interactive analytical tool for understanding Bitcoin's historical market behavior from 2012 to 2021. By meticulously cleaning and transforming a complex, high-frequency dataset, critical insights into price trends, trading volumes, volatility, and quarterly patterns have been revealed. The dashboard serves as an invaluable resource for anyone seeking to understand the past dynamics of the world's leading cryptocurrency. This analysis underscores the power of data visualization in turning raw, extensive data into clear, actionable intelligence for financial analysis and research.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Baro Monarch Onoriose</h3>
+      <p>Connect with me on social media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

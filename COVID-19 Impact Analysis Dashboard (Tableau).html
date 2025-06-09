@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>COVID-19 Impact Analysis Dashboard</title>
+  <meta name="description" content="An in-depth Tableau project analyzing global COVID-19 data, cases, deaths, and vaccination trends for a personal portfolio.">
+  <meta name="keywords" content="COVID-19, Tableau, data visualization, pandemic, global health, data analysis, portfolio, analytics">
+
+  <!-- Favicons -->
+  <!-- IMPORTANT: Update these paths to your actual favicon and apple-touch-icon images -->
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <!-- IMPORTANT: Ensure these paths are correct for your project setup. These are typically provided by your template. -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <!-- IMPORTANT: Ensure this path is correct for your project setup. This is typically provided by your template. -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Lonely
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Baro Monarch Onoriose</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title Section -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">COVID-19 Impact Analysis Dashboard</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Tableau Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title Section -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                  {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                          "delay": 5000
+                      },
+                      "slidesPerView": "auto",
+                      "pagination": {
+                          "el": ".swiper-pagination",
+                          "type": "bullets",
+                          "clickable": true
+                      }
+                  }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                
+                <div class="swiper-slide">
+                  <img src="assets/img/who covid.png" alt="Tableau COVID-19 Dashboard Overview Screenshot">
+                </div>
+                
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <!-- Project Overview Section - Concise Summary -->
+              <h3>Project Overview</h3>
+              <ul>
+                <li><strong>Project Type</strong>: Data Visualization & Analytics</li>
+                <li><strong>Platform</strong>: Tableau Desktop (Dashboard published on Tableau Public)</li>
+                <li><strong>Data Source</strong>: Publicly available WHO COVID-19 Dataset</li>
+                <li><strong>Project Focus</strong>: Global pandemic trends, case and death analysis, geographical impact</li>
+                <li><strong>Key Techniques</strong>: Data Cleaning, Trend Analysis, Geospatial Mapping, Interactive Dashboard Design</li>
+                <li><strong>Timeline</strong>: Completed March 2024</li>
+                <li><strong>Live Dashboard</strong>: <a href="https://public.tableau.com/app/profile/baro.onoriose/viz/WHOcoronaviruscovid-19Dashboard/Dashboard1" target="_blank" rel="noopener noreferrer">View on Tableau Public</a></li>
+              </ul>
+            </div>
+          </div>
+        </div> <!-- End of .row gy-4 for images and overview -->
+
+        <!-- Project Report Content Section -->
+        <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2 class="text-3xl font-bold mb-4">The COVID-19 Story: Unveiling Insights with Data</h2>
+
+              <p>The early days of the COVID-19 pandemic brought global uncertainty, demanding a clear understanding of its rapid spread. As a data professional, I felt compelled to illuminate this crisis, transforming raw numbers into a meaningful narrative.</p>
+
+              <h2 class="text-3xl font-bold mb-4">From Chaos to Clarity: My Data Journey</h2>
+
+              <p>My work began with the extensive <strong>WHO COVID-19 dataset</strong>, a vast but unstructured collection of global cases, deaths, and vaccination figures. The first crucial step was <strong>data preparation</strong>, meticulously cleaning and transforming this raw data into a usable foundation. Following this, <strong>Exploratory Data Analysis (EDA)</strong> allowed me to uncover initial patterns and formulate key questions, guiding the direction of my project.</p>
+
+              <p>The heart of this endeavor lay in <strong>Tableau Desktop</strong>. Here, I connected the prepared data, crafted calculated fields for vital metrics, and designed an interactive dashboard. This wasn't merely about visualizing data; it was about creating a dynamic tool. Users could effortlessly filter by <strong>Country/Region</strong> or <strong>Date</strong>, observe daily trends in <strong>cases and deaths</strong>, explore the global spread through a <strong>geographic map</strong>, and track <strong>vaccination progress</strong>. Through this process, key findings emerged:</p>
+
+              <p>The dashboard clearly illustrated distinct waves of infection across different periods, demonstrating the pandemic's cyclical nature. It highlighted **regions with significantly higher case concentrations**, pinpointing areas that bore the brunt of the virus. Furthermore, a visual correlation was evident between **accelerated vaccination efforts and a subsequent flattening or decline in new cases and deaths** in various areas, showcasing the positive impact of public health interventions. The interactive nature of the dashboard allowed for granular exploration, enabling users to pinpoint specific countries and observe their unique pandemic trajectories and recovery patterns.</p>
+
+              <p>The dashboard, now live on <strong><a href="https://public.tableau.com/app/profile/baro.onoriose/viz/WHOcoronaviruscovid-19Dashboard/Dashboard1" target="_blank" rel="noopener noreferrer">Tableau Public</a></strong>, became a powerful lens for dynamic data exploration and understanding these critical results.</p>
+
+              <h2 class="text-3xl font-bold mb-4">Impact and Conclusion: Data-Driven Understanding</h2>
+
+              <p>This Tableau dashboard provided immediate, critical insights derived directly from the analysis: revealing distinct pandemic waves, highlighting regional disparities in impact and recovery, and showcasing the widespread global effect of the virus. More than just a collection of charts, it serves as a valuable resource for <strong>enhanced situational awareness</strong>, <strong>identifying trends and hotspots</strong>, supporting <strong>policy formulation</strong>, and fostering <strong>public education and transparency</strong>.</p>
+
+              <p>By transforming complex WHO data into clear, interactive insights, this project demonstrates my strong command of data analysis principles and robust skills in <strong>Tableau</strong>. It underscores the vital role of data visualization in navigating and understanding global health crises, empowering informed decision-making for a healthier future.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer light-background">
+      <div class="container">
+        <h3 class="sitename">Baro Monarch Onoriose</h3>
+        <p>Connect with me on social Media.</p>
+        <div class="social-links d-flex justify-content-center">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href="https://github.com/Onoriosebaro"><i class="bi bi-github"></i></a>
+          <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <div class="container">
+          <div class="copyright">
+            <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriosee</strong> <span>All Rights Reserved</span>
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you've purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          </div>
+        </div>
+      </div>
+    </footer><!-- End Footer Section -->
+
+    <!-- Scroll Top Button -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <!-- IMPORTANT: Ensure these paths are correct for your project setup. These are typically provided by your template. -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <!-- IMPORTANT: Ensure this path is correct for your project setup. This is typically provided by your template. -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

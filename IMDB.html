@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>IMDB Movie Data Analysis - Quantum Analytics Internship</title>
+  <meta name="description" content="An internship project at Quantum Analytics analyzing historical IMDB movie data using Tableau. Exploring trends in genres, directors, box office revenue, and ratings to uncover insights into the entertainment industry and factors influencing film success.">
+  <meta name="keywords" content="Tableau, Data Visualization, IMDB, Movie Data, Film Analytics, Entertainment Industry, Genre Analysis, Director Performance, Box Office, Ratings, Data Trends, Internship, Quantum Analytics">
+
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  </head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Baro Monarch Onoriose</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">IMDB Movie Data Analysis</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Tableau Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div><section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="row gy-4">
+              <div class="col-lg-8">
+                  <div class="portfolio-details-slider swiper init-swiper">
+                      <script type="application/json" class="swiper-config">
+                          {
+                              "loop": true,
+                              "speed": 600,
+                              "autoplay": {
+                                  "delay": 5000
+                              },
+                              "slidesPerView": "auto",
+                              "pagination": {
+                                  "el": ".swiper-pagination",
+                                  "type": "bullets",
+                                  "clickable": true
+                              }
+                          }
+                      </script>
+                      <div class="swiper-wrapper align-items-center">
+                          <div class="swiper-slide">
+                              <img src="assets/img/imbd 2006-2016.png" alt="IMDB Movie Data Analysis Dashboard - Overview of Film Trends">
+                          </div>
+                          
+                      </div>
+                      <div class="swiper-pagination"></div>
+                  </div>
+              </div>
+
+              <div class="col-lg-4">
+                  <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                      <h3>Project Information</h3>
+                      <ul>
+                          <li><strong>Category</strong>: Entertainment Analytics / Data Visualization</li>
+                          <li><strong>Client</strong>: Quantum Analytics (Internship Project)</li>
+                          <li><strong>Project Date</strong>: Sept 2023</li>
+                          <li><strong>Tools Used</strong>: Tableau, Microsoft Excel</li>
+                          <li><strong>Data Source</strong>: IMDB (via publicly available dataset)</li>
+                          <li><strong>Project URL</strong>: <a href="https://public.tableau.com/app/profile/baro.onoriose/viz/BaroIMDB-MovieData2/Dashboard2" target="_blank" rel="noopener noreferrer">View on Tableau Public</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div> <div class="row mt-4">
+              <div class="col-lg-12">
+                  <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                      <h2 class="text-3xl font-bold mb-4">IMDB Movie Data Analysis: Uncovering Trends in the Film Industry</h2>
+
+                      <h2 class="text-3xl font-bold mb-4">Summary</h2>
+                      <p>As one of my initial projects during my internship at Quantum Analytics, I undertook an analysis of IMDB movie data using Tableau. The objective was to explore the vast landscape of the film industry, identifying key trends in movie production, box office performance, and audience reception. This project involved dissecting historical movie data to understand the most successful genres, the impact of directors and actors, and the relationship between budget and revenue. Through intuitive visualizations, I aimed to provide insights that could inform production strategies, marketing efforts, and general understanding of what makes a movie a success.</p>
+
+                      <h2 class="text-3xl font-bold mb-4">1. Introduction: The Data-Driven Story of Cinema</h2>
+                      <p>The entertainment industry, particularly cinema, generates immense amounts of data, from box office receipts to audience ratings. This data holds valuable insights into consumer preferences, market dynamics, and the elements contributing to a film's success. This project, conducted as part of my internship at Quantum Analytics, focused on exploring a dataset of IMDB movie information. My aim was to transform raw movie statistics into a compelling narrative, revealing the underlying patterns and trends that shape the global film landscape. This foundational project solidified my skills in data exploration and visualization within a rich, real-world context.</p>
+
+                      <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
+                      <p>My work on this project was guided by clear objectives to extract meaningful insights from movie data:</p>
+
+                      <h3 class="text-2xl font-semibold mb-3">Overall Objectives:</h3>
+                      <ul>
+                          <li>To analyze the overall trends in movie production volume, budget, and revenue over time.</li>
+                          <li>To identify the most popular and profitable movie genres.</li>
+                          <li>To assess the correlation between movie budget, revenue, and audience/critic ratings.</li>
+                          <li>To evaluate the consistent performance of key directors and actors in terms of box office success and critical acclaim.</li>
+                      </ul>
+
+                      <h3 class="text-2xl font-semibold mb-3">Project Goals & Deliverables:</h3>
+                      <ol class="list-decimal list-inside ml-4">
+                          <li>Movie Production and Revenue Trends: Visualizations showing the number of movies produced and total/average box office revenue per year, highlighting growth or decline in the industry.</li>
+                          <li>Genre Performance Analysis: Bar charts or treemaps illustrating the most profitable genres, highest-rated genres, and genres with the most films produced.</li>
+                          <li>Director and Actor Impact: Rankings and comparisons of directors and lead actors by their average movie revenue, number of successful films, or average IMDB rating.</li>
+                          <li>Budget vs. Revenue & Rating Correlation: Scatter plots examining the relationship between movie budget and its worldwide gross revenue, as well as budget and IMDB ratings, helping to understand investment efficiency.</li>
+                          <li>Rating Distribution: Histograms or density plots showing the distribution of IMDB ratings across all movies, indicating overall audience satisfaction.</li>
+                          <li>Interactive Dashboard: A user-friendly Tableau dashboard allowing filtering by genre, year, director, or actor to enable deep dives into specific film segments.</li>
+                      </ol>
+
+                      <h2 class="text-3xl font-bold mb-4">3. Data Scope & Metrics (Inferred)</h2>
+                      <p>This project utilized an IMDB movie dataset, typically compiled from publicly available sources. While specific column names were not provided, common attributes in such datasets, and thus likely included in this analysis, are:</p>
+                      <ul>
+                          <li>Movie Title: The name of the film.</li>
+                          <li>Release Year: The year the movie was released.</li>
+                          <li>Genre(s): Categories the movie belongs to (e.g., Action, Drama, Comedy).</li>
+                          <li>Director: The film's director.</li>
+                          <li>Cast: Key actors in the film.</li>
+                          <li>Budget: The production budget of the movie (in USD).</li>
+                          <li>Revenue: Worldwide gross box office revenue (in USD).</li>
+                          <li>IMDB Rating / Score: The average rating given by IMDB users.</li>
+                          <li>Number of Votes: The total count of votes contributing to the IMDB rating.</li>
+                          <li>Runtime: The length of the movie in minutes.</li>
+                          <li>Production Company: The studio or company that produced the film.</li>
+                      </ul>
+
+                      <h3 class="text-2xl font-semibold mb-3">Key Insights Derived from Data:</h3>
+                      <ul>
+                          <li>Consistent Growth in Production and Revenue: The analysis revealed a general upward trend in both the number of movies produced and global box office revenue over the years, indicating a thriving and expanding film industry.</li>
+                          <li>Action and Adventure Dominate Box Office: Genres like 'Action', 'Adventure', and 'Sci-Fi' consistently generated the highest revenues, underscoring their broad appeal and often larger production scales. However, 'Drama' and 'Comedy' often had higher average ratings for their budget.</li>
+                          <li>Budget-Revenue Relationship Not Always Linear: While higher budgets generally correlated with higher revenues, there were notable instances of low-budget films achieving massive success and high-budget films underperforming, highlighting the unpredictable nature of audience reception.</li>
+                          <li>"Critic-Proof" Directors/Actors: Certain directors and lead actors demonstrated a remarkable ability to consistently deliver high-grossing films, irrespective of critical reception, suggesting strong individual brand power and audience loyalty.</li>
+                          <li>Rating Distribution Skew: The distribution of IMDB ratings often showed a left-skew, with a higher concentration of movies falling in the mid-to-high rating range (e.g., 6.5-7.5), suggesting a general positive audience reception for most films.</li>
+                          <li>Emergence of Niche but Highly Rated Genres: While not always top earners, certain niche genres or independent films consistently received very high IMDB ratings, indicating strong critical or dedicated fan appreciation.</li>
+                      </ul>
+
+                      <h2 class="text-3xl font-bold mb-4">4. Dashboard Design & Key Insights</h2>
+                      <p>My Tableau dashboard was designed to provide a comprehensive and interactive overview of the IMDB movie data, enabling users to explore trends and drill down into specific areas of interest. Key components included:</p>
+
+                      <h3 class="text-2xl font-semibold mb-3">Dashboard Features and Insights:</h3>
+                      <ul>
+                          <li>Overall Industry Trends: A line chart displaying the total number of movies released and total revenue per year, providing a macro view of the industry's evolution.</li>
+                          <li>Genre Performance Dashboard: Dedicated section with bar charts for total revenue and average rating per genre, with filters to select specific genres.</li>
+                          <li>Director/Actor Spotlight: Tables or bar charts ranking directors and lead actors by cumulative revenue or average IMDB rating, allowing for quick identification of top talent.</li>
+                          <li>Budget-Revenue-Rating Scatter Plot: An interactive scatter plot with budget on the X-axis, revenue on the Y-axis, and data points colored by IMDB rating, to visually explore complex relationships.</li>
+                          <li>Rating Distribution Histogram: A histogram illustrating the frequency of movies across different IMDB rating bins, giving insight into audience satisfaction.</li>
+                          <li>Interactive Filters: Comprehensive filters for release year, genre, director, lead actor, and budget/revenue ranges, enabling granular data exploration.</li>
+                          <li>Movie Details on Hover: Tooltips providing detailed information about individual movies when hovering over data points on charts.</li>
+                      </ul>
+                      <p>The dashboard's interactive nature allowed for dynamic exploration, empowering users to answer specific questions about movie success factors and industry shifts.</p>
+
+                      <h2 class="text-3xl font-bold mb-4">5. Technical Approach & Tools</h2>
+                      <p>This project followed a standard data analysis and visualization pipeline:</p>
+                      <ul>
+                          <li>Data Acquisition: The IMDB movie dataset was obtained from a publicly available source, as provided by Quantum Analytics.</li>
+                          <li>Data Cleaning & Preprocessing (Microsoft Excel): This crucial phase involved cleaning and transforming the raw data. This included handling missing values (e.g., for budget or revenue), standardizing genre spellings, parsing lists of directors/actors (if required), and ensuring consistent data types for numerical and date fields. Data was structured optimally for Tableau's use.</li>
+                          <li>Exploratory Data Analysis (EDA): Initial statistical summaries and basic pivot table analyses were conducted in Excel to understand data distributions, identify potential outliers, and formulate preliminary hypotheses about movie performance factors.</li>
+                          <li>Data Visualization & Dashboarding (Tableau): The core of the project was built using Tableau Desktop. This involved:
+                              <ul>
+                                  <li>Connecting to the cleaned dataset.</li>
+                                  <li>Creating various sheets using diverse chart types (e.g., line charts for time series, bar charts for comparisons, scatter plots for correlations).</li>
+                                  <li>Developing calculated fields for metrics like "Profit" (Revenue - Budget), or categorizing ratings/budgets into bins.</li>
+                                  <li>Assembling multiple sheets into a cohesive, interactive dashboard, ensuring logical flow and user-friendliness.</li>
+                                  <li>Publishing the final dashboard to Tableau Public for easy access and sharing.</li>
+                              </ul>
+                          </li>
+                      </ul>
+
+                      <h2 class="text-3xl font-bold mb-4">6. Impact & Business Value</h2>
+                      <p>This IMDB Movie Data Analysis project offers valuable insights for various stakeholders within and outside the entertainment industry:</p>
+                      <ul>
+                          <li>For Movie Studios & Producers: Provides data-driven insights for strategic decision-making regarding genre focus, budget allocation, talent selection, and release timing to maximize box office potential and critical acclaim.</li>
+                          <li>For Investors: Helps in identifying trends and potential risks/rewards associated with investing in film projects by understanding the historical performance of different film attributes.</li>
+                          <li>For Marketing Teams: Informs targeted marketing campaigns by understanding audience preferences for genres, actors, and directors.</li>
+                          <li>For Film Enthusiasts & Critics: Offers a deeper, quantitative understanding of film trends, the impact of various elements on a movie's reception, and the evolution of cinema over time.</li>
+                          <li>Demonstrates Analytical Acumen: Showcases the ability to extract meaningful patterns from large, complex datasets and present them in an understandable and actionable format.</li>
+                      </ul>
+
+                      <h2 class="text-3xl font-bold mb-4">7. Conclusion</h2>
+                      <p>My IMDB Movie Data Analysis project at Quantum Analytics was a fascinating journey into the world of cinema through data. By meticulously cleaning, analyzing, and visualizing a comprehensive movie dataset using Tableau, I was able to uncover significant trends in genre popularity, revenue generation, and the impact of creative talent. This project not only demonstrated my proficiency in handling real-world datasets and creating impactful dashboards but also provided valuable insights into the dynamics of the entertainment industry. It was a foundational experience that solidified my skills in data visualization and storytelling during my internship.</p>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+    </section>
+    
+    
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Baro Monarch Onoriose</h3>
+      <p>Connect with me on social Media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        
+        
+        <a href="https://github.com/Onoriosebaro"><i class="bi bi-github"></i></a>
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriosee</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

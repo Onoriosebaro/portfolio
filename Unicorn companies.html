@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Unicorn Company Analysis - Baro Monarch Onoriose</title>
+  <meta name="description" content="A Power BI dashboard analyzing global unicorn companies, their valuation trends, industry distribution, and geographical presence, developed during an internship at Quantum Analytics.">
+  <meta name="keywords" content="Power BI, Data Analysis, Unicorn Companies, Startup Valuation, Fintech, E-commerce, Artificial Intelligence, Global Trends, Quantum Analytics, Internship Project, Data Visualization">
+
+  <!-- Favicons -->
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Lonely
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Baro Monarch Onoriose</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Unicorn Company Analysis</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#portfolio">Back</a></li>
+            <li class="current">Power BI Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/unicorn company analysis.png" alt="Unicorn Company Analysis Power BI Dashboard Overview">
+                </div>
+                <!-- Add more dashboard images if available -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Data Analytics / Business Intelligence / Startup Ecosystem</li>
+                <li><strong>Client/Context</strong>: Quantum Analytics Internship Project / Market Research</li>
+                <li><strong>Project Date</strong>: october 2023(as part of internship)</li>
+                <li><strong>Tools Used</strong>: Power BI (Power Query, DAX)</li>
+                <li><strong>Data Source</strong>: Global Unicorn Company Dataset</li>
+                <li><strong>Project URL</strong>: <a href="#" target="_blank" rel="noopener noreferrer">View Live Dashboard (If available)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End of .row gy-4 -->
+
+        <!-- New Row for Project Report Content -->
+        <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+              <h2 class="text-3xl font-bold mb-4">Unicorn Company Analysis: Decoding Growth and Trends in the Billion-Dollar Startup Ecosystem</h2>
+
+              <h2 class="text-3xl font-bold mb-4">Summary</h2>
+              <p>As my first Power BI project during my internship at Quantum Analytics, this dashboard provides a comprehensive analysis of global unicorn companies. The project involved exploring key metrics such as total valuation, industry distribution, geographical presence, and the trends of unicorn creation and valuation over time. Through meticulous data preparation in Power Query and insightful visualizations, the dashboard aims to uncover patterns in the billion-dollar startup ecosystem, identify dominant industries and countries, and highlight the rapid growth of these highly-valued private companies. This analysis serves as a foundational tool for understanding market dynamics for investors, venture capitalists, and aspiring entrepreneurs.</p>
+
+              <h2 class="text-3xl font-bold mb-4">1. Introduction: The Rise of Unicorns in the Global Economy</h2>
+              <p>Unicorn companies, private startups valued at over $1 billion, are key indicators of innovation, market disruption, and significant investment opportunities. During my internship at Quantum Analytics, my inaugural Power BI project focused on dissecting this unique segment of the global economy. The objective was to transform raw data about these companies into a dynamic and interactive dashboard, enabling a clearer understanding of their growth trajectories, the sectors they dominate, and their geographical concentration. This project was a critical learning experience in end-to-end data analysis within a professional setting.</p>
+
+              <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
+              <p>The primary objectives for this Power BI project were defined to provide comprehensive insights into the unicorn company landscape:</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Overall Objectives:</h3>
+              <ul>
+                <li>To perform exploratory data analysis on global unicorn companies to identify key trends and patterns.</li>
+                <li>To analyze the distribution of unicorns by industry and geographical location.</li>
+                <li>To visualize the growth of unicorn valuations and the rate of new unicorn creation over time.</li>
+                <li>To provide actionable insights for stakeholders interested in the startup and investment ecosystem.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Project Goals & Deliverables:</h3>
+              <ol class="list-decimal list-inside ml-4">
+                <li>Overall Unicorn Metrics: Display key aggregated metrics such as Total Valuation, Total Number of Industries, Total Number of Countries, Total Number of Companies, and Total Number of Cities where unicorns are based.</li>
+                <li>Top Countries with the Most Unicorns: Identify and visualize the leading countries by the number of unicorn companies.</li>
+                <li>Top Most Valued Industry: Analyze and display the industries with the highest cumulative unicorn valuation.</li>
+                <li>Valuation Trend by Year: Show the overall trend of unicorn company valuations over the years.</li>
+                <li>Unicorn Trend by Year of Joining: Illustrate the rate at which new companies achieved unicorn status annually.</li>
+                <li>Top 10 Most Valued Companies: List the top 10 unicorn companies by their individual valuations.</li>
+                <li>Interactive Filtering: Allow users to filter the dashboard by company name and year.</li>
+              </ol>
+
+              <h2 class="text-3xl font-bold mb-4">3. Data Scope & Metrics</h2>
+              <p>The analysis utilized a global dataset of unicorn companies, encompassing various attributes about these high-valuation private companies.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Data Source:</h3>
+              <ul>
+                <li>Global Unicorn Company Dataset: Contains information on companies valued at over $1 billion.</li>
+                <li>Key Columns :
+                  <ul>
+                    <li>Company Name</li>
+                    <li>Valuation (in billions/trillions)</li>
+                    <li>Industry</li>
+                    <li>Country</li>
+                    <li>City</li>
+                    <li>Year of Joining (when they became a unicorn)</li>
+                    <li>Date Last Updated (implied for valuation trend)</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h3 class="text-2xl font-bold mb-4">Key Data Points & Metrics Captured and Displayed:</h3>
+              <ul>
+                <li>Total Valuation: $3.711T</li>
+                <li>Total Number of Industries: 15</li>
+                <li>Total Number of Countries: 46</li>
+                <li>Total Number of Companies: 1072</li>
+                <li>Total Number of Cities: 259</li>
+                <li>Top 5 Countries with the Most Unicorns: United States (561), China (173), India (65), United Kingdom (43), Germany (26).</li>
+                <li>Top 5 Most Valued Industry: Fintech (34.83%), Internet (23.50%), E-commerce (16.82%), Artificial Intelligence (14.89%), Other (9.95%).</li>
+                <li>Valuation trend by Year: Shows significant fluctuations and overall growth, with notable peaks, reflecting market cycles and large funding rounds.</li>
+                <li>Unicorn trend by Year of Joining: Indicates an accelerating pace of new unicorn creation, particularly in recent years.</li>
+                <li>Top 10 Most Valued Company: Includes companies like ByteDance, SHEIN, SpaceX, Stripe, Canva, Instacart, among others, with valuations ranging from $0.02T to over $0.18T.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Insights Derived from Data:</h3>
+              <ul>
+                <li>The unicorn ecosystem is highly concentrated geographically, with the United States and China dominating in terms of the number of unicorn companies.</li>
+                <li>Technology-driven industries such as Fintech, Internet, E-commerce, and Artificial Intelligence account for the vast majority of unicorn valuations, highlighting major areas of innovation and investment.</li>
+                <li>There has been a dramatic increase in both the total valuation of unicorn companies and the rate at which new companies achieve unicorn status, especially in recent years, indicating a boom in venture capital activity and technological advancement.</li>
+                <li>Specific companies like ByteDance and SHEIN hold exceptionally high valuations, signifying their significant impact and market leadership within the unicorn landscape.</li>
+                <li>The data provides clear evidence of which sectors are attracting the most capital and producing the most successful private companies globally.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">4. Dashboard Design & Key Insights</h2>
+              <p>The "Unicorn Company Analysis" dashboard is designed to provide a comprehensive and interactive overview of the global unicorn landscape. It prominently displays key metrics and trends to offer immediate insights into this dynamic market.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Dashboard Features and Key Insights:</h3>
+
+              <h4 class="text-xl font-semibold mb-2">4.1 Key Performance Indicators (KPIs)</h4>
+              <p>Prominent KPIs at the top provide an immediate overview of the dataset's scale and scope:</p>
+              <ul>
+                <li>Total Valuation: $3.711T</li>
+                <li>Total Number of Industries: 15</li>
+                <li>Total Number of Countries: 46</li>
+                <li>Total Number of Companies: 1072</li>
+                <li>Total Number of Cities: 259</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.2 Geographical and Industry Distribution</h4>
+              <ul>
+                <li>Top 5 Countries with the Most Unicorns (Bar Chart): This chart clearly shows the United States as the dominant country by number of unicorns, followed by China, India, and the United Kingdom, illustrating global startup hubs.</li>
+                <li>Top 5 Most Valued Industry (Pie Chart): This chart provides a clear breakdown of industries by their total valuation, highlighting Fintech, Internet, E-commerce, and Artificial Intelligence as the leading sectors for unicorn companies.</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.3 Trend Analysis</h4>
+              <ul>
+                <li>Valuation trend by Year (Line Chart): This chart illustrates the overall growth trajectory of unicorn valuations over time, showing periods of accelerated growth and highlighting the increasing capital flowing into these companies.</li>
+                <li>Unicorn trend by Year of Joining (Bar Chart): This visual demonstrates the escalating rate at which new companies are achieving unicorn status, particularly in recent years, underscoring the rapid expansion of the unicorn ecosystem.</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.4 Top Companies and Interactive Filtering</h4>
+              <ul>
+                <li>Top 10 Most Valued Company (Bar Chart): This chart identifies and ranks the top 10 most valuable individual unicorn companies, providing insights into specific market leaders.</li>
+                <li>Company Slicer: Allows users to select individual companies to filter the dashboard and analyze specific company data.</li>
+                <li>Year Slicer: Enables filtering by year to focus on specific periods, allowing for detailed trend analysis over time.</li>
+              </ul>
+              <p>The dashboard's intuitive design and interactive elements empower users to gain a deep understanding of the unicorn company landscape, identify key players, and track market evolution.</p>
+
+              <h2 class="text-3xl font-bold mb-4">5. Technical Approach & Tools</h2>
+              <p>This project, undertaken during my internship at Quantum Analytics, involved a systematic approach to data analysis using Power BI:</p>
+
+              <ul>
+                <li>Data Acquisition & Ingestion: The global unicorn company dataset was imported into Power BI Desktop. This dataset contained various attributes about unicorn companies including their valuation, industry, country, city, and year of joining.</li>
+                <li>Data Cleaning & Transformation (Power Query in Power BI): Power Query Editor was utilized for extensive data preparation:
+                  <ul>
+                    <li>Handling Inconsistencies: Cleaned inconsistencies in company names, industry classifications, and geographical entries to ensure data accuracy.</li>
+                    <li>Data Type Standardization: Ensured all numerical fields (e.g., valuation) and date fields were correctly formatted.</li>
+                    <li>Valuation Normalization: Standardized valuation figures to a consistent unit (e.g., trillions) for accurate aggregation and comparison across companies.</li>
+                    <li>Date Processing: Extracted 'Year' from relevant date fields to enable time-series analysis for trends.</li>
+                  </ul>
+                </li>
+                <li>DAX (Data Analysis Expressions) Calculations: DAX measures were created to compute key aggregated metrics and enable dynamic calculations:
+                  <ul>
+                    <li>Total Valuation = SUM(Unicorns[Valuation])</li>
+                    <li>NO OF INDUSTRIES = CALCULATE(DISTINCTCOUNT('unicorn companies'[Industry]))</li>
+                    <li>NO OF COUNTRIES = CALCULATE(DISTINCTCOUNT('unicorn companies'[Country]))</li>
+                    <li>NO OF COMPANIES = CALCULATE(DISTINCTCOUNT('unicorn companies'[Company]))</li>
+                    <li>NO OF CITIES = CALCULATE(DISTINCTCOUNT('unicorn companies'[City]))</li>
+                    <li>Measures for calculating total valuation by industry, number of unicorns by country, and trends over time.</li>
+                  </ul>
+                </li>
+                <li>Data Visualization & Dashboarding (Power BI Desktop): The dashboard was designed with a focus on clear and insightful representation:
+                  <ul>
+                    <li>KPI Cards: For prominent display of overall metrics.</li>
+                    <li>Bar Charts: Used for comparing top countries, top companies, and unicorn trends by year of joining.</li>
+                    <li>Pie Chart: To show the distribution of valuation by industry.</li>
+                    <li>Line Charts: For visualizing valuation trends over time.</li>
+                    <li>Slicers: Implemented for interactive filtering by company and year.</li>
+                  </ul>
+                </li>
+                <li>Publishing & Sharing (Power BI Service): The final interactive report was published to the Power BI Service, demonstrating the capabilities of Power BI for business intelligence and showcasing the project as part of the Quantum Analytics internship experience.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">6. Impact & Business Value</h2>
+              <p>This Power BI project, developed during my internship at Quantum Analytics, delivers significant value to various stakeholders in the startup and investment community:</p>
+              <ul>
+                <li>Informed Investment Strategies: Provides venture capitalists and angel investors with a data-driven view of high-growth industries and geographical hotspots for potential investment.</li>
+                <li>Market Trend Identification: Helps identify emerging trends in the unicorn ecosystem, including the rapid increase in unicorn creation and the dominance of specific tech sectors.</li>
+                <li>Competitive Intelligence: Allows entrepreneurs and existing companies to benchmark themselves against successful unicorns and understand the market landscape.</li>
+                <li>Strategic Business Planning: Aids startups in understanding market saturation, identifying niches, and strategizing for growth based on industry and country performance.</li>
+                <li>Demonstration of Analytical Skills: As an internship project, it effectively showcases proficiency in data cleaning, transformation, DAX calculations, and impactful data visualization using Power BI, critical skills gained at Quantum Analytics.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">7. Conclusion</h2>
+              <p>This Power BI project on Unicorn Company Analysis successfully delivers a comprehensive and interactive analytical tool for understanding the global unicorn ecosystem. As my first major project during my internship at Quantum Analytics, it provided invaluable hands-on experience in the entire data analysis lifecycle, from raw data to actionable insights. By meticulously processing and visualizing complex startup data, the dashboard offers critical intelligence on valuation trends, industry leadership, and geographical concentrations. This analysis not only serves as a vital resource for market understanding but also stands as a testament to my developing skills in business intelligence and data visualization, cultivated during my time at Quantum Analytics.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Baro Monarch Onoriose</h3>
+      <p>Connect with me on social media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

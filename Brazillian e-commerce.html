@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Brazilian E-commerce Data Analysis - Baro Monarch Onoriose</title>
+  <meta name="description" content="A Power BI dashboard analyzing Brazilian E-commerce orders from Olist, focusing on delivery performance, customer satisfaction, and sales trends from 2016 to 2018.">
+  <meta name="keywords" content="Power BI, Data Analysis, E-commerce, Brazil, Olist, Delivery Performance, Customer Satisfaction, Sales Trends, Data Cleaning, Data Visualization">
+
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  </head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Baro Monarch Onoriose</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Brazilian E-commerce Data Analysis</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#portfolio">Back</a></li>
+            <li class="current">Power BI Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div><section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/brazillian E-commerce.png" alt="Brazilian E-commerce Data Analysis Power BI Dashboard Overview">
+                </div>
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Data Analytics / E-commerce / Business Intelligence</li>
+                <li><strong>Client/Context</strong>: Olist Store, Brazilian Marketplaces</li>
+                <li><strong>Project Date</strong>: Dec 2023</li>
+                <li><strong>Tools Used</strong>: Power BI (Power Query, DAX)</li>
+                <li><strong>Data Source</strong>: Brazilian E-commerce Public Dataset by Olist (2016-2018)</li>
+                <li><strong>Project URL</strong>: <a href="#" target="_blank" rel="noopener noreferrer">View Live Dashboard (If available)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+              <h2 class="text-3xl font-bold mb-4">Brazilian E-commerce Data Analysis: Optimizing Delivery & Customer Satisfaction for Olist</h2>
+
+              <h2 class="text-3xl font-bold mb-4">Summary</h2>
+              <p>This Power BI project delves into the Brazilian E-commerce Public Dataset by Olist, analyzing over 100,000 orders from 2016 to 2018. The dashboard provides a multi-dimensional view of order performance, focusing heavily on delivery status, customer satisfaction, and geographical sales distribution. Key insights include the volume of on-time versus late deliveries, monthly delivery trends, customer review scores, and identification of product categories most prone to late delivery. I meticulously cleaned and transformed the dataset in Power Query to handle complex relationships across multiple tables and ensure accurate reporting. My analysis aims to empower Olist and its sellers with actionable intelligence to optimize logistics, improve delivery performance, and enhance overall customer experience in the competitive Brazilian marketplace.</p>
+
+              <h2 class="text-3xl font-bold mb-4">1. Introduction: Understanding Brazilian E-commerce Dynamics</h2>
+              <p>The Brazilian e-commerce landscape, facilitated by platforms like Olist, presents unique challenges and opportunities. Understanding the intricate details of order fulfillment, from purchase to delivery and customer review, is paramount for operational efficiency and customer retention. This project leverages a rich, anonymized dataset provided by Olist, encompassing 100,000 orders from 2016 to 2018. The dataset's granular detail, including order status, payment, freight, product attributes, and customer reviews, demands robust data analysis to uncover patterns that can drive strategic improvements in delivery performance and customer satisfaction.</p>
+
+              <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
+              <p>My core objectives for this Power BI project were to provide comprehensive insights into Olist's Brazilian e-commerce operations:</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Overall Objectives:</h3>
+              <ul>
+                <li>To analyze delivery performance across various dimensions to identify bottlenecks and areas for optimization.</li>
+                <li>To assess customer satisfaction based on delivery status and review scores.</li>
+                <li>To provide actionable insights for Olist and its partnered sellers to improve logistics and customer experience.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Project Goals & Deliverables:</h3>
+              <ol class="list-decimal list-inside ml-4">
+                <li><strong>Overall Customer & Delivery Statistics</strong>: Display key metrics such as Total No. of Customers, Total No. of Sellers, On-Time Deliveries, and Late Deliveries.</li>
+                <li><strong>On-Time Delivery by Month Trend</strong>: Visualize the monthly trend of on-time deliveries to identify seasonal patterns or performance shifts.</li>
+                <li><strong>Total No. of Orders by Customer City</strong>: Identify geographical hotspots for orders and distribution.</li>
+                <li><strong>Total No. of Orders by Delivery Status</strong>: Show the overall proportion of delivered on-time versus late deliveries.</li>
+                <li><strong>Review Score of Customers with No Message</strong>: Analyze customer satisfaction, particularly for those who did not leave a review message.</li>
+                <li><strong>Late Delivery by Product Category</strong>: Pinpoint which product categories are most frequently associated with late deliveries.</li>
+                <li><strong>Late Delivery by Days of the Week</strong>: Determine if certain days of the week are more prone to late deliveries.</li>
+                <li><strong>Interactive Date Filtering</strong>: Allow users to filter data by customer order date ranges.</li>
+                <li><strong>Interactive Delivery Status Filtering</strong>: Enable filtering based on delivery status (On Time, Late Delivery).</li>
+              </ol>
+
+              <h2 class="text-3xl font-bold mb-4">3. Data Scope & Metrics</h2>
+              <p>The analysis leveraged the Brazilian E-commerce Public Dataset by Olist, spanning orders from 2016 to 2018.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Data Source:</h3>
+              <ul>
+                <li><strong>Brazilian E-commerce Public Dataset by Olist</strong>: This dataset includes information on 100k orders, comprising details on order status, price, payment, freight performance, customer location, product attributes, and customer reviews. It also includes a geolocation dataset relating Brazilian zip codes to lat/lng coordinates.</li>
+                <li><strong>Key Datasets/Tables (as described in schema):</strong>
+                  <ul>
+                    <li>`orders` (order status, timestamps)</li>
+                    <li>`order_items` (product info, seller info)</li>
+                    <li>`products` (product category, name length)</li>
+                    <li>`customers` (customer ID, city, state)</li>
+                    <li>`sellers` (seller ID, city, state)</li>
+                    <li>`order_payments` (payment type, value)</li>
+                    <li>`order_reviews` (review score, review comment message)</li>
+                    <li>`geolocation` (zip code, lat/lng)</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Data Points & Metrics Captured and Displayed:</h3>
+              <ul>
+                <li><strong>Total No. of Customers</strong>: 96,475</li>
+                <li><strong>Total No. of Sellers</strong>: 2,970</li>
+                <li><strong>On Time Deliveries</strong>: 89,941</li>
+                <li><strong>Late Deliveries</strong>: 6,534</li>
+                <li><strong>On Time Delivery by Month</strong>: Shows monthly peaks in July (10,257) and April (9,483) and dips in January (6,258) and November (4,538).</li>
+                <li><strong>Total No. of Orders by Customer City</strong>: Sao Paulo (15,046), Rio de Janeiro (6,604), Belo Horizonte (2,697), Brasilia (2,071), Curitiba (1,489) are top cities.</li>
+                <li><strong>Total No. of Orders by Delivery Status</strong>: 93.23% Delivered On Time vs. 6.77% Late Delivery.</li>
+                <li><strong>Review Score of Customers with No Message</strong>: Predominantly positive (score > 3), with a smaller portion of neutral/negative.</li>
+                <li><strong>Late Delivery by Product Category</strong>: Top categories for late delivery include "bed_bath_table" (689), "health_beauty" (650), "sports_leisure" (495).</li>
+                <li><strong>Late Delivery by Days of the Week</strong>: Day 3 (Wednesday, 1238) and Day 4 (Thursday, 1143) show higher numbers of late deliveries, with Day 7 (Sunday, 556) being lowest.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Insights Derived from Data:</h3>
+              <ul>
+                <li>The vast majority of Olist orders (93.23%) are delivered on time, indicating generally efficient logistics.</li>
+                <li>Sao Paulo is by far the largest market for Olist, contributing the highest number of orders.</li>
+                <li>Late deliveries show some monthly fluctuations, with peaks in July and April for on-time deliveries, and specific days of the week (Wednesday/Thursday) showing higher instances of late deliveries.</li>
+                <li>Specific product categories like "bed_bath_table" and "health_beauty" are disproportionately affected by late deliveries, suggesting potential logistical challenges for these item types.</li>
+                <li>Customers who leave no review message are generally satisfied, implying that dissatisfaction often prompts written feedback.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">4. Dashboard Design & Key Insights</h2>
+              <p>The "Brazilian E-commerce Data Analysis" dashboard is designed to provide a comprehensive, interactive overview of Olist's operational performance.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Dashboard Features and Key Insights:</h3>
+
+              <h4 class="text-xl font-semibold mb-2">4.1 Executive Summary & Key Performance Indicators (KPIs)</h4>
+              <p>Key summary statistics are prominently displayed on the left sidebar:</p>
+              <ul>
+                <li><strong>Total No. of Customers</strong>: 96,475</li>
+                <li><strong>Total No. of Sellers</strong>: 2,970</li>
+                <li><strong>On Time Deliveries</strong>: 89,941</li>
+                <li><strong>Late Deliveries</strong>: 6,534</li>
+              </ul>
+              <p>These KPIs provide an immediate understanding of the scale of operations and the overall delivery success rate.</p>
+
+              <h4 class="text-xl font-semibold mb-2">4.2 Delivery Performance Analysis</h4>
+              <ul>
+                <li><strong>On Time Delivery by Month (Line Chart)</strong>: A line chart illustrates the monthly trend of on-time deliveries, allowing for the identification of seasonal patterns or periods needing operational review.</li>
+                <li><strong>Total No. of Orders by Delivery Status (Donut Chart)</strong>: This chart visually represents the high percentage of on-time deliveries (93.23%) versus late deliveries (6.77%), highlighting the overall efficiency.</li>
+                <li><strong>Late Delivery by Product Category (Bar Chart)</strong>: This horizontal bar chart pinpoints specific product categories like "bed_bath_table" and "health_beauty" that are more prone to late deliveries. This is a critical insight for targeted logistical improvements.</li>
+                <li><strong>Late Delivery by Days of the Week (Line Chart)</strong>: This chart shows the distribution of late deliveries across the week, identifying peak days for delays (e.g., Wednesday and Thursday).</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.3 Customer and Geographical Insights</h4>
+              <ul>
+                <li><strong>Total No. of Orders by Customer City (Treemap)</strong>: A treemap visualizes the distribution of orders by customer city, clearly showing Sao Paulo as the dominant market, followed by Rio de Janeiro and Belo Horizonte. This helps in understanding market concentration.</li>
+                <li><strong>Review Score of Customers with No Message (Bar Chart)</strong>: This bar chart provides insights into the satisfaction level of customers who don't leave explicit feedback, helping understand general customer sentiment.</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.4 Interactive Filtering</h4>
+              <ul>
+                <li><strong>Order Customer Date Slicer</strong>: Allows users to filter the data by specific date ranges (e.g., 2016-2018) for time-period specific analysis.</li>
+                <li><strong>Delivery Status Slicer</strong>: Enables filtering by "Delivered On Time" or "Late Delivery" to deep-dive into the characteristics of each status.</li>
+              </ul>
+              <p>The dashboard's intuitive design and interactive elements empower Olist and its partners to monitor performance, identify areas for improvement, and ultimately enhance the e-commerce experience.</p>
+
+              <h2 class="text-3xl font-bold mb-4">5. Technical Approach & Tools</h2>
+              <p>The project involved significant data cleaning and transformation given the numerous tables and potential inconsistencies in the Olist dataset, followed by robust analysis in Power BI:</p>
+
+              <ul>
+                <li><strong>Data Acquisition & Ingestion</strong>: Multiple CSV files comprising the Brazilian E-commerce Public Dataset (orders, order_items, products, customers, sellers, order_payments, order_reviews, geolocation) were imported into Power BI Desktop.</li>
+                <li><strong>Data Cleaning & Transformation (Power Query in Power BI)</strong>: Power Query Editor was crucial for integrating and preparing the disparate tables:
+                  <ul>
+                    <li><strong>Table Merging & Joins</strong>: Performed complex joins (e.g., `Merge Queries` in Power Query) to consolidate information from multiple tables (e.g., joining `orders` with `order_items`, `products`, `customers`, and `order_reviews`) to create a unified data model suitable for analysis.</li>
+                    <li><strong>Date & Time Parsing</strong>: Ensured all date and timestamp columns were correctly parsed and transformed to enable time-series analysis (e.g., 'On Time Delivery by Month', 'Late Delivery by Days of the Week').</li>
+                    <li><strong>Handling Missing Values & Inconsistencies</strong>: Addressed nulls or inconsistent entries across various columns, especially in product categories or review comments.</li>
+                    <li><strong>Categorical Standardization</strong>: Cleaned and standardized categorical fields like 'Delivery Status' to ensure consistent reporting (e.g., categorizing into "On Time Delivery" and "Late Delivery" based on `order_delivered_customer_date` and `order_estimated_delivery_date`).</li>
+                    <li><strong>Feature Engineering</strong>: Created new columns as needed, such as deriving the 'Day of the Week' from delivery dates for analysis.</li>
+                    
+                  </ul>
+                </li>
+                <li><strong>DAX (Data Analysis Expressions) Calculations</strong>: DAX measures were created to compute key business metrics and aggregations:
+                  <ul>
+                    <li>`Total No of Customers = DISTINCTCOUNT(Customers[customer_id])`</li>
+                    <li>`Total No of Sellers = DISTINCTCOUNT(Sellers[seller_id])`</li>
+                    <li>`On Time Deliveries = CALCULATE(COUNTROWS(OrdersTable), OrdersTable[Delivery Status] = "Delivered On Time")`</li>
+                    <li>`Late Deliveries = CALCULATE(COUNTROWS(OrdersTable), OrdersTable[Delivery Status] = "Late Delivery")`</li>
+                    <li>Measures for monthly delivery counts, orders by city, and late deliveries by product category and day of the week were developed.</li>
+                  </ul>
+                </li>
+                <li><strong>Data Visualization & Dashboarding (Power BI Desktop)</strong>: The dashboard was designed with a focus on clear and intuitive representation for e-commerce performance:
+                  <ul>
+                    <li><strong>KPI Cards</strong>: Utilized for high-level summaries of customer, seller, and delivery counts.</li>
+                    <li><strong>Line Charts</strong>: For visualizing monthly and weekly delivery trends.</li>
+                    <li><strong>Treemap</strong>: To effectively show geographical distribution of orders by city.</li>
+                    <li><strong>Donut Chart</strong>: For a clear proportion of on-time vs. late deliveries.</li>
+                    <li><strong>Bar Charts</strong>: Effectively compare late deliveries by product category and customer review scores.</li>
+                    <li><strong>Slicers</strong>: Implemented for dynamic filtering by date range and delivery status.</li>
+                  </ul>
+                </li>
+                <li><strong>Publishing & Sharing (Power BI Service)</strong>: The final interactive report was published to the Power BI Service, enabling stakeholders at Olist and its partners to monitor and improve their e-commerce operations.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">6. Impact & Business Value</h2>
+              <p>My Power BI dashboard for Brazilian E-commerce Data Analysis delivers significant value to Olist and its ecosystem:</p>
+              <ul>
+                <li><strong>Improved Delivery Performance</strong>: By identifying peak times for late deliveries (e.g., specific months, days of the week) and problematic product categories, Olist can implement targeted logistical improvements and communicate effectively with sellers.</li>
+                <li><strong>Enhanced Customer Satisfaction</strong>: Understanding the proportion of late deliveries and the sentiment of customers (even those without explicit reviews) allows for proactive measures to address common pain points and improve the post-purchase experience.</li>
+                <li><strong>Optimized Resource Allocation</strong>: Insights into geographical demand (e.g., Sao Paulo being a major hub) can inform decisions on warehousing, logistics partner agreements, and marketing efforts.</li>
+                <li><strong>Data-Driven Decision Making</strong>: Provides Olist with a centralized, interactive tool to monitor key operational metrics, enabling continuous improvement in their marketplace efficiency.</li>
+                <li><strong>Competitive Advantage</strong>: By proactively addressing delivery and satisfaction issues, Olist can strengthen its position in the competitive Brazilian e-commerce market.</li>
+                <li><strong>Demonstration of Complex Data Integration</strong>: The successful integration and analysis of data from multiple, related tables showcase strong data modeling and transformation skills, vital for real-world business intelligence challenges.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">7. Conclusion</h2>
+              <p>This Power BI project successfully provides a robust and interactive analytical tool for understanding the dynamics of Brazilian e-commerce operations based on the Olist dataset. Through meticulous data cleaning, integration of multiple related tables, and insightful visualizations, key patterns related to delivery performance, customer satisfaction, and geographical distribution of orders have been revealed. The dashboard serves as an invaluable resource for Olist and its partners to monitor operational efficiency, identify areas for improvement, and ultimately enhance the overall customer experience in the competitive e-commerce landscape.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Baro Monarch Onoriose</h3>
+      <p>Connect with me on social media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

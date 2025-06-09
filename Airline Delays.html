@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Airline Flight Delays Analysis - Baro Monarch Onoriose</title>
+  <meta name="description" content="A Power BI project analyzing over 5 million commercial airline flights to understand delays and cancellations, compiled for the U.S. DOT Air Travel Consumer Report.">
+  <meta name="keywords" content="Power BI, Data Analysis, Airline Delays, Flight Cancellations, Big Data, Business Intelligence, Data Visualization, Transportation Analytics, U.S. DOT">
+
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  </head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Baro Monarch Onoriose</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Airline Flight Delays Analysis</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#portfolio">Back</a></li>
+            <li class="current">Power BI Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div><section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/Airline flight.png" alt="Airline Flight Delays Power BI Dashboard Overview">
+                </div>
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Data Analytics / Business Intelligence / Aviation</li>
+                <li><strong>Client/Context</strong>: Quantum Analytics (Internship Project)</li>
+                <li><strong>Project Date</strong>: December 2023</li>
+                <li><strong>Tools Used</strong>: Power BI (Power Query, DAX)</li>
+                <li><strong>Data Source</strong>: 5,000,000+ commercial airline flights in 2015 (U.S. DOT)</li>
+                <li><strong>Project URL</strong>: <a href="#" target="_blank" rel="noopener noreferrer">View Live Dashboard </a></li> </ul>
+            </div>
+          </div>
+        </div> <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+              <h2 class="text-3xl font-bold mb-4">Airline Flight Delays and Cancellations Analysis</h2>
+
+              <h2 class="text-3xl font-bold mb-4">Summary</h2>
+              <p>This project involved comprehensive analysis of over 5,000,000 commercial airline flight records from 2015, compiled for the U.S. DOT Air Travel Consumer Report. The primary objective was to uncover key insights into flight performance, including delay patterns and cancellation causes. Working with a dataset of this magnitude presented a significant technical challenge, requiring robust data cleaning, transformation, and optimization within Power BI to ensure efficient processing and responsive dashboard interactions. I developed a dynamic Power BI dashboard (as shown visually) to answer critical questions about flight volumes, delay percentages, average delay times, and airline reliability. The insights gained provide valuable intelligence for understanding operational efficiencies and passenger experiences within the U.S. air travel industry, highlighting areas for potential improvement in scheduling and service reliability.</p>
+
+              <h2 class="text-3xl font-bold mb-4">1. Introduction: Deconstructing Airline Performance with Data</h2>
+              <p>The vast amount of data generated by commercial airline operations holds immense potential for understanding the complexities of air travel. This project aimed to unlock that potential by diving into a substantial dataset of **over 5,000,000 commercial airline flights from 2015**, originally compiled for the U.S. DOT Air Travel Consumer Report. Each record detailed crucial information such as airline name, flight number, origin/destination airports, flight distance, and scheduled/actual departure and arrival times. The core challenge was to transform this massive raw data into actionable insights, providing a clear picture of flight delays and cancellations.</p>
+              <p>My role focused on leveraging Power BI to clean, model, and visualize this data, addressing specific analytical questions crucial for understanding overall air travel performance. The sheer volume of records necessitated a meticulous approach to data preparation and careful consideration of data model design to maintain optimal dashboard performance and responsiveness. The goal was to deliver a clear, interactive dashboard that could inform stakeholders about key trends and pain points in airline operations.</p>
+
+              <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
+              <p>The analysis was guided by specific questions to extract meaningful insights from the extensive flight data:</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Overall Objectives:</h3>
+              <ul>
+                <li>To process and analyze a large-scale dataset of over 5 million airline flights to identify patterns in delays and cancellations.</li>
+                <li>To develop an intuitive Power BI dashboard that visually represents key flight performance metrics.</li>
+                <li>To provide actionable insights into airline reliability and operational variations by time and location.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Project Goals & Deliverables:</h3>
+              <ol class="list-decimal list-inside ml-4">
+                <li><strong>Analyze Flight Volume Trends</strong>:
+                  <ul>
+                    <li>Quantify how overall flight volume varies by month.</li>
+                    <li>Quantify how overall flight volume varies by day of the week.</li>
+                  </ul>
+                </li>
+                <li><strong>Evaluate Departure Delays</strong>:
+                  <ul>
+                    <li>Calculate the percentage of flights that experienced a departure delay in 2015.</li>
+                    <li>Determine the average delay time, in minutes, for delayed flights.</li>
+                  </ul>
+                </li>
+                <li><strong>Assess Delay Variation</strong>:
+                  <ul>
+                    <li>Examine how the percentage of delayed flights varies throughout the year.</li>
+                    <li>Specifically analyze the percentage of delayed flights originating from Boston (BOS).</li>
+                  </ul>
+                </li>
+                <li><strong>Investigate Flight Cancellations</strong>:
+                  <ul>
+                    <li>Determine the total number of flights cancelled in 2015.</li>
+                    <li>Break down cancellation causes: percentage due to weather vs. percentage due to Airline/Carrier.</li>
+                  </ul>
+                </li>
+                <li><strong>Identify Airline Reliability</strong>:
+                  <ul>
+                    <li>Identify the airlines that are most reliable in terms of on-time departure.</li>
+                    <li>Identify the airlines that are least reliable in terms of on-time departure.</li>
+                  </ul>
+                </li>
+              </ol>
+
+              <h2 class="text-3xl font-bold mb-4">3. Data Scope & Metrics</h2>
+              <p>The analysis leveraged a single, comprehensive dataset provided for the U.S. DOT Air Travel Consumer Report.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Data Source:</h3>
+              <ul>
+                <li>Commercial Airline Flight Records (CSV): Over 5,000,000 individual flight records from 2015. Each record included:
+                  <ul>
+                    <li>Airline Name</li>
+                    <li>Flight Number</li>
+                    <li>Origin Airport</li>
+                    <li>Destination Airport</li>
+                    <li>Flight Distance</li>
+                    <li>Scheduled Departure/Arrival Times</li>
+                    <li>Actual Departure/Arrival Times</li>
+                    <li>Delay Information (Departure Delay, Arrival Delay)</li>
+                    <li>Cancellation Information (Cancelled Flag, Cancellation Reason - e.g., Weather, Carrier, Security)</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Data Points & Metrics Captured and Calculated:</h3>
+              <ul>
+                <li><strong>Total Flights</strong>: Overall count of flights.</li>
+                <li><strong>Departure Delay (Minutes)</strong>: Sum of all departure delay minutes.</li>
+                <li><strong>On Time Departure</strong>: Count of flights that departed on time.</li>
+                <li><strong>Cancelled Flights</strong>: Total number of flights cancelled.</li>
+                <li><strong>Airports</strong>: Total number of unique airports involved.</li>
+                <li><strong>Total Flights</strong>: Overall number of flights in the dataset.</li>
+                <li><strong>Avg Departure Delay</strong>: Average delay time for delayed flights (e.g., 33 minutes).</li>
+                <li><strong>% Departure Delay</strong>: Percentage of flights experiencing a departure delay (e.g., 37%).</li>
+                <li><strong>% Spread of Delayed Flights from BOS by Month</strong>: Monthly trend of delayed flights specifically from Boston.</li>
+                <li><strong>% Delayed Flights by Month</strong>: Monthly trend of overall delayed flights.</li>
+                <li><strong>Cancelled Flights by Cancellation Reason</strong>: Breakdown by Weather, Airline/National, Security, Not Cancelled.</li>
+                <li><strong>Most Reliable Airlines</strong>: Airlines with highest on-time performance.</li>
+                <li><strong>Least Reliable Airlines</strong>: Airlines with lowest on-time performance (highest delays).</li>
+                <li><strong>Total Flights by Month, Weekday and weekday name</strong>: Detailed breakdown of flight volume by temporal dimensions.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Insights Derived from Data (Pre-Dashboard):</h3>
+              <ul>
+                <li>Initial data exploration confirmed the high volume of records, emphasizing the need for efficient Power Query and DAX strategies.</li>
+                <li>Preliminary analysis indicated seasonal variations in flight delays, with certain months exhibiting higher percentages.</li>
+                <li>The breakdown of cancellation reasons immediately highlighted weather and carrier issues as primary drivers.</li>
+                <li>Identifying most and least reliable airlines revealed significant performance disparities across different carriers.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">4. Dashboard Design & Key Insights (Based on Visual Analysis)</h2>
+              <p>The project culminated in an interactive Power BI dashboard, the "Airline & Airport Flight Cancellation and Delay" dashboard, designed to provide clear, actionable insights into airline performance.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Dashboard Features and Key Insights from the "Airline & Airport Flight Cancellation and Delay" Dashboard:</h3>
+
+              <h4 class="text-xl font-semibold mb-2">4.1 Executive Summary & Key Performance Indicators (KPIs)</h4>
+              <p>The dashboard's top section provides an immediate overview of critical aggregated metrics:</p>
+              <ul>
+                <li><strong>Departure Delay (Minutes)</strong>: `2,125,618` – Total minutes of departure delays.</li>
+                <li><strong>On Time Departure</strong>: `3,693,461` – Total flights departed on time.</li>
+                <li><strong>Cancelled Flights</strong>: `89,884` – Total number of flights cancelled.</li>
+                <li><strong>Airports</strong>: `322` – Total unique airports in the dataset.</li>
+                <li><strong>Total Flights</strong>: `5,819,079` – Overall number of flights analyzed.</li>
+                <li><strong>Avg Departure Delay</strong>: `33` – Average delay time in minutes for delayed flights.</li>
+                <li><strong>% Departure Delay</strong>: `37%` – Percentage of flights that experienced a departure delay.</li>
+              </ul>
+              <p>These KPIs provide a high-level summary of the overall flight performance and impact of delays.</p>
+
+              <h4 class="text-xl font-semibold mb-2">4.2 Temporal Trends & Delay Distribution</h4>
+              <p>These charts reveal how delays fluctuate over time:</p>
+              <ul>
+                <li><strong>% Spread of Delayed Flights from BOS by Month (Area Chart)</strong>: Shows monthly variations in delayed flights specifically from Boston (BOS). There are peaks in February (13.25%), May (11.26%), and October (10.71%), indicating specific periods where BOS departures are more prone to delays. This is crucial for airport-specific operational planning.</li>
+                <li><strong>% Delayed Flights by Month (Bar Chart)</strong>: Presents the overall percentage of delayed flights each month. June (10.88%) and July (10.12%) show the highest percentages, aligning with peak travel seasons. This informs general seasonal operational adjustments.</li>
+                <li><strong>Total Flights by Month, Weekday and weekday name (Line Chart)</strong>: Provides a detailed view of flight volume across months and days of the week. Weekends (especially Saturday and Sunday) generally show higher flight volumes in specific months like January, February, and March. This helps understand overall demand patterns.</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.3 Cancellation Analysis</h4>
+              <p>Understanding why flights are cancelled is vital for risk mitigation:</p>
+              <ul>
+                <li><strong>Cancelled Flights by Cancellation Reason (Bar Chart)</strong>:
+                  <ul>
+                    <li>`Weather (49K)`</li>
+                    <li>`Airline/National (16K)`</li>
+                    <li>`Security (0K)`</li>
+                    <li>`Not Cancelled (0K)`</li>
+                  </ul>
+                  <p>This chart clearly indicates Weather as the predominant reason for flight cancellations, followed by Airline/National issues. This is a critical insight for operational resilience planning.</p>
+                </li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.4 Airline Reliability Assessment</h4>
+              <p>These charts identify top and bottom performers:</p>
+              <ul>
+                <li><strong>Most Reliable Airlines (Bar Chart)</strong>: Southwest Airlines Co. (695K flights), Delta Air Lines Inc. (593K flights), and American Airlines Inc. (480K flights) appear to be the most reliable, likely in terms of on-time departure volume. This helps recognize strong performers.</li>
+                <li><strong>Least Reliable Airlines (Bar Chart)</strong>: Spirit Airlines (129K flights), Hawaiian Airlines Inc. (65K flights), and Frontier Airlines Inc. (56K flights) are highlighted as least reliable. This pinpoints airlines requiring potential investigation for service improvement.</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.5 Interactive Filters</h4>
+              <ul>
+                <li><strong>Month Slicer</strong>: Allows filtering data by specific months (January, February, March, May, September, June, October, July, November, April, August, December). This enables focused analysis on seasonal trends.</li>
+              </ul>
+              <p>The dashboard provides a comprehensive view of critical airline performance metrics, enabling stakeholders to quickly identify trends, understand causes of delays and cancellations, and assess airline reliability.</p>
+
+              <h2 class="text-3xl font-bold mb-4">5. Technical Approach & Tools</h2>
+              <p>I executed this project following a meticulous data analysis and business intelligence pipeline:</p>
+
+              <ul>
+                <li><strong>Data Acquisition & Ingestion</strong>: The project began with the ingestion of the large CSV file containing over 5,000,000 flight records into Power BI Desktop.</li>
+                <li><strong>Data Cleaning & Transformation (Power Query in Power BI)</strong>: This was a critical phase due to the sheer volume of data. I employed efficient Power Query techniques to handle potential data inconsistencies and prepare the dataset for analysis. This included:
+                  <ul>
+                    <li>Handling missing values or errors in key fields.</li>
+                    <li>Ensuring correct data types for dates, times, numerical values, and categorical data.</li>
+                    <li>Creating calculated columns for delay minutes and percentage of delay, based on scheduled and actual times.</li>
+                    <li>Parsing cancellation reasons to enable accurate categorization and aggregation.</li>
+                    <li>Optimizing query steps to reduce load times and improve performance when working with millions of rows.</li>
+                  </ul>
+                </li>
+                <li><strong>Data Modeling (Power BI Desktop)</strong>: A robust data model was established to facilitate relationships and calculations across the large dataset. Key considerations included:
+                  <ul>
+                    <li>Creating a calendar table if not already present, to enable time-based analysis (monthly, daily, weekday trends).</li>
+                    <li>Optimizing data storage mode (e.g., Import vs. DirectQuery) and columnar storage for performance.</li>
+                    <li>Establishing appropriate relationships between tables (if any additional lookups were created) to ensure data integrity and efficient filtering.</li>
+                  </ul>
+                </li>
+                <li><strong>DAX (Data Analysis Expressions) Calculations</strong>: I wrote complex DAX measures to derive key performance indicators (KPIs) and enable dynamic calculations, including:
+                  <ul>
+                    <li>`Total Departure Delay Minutes`</li>
+                    <li>`Total On-Time Departures`</li>
+                    <li>`Total Cancelled Flights`</li>
+                    <li>`Average Departure Delay (for delayed flights)`</li>
+                    <li>`% of Flights with Departure Delay`</li>
+                    <li>Measures to categorize and sum cancellation reasons (Weather, Carrier, etc.).</li>
+                    <li>Measures to rank airlines by reliability.</li>
+                  </ul>
+                </li>
+                <li><strong>Data Visualization & Dashboarding (Power BI Desktop)</strong>: I meticulously designed the interactive dashboard using appropriate visualization types to address the project objectives:
+                  <ul>
+                    <li>KPI Cards: For immediate summary of overall performance metrics like total delays, on-time departures, and cancellations.</li>
+                    <li>Bar Charts: For categorical breakdowns (e.g., Most/Least Reliable Airlines, Cancelled Flights by Reason) and monthly delay percentages.</li>
+                    <li>Area Charts: For visualizing temporal trends like % spread of delayed flights from BOS and Total Flights by Pickup Time, allowing for easy identification of peaks and troughs.</li>
+                    <li>Slicers: For dynamic filtering by Month, providing user interactivity and enabling deeper exploration of specific periods.</li>
+                  </ul>
+                </li>
+                <li><strong>Publishing & Sharing (Power BI Service)</strong>: The final interactive report was published to the Power BI Service, enabling secure sharing and access for stakeholders.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">6. Impact & Business Value</h2>
+              <p>This Airline Flight Delays Analysis project provides significant business value for stakeholders in the aviation industry, including airlines, regulatory bodies (like the U.S. DOT), and even travelers:</p>
+              <ul>
+                <li>Enhanced Operational Awareness: Provides a clear, data-driven understanding of flight delay and cancellation patterns, enabling airlines to identify recurring issues and improve operational planning and resource allocation.</li>
+                <li>Informed Decision-Making: Regulators can use these insights to monitor airline performance, identify areas for policy intervention, and improve consumer reporting accuracy.</li>
+                <li>Improved Passenger Experience: By understanding peak delay times and reasons for cancellations, airlines can better manage passenger expectations, communicate proactively, and potentially reduce disruptions.</li>
+                <li>Airline Performance Benchmarking: The identification of most and least reliable airlines provides a basis for benchmarking and competitive analysis, encouraging airlines to strive for better on-time performance.</li>
+                <li>Strategic Resource Allocation: Knowledge of flight volume by month and day of the week allows for better staffing and scheduling of airport personnel, ground crews, and flight attendants.</li>
+                <li>Data-Driven Problem Solving: The dashboard serves as a foundational tool for further root-cause analysis of delays and cancellations, leading to more targeted and effective solutions.</li>
+                <li>Demonstrated Big Data Capability: Successfully handling and deriving insights from a dataset of over 5 million records highlights strong data processing and analysis capabilities for large volumes of data.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">7. Conclusion</h2>
+              <p>This Airline Flight Delays Analysis project successfully transformed a massive dataset of over 5 million commercial flight records into a powerful and intuitive Power BI dashboard. By meticulously cleaning the data and developing targeted visualizations, I was able to answer key questions regarding flight volumes, delay trends, and cancellation reasons, and assess airline reliability. Working with such a large dataset presented a valuable technical challenge, which was successfully navigated through careful data modeling and Power Query optimization. The dashboard serves as a vital tool for understanding the complexities of air travel performance, providing actionable insights for airlines, regulatory bodies, and contributing to a better passenger experience. This project underscores the significant impact that robust data analysis and visualization can have on complex operational challenges in the transportation sector.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Baro Monarch Onoriose</h3>
+      <p>Connect with me on social media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

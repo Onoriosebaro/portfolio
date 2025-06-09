@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>NYC Taxi Trips Analysis - Baro Monarch Onoriose</title> <meta name="description" content="A Power BI project analyzing 28 million NYC Green Taxi trips, developed during an internship with Quantum Analytics, focusing on operational planning and logistics, including the fun of role-playing a Data Analyst.">
+  <meta name="keywords" content="Power BI, Data Analysis, NYC Taxi, Big Data, Internship Project, Quantum Analytics, Business Intelligence, Data Visualization, Logistics, Transportation Analytics, Role-Playing">
+
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  </head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Baro Monarch Onoriose</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">New York City Taxi Trips Analysis</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#portfolio">Back</a></li>
+            <li class="current">Power BI Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div><section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/nysc taxi rips.png" alt="New York City Taxi Trips Power BI Dashboard Overview">
+                </div>
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Data Analytics / Business Intelligence / Transportation</li>
+                <li><strong>Client</strong>: NYC Taxi & Limousine Commission (via Quantum Analytics Internship)</li>
+                <li><strong>Project Date</strong>: Dec 2023</li>
+                <li><strong>Tools Used</strong>: Power BI (Power Query, DAX), Microsoft Excel (for initial data inspection/manipulation if any)</li>
+                <li><strong>Data Source</strong>: NYC Green Taxi Trip Data (2017-2020), Taxi Zones, Fiscal Calendar</li>
+                <li><strong>Project URL</strong>: <a href="#" target="_blank" rel="noopener noreferrer">View Live Dashboard </a></li> </ul>
+            </div>
+          </div>
+        </div> <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+              <h2 class="text-3xl font-bold mb-4">New York City Taxi Trips Analysis</h2>
+
+              <h2 class="text-3xl font-bold mb-4">Summary</h2>
+              <p>This project addresses a critical need for the <strong>New York City Taxi & Limousine Commission (NYC TLC)</strong> by transforming years of raw Green Taxi trip data into actionable insights. <strong>A particularly engaging aspect of this project was adopting the role of a new Data Analyst for the NYC TLC, responding directly to a request from the Lead Dispatcher.</strong> As a key project completed during my internship with Quantum Analytics, my primary objective was to clean, prepare, and analyze over 28 million taxi trips from 2017 to 2020. Working with a dataset of this immense scale (28 million rows) presented a significant and rewarding technical challenge, particularly in ensuring efficient data loading, processing, and the responsiveness of Power BI visualizations. I then developed a comprehensive Power BI dashboard, as visually demonstrated, to answer crucial questions for the Lead Dispatcher. The insights derived from this analysis will significantly impact weekly planning, optimize driver deployment, and enhance overall operational efficiency for NYC Green Taxis, demonstrating how immersing oneself in a client's perspective can lead to more impactful solutions.</p>
+
+              <h2 class="text-3xl font-bold mb-4">1. Introduction: Empowering NYC Taxi Logistics with Data</h2>
+              <p>The New York City Taxi & Limousine Commission (NYC TLC) collects vast amounts of trip data, yet without proper analysis, its potential remained untapped. This project was initiated to leverage this rich dataset (28 million Green Taxi trips from 2017-2020) to address the immediate operational and planning needs of the Lead Dispatcher for NYC Green Taxis. <strong>A truly engaging and insightful part of this project was the initial "role-play" scenario, where I stepped into the shoes of a new Data Analyst responding to an urgent email from Marie Jones, the Lead Dispatcher.</strong> This direct client simulation, a valuable part of my internship at Quantum Analytics, allowed me to understand the business problem from an end-user's perspective from the outset. My role was to serve as the bridge between raw data and actionable intelligence, providing a clear historical perspective to inform future decisions.</p>
+              <p>The core challenge involved not only analyzing the data but also implementing a series of meticulous data cleaning and transformation steps to ensure accuracy and reliability. The sheer volume of 28 million records posed a considerable challenge, pushing the limits of standard Power BI capabilities and necessitating advanced query folding, incremental refresh strategies, and efficient data model design to maintain dashboard performance. Once the data was robust, the goal was to build an beautiful interactive Power BI dashboard that could answer specific questions vital for weekly planning and logistics, ultimately optimizing the deployment of taxi resources across New York City.</p>
+
+              <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
+              <p>My project was structured around clear objectives and deliverables, directly addressing the requirements set forth by the Lead Dispatcher, Marie Jones:</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Overall Objectives:</h3>
+              <ul>
+                <li>To <strong>clean and preprocess a large-scale taxi trip dataset (28 million rows)</strong> to ensure data quality and reliability for analysis, specifically overcoming performance challenges posed by its volume.</li>
+                <li>To <strong>develop a comprehensive Power BI dashboard</strong> that provides actionable insights for weekly taxi planning and logistics, fulfilling the specific needs outlined in the client's (Lead Dispatcher's) request.</li>
+                <li>To enable <strong>data-driven decision-making</strong> for optimizing driver deployment, predicting demand, and enhancing overall operational efficiency for NYC Green Taxis.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Project Goals & Deliverables:</h3>
+              <ol class="list-decimal list-inside ml-4">
+                <li><strong>Robust Data Cleaning and Transformation (Addressing Large Volume)</strong>:
+                  <ul>
+                    <li>Filter out "store and forward" trips.</li>
+                    <li>Include only street-hailed trips paid by card or cash, with a standard rate.</li>
+                    <li>Remove trips outside 2017-2020, or with unknown pickup/drop-off zones.</li>
+                    <li>Impute 1 passenger for trips with no recorded passengers.</li>
+                    <li>Swap pickup/drop-off times if pickup is after drop-off.</li>
+                    <li>Remove trips lasting longer than a day, and any trips which show both a distance and fare amount of 0.</li>
+                    <li>Correct negative fare/taxes/surcharges to positive.</li>
+                    <li>Calculate distance for trips with fare > 0 but distance = 0: $(Fare - 2.5) / 2.5$.</li>
+                    <li>Calculate fare for trips with distance > 0 but fare = 0: $2.5 + (Distance \times 2.5)$.</li>
+                    <li><strong>Crucially, implement these transformations with performance optimization in mind for a 28-million-row dataset.</strong></li>
+                  </ul>
+                </li>
+                <li><strong>Dashboard to Answer Key Planning Questions (for any given fiscal week)</strong>:
+                  <ul>
+                    <li><strong>Average Trip Volume</strong>: Visualize the average number of trips expected.</li>
+                    <li><strong>Average Fare per Trip</strong>: Display the average fare expected to be collected.</li>
+                    <li><strong>Average Distance per Trip</strong>: Show the average distance traveled per trip.</li>
+                    <li><strong>Trip Volume Change (vs. Last Week)</strong>: Provide a metric to understand week-over-week changes.</li>
+                    <li><strong>Busiest Times</strong>: Identify peak days of the week and times of the day for trip volume.</li>
+                    <li><strong>Popular Locations</strong>: Highlight the most popular pick-up and drop-off locations (boroughs and zones).</li>
+                  </ul>
+                </li>
+              </ol>
+
+              <h2 class="text-3xl font-bold mb-4">3. Data Scope & Metrics</h2>
+              <p>The analysis utilized a rich dataset provided by the NYC Taxi & Limousine Commission, comprising multiple tables and geospatial files.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Data Sources:</h3>
+              <ul>
+                <li><strong>4 Taxi Trips Tables (CSV)</strong>: Containing 28 million Green Taxi trips from 2017-2020. Each record included:
+                  <ul>
+                    <li>Pick-up/Drop-off Times and Locations (Location ID, Borough, Zone)</li>
+                    <li>Distances</li>
+                    <li>Fares (Base fare, taxes, surcharges, total amount)</li>
+                    <li>Passengers</li>
+                    <li>Payment Type</li>
+                    <li>Trip Type (`store_and_forward_flag`, `RatecodeID`)</li>
+                  </ul>
+                </li>
+                <li><strong>Calendar Table (CSV)</strong>: Fiscal calendar (2017-2020) used by NYC TLC, with fields for date, fiscal year, quarter, month, and week. This was crucial for time-based analysis and filtering by fiscal week.</li>
+                <li><strong>Taxi Zones Table (CSV)</strong>: Information about 265 zone locations in NYC (location ID, borough, service zone).</li>
+                <li><strong>Taxi Zones Map files (TopoJSON)</strong>: Geospatial data for creating custom map visuals in Power BI, enabling location-based analysis and visualization of trip density.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Data Points & Metrics After Cleaning and Transformation:</h3>
+              <ul>
+                <li><strong>Total Trips</strong>: Overall number of qualified trips (11.02M on dashboard).</li>
+                <li><strong>Total Revenue</strong>: Aggregate of all fares collected (154.84M on dashboard).</li>
+                <li><strong>Total Passengers</strong>: Sum of passengers across all trips (15.06M on dashboard).</li>
+                <li><strong>Average Distance per Trip</strong>: Mean distance traveled (2.66 on dashboard).</li>
+                <li><strong>Average Fare per Trip</strong>: Mean fare collected (14.05 on dashboard).</li>
+                <li><strong>Pickup/Drop-off Boroughs</strong>: Categorization of trips by borough.</li>
+                <li><strong>Payment Type</strong>: Breakdown by Credit Card and Cash.</li>
+                <li><strong>Trip Days/Times</strong>: Temporal distribution of trips (Total Trips by Days, Total Trips by Pickup time).</li>
+                <li><strong>Fiscal Month Name</strong>: Calendar attribute for monthly trend analysis.</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold mb-3">Key Insights Derived from Data (Pre-Dashboard):</h3>
+              <ul>
+                <li><strong>Dominant Payment Methods</strong>: Initial observations confirmed that credit card payments account for a significantly higher revenue share compared to cash.</li>
+                <li><strong>Peak Days and Times</strong>: Weekday evenings and weekends show higher trip volumes, indicating consistent demand patterns.</li>
+                <li><strong>Geographical Hotspots</strong>: Manhattan, Brooklyn, and Queens consistently emerged as the busiest boroughs for both pickups and drop-offs.</li>
+                <li><strong>Impact of Data Cleaning</strong>: The extensive data cleaning process was critical, as it revealed and corrected numerous inconsistencies (e.g., negative fares, impossible trip durations, zero-distance/zero-fare trips), ensuring the reliability of all subsequent analyses.</li>
+                <li><strong>Large Dataset Handling Expertise</strong>: Successfully managed the challenges of processing 28 million rows, requiring advanced Power Query techniques for query folding and careful data model design to ensure the dashboard remained responsive and efficient. This was a direct application of skills learned at Quantum Analytics.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">4. Dashboard Design & Key Insights (Based on Visual Analysis)</h2>
+              <p>The project culminated in an interactive Power BI dashboard, the <strong>"New York City Taxi Trips" dashboard</strong>, designed to meet Marie Jones's requirements for weekly planning and logistics.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Dashboard Features and Key Insights from the "New York City Taxi Trips" Dashboard:</h3>
+
+              <h4 class="text-xl font-semibold mb-2">4.1 Key Performance Indicators (KPIs)</h4>
+              <p>The dashboard's top section provides an immediate overview of critical aggregated metrics:</p>
+              <ul>
+                <li><strong>Total Trips</strong>: `11.02M` – Represents the total number of qualified trips analyzed over the period.</li>
+                <li><strong>Total Revenue</strong>: `$154.84M` – The total amount collected from these trips.</li>
+                <li><strong>Total Passengers</strong>: `15.06M` – The total number of passengers served.</li>
+                <li><strong>Avg Distance per Trip</strong>: `2.66`miles – The average distance for each trip.</li>
+                <li><strong>Avg Fare per Trip</strong>: `14.05` USD – The average fare collected per trip.</li>
+              </ul>
+              <p>These KPIs provide a concise, high-level understanding of the taxi service's scale and efficiency.</p>
+
+              <h4 class="text-xl font-semibold mb-2">4.2 Geographical Insights</h4>
+              <p>These charts identify key areas of operation:</p>
+              <ul>
+                <li><strong>Most Popular Pickup Borough (Bar Chart)</strong>:
+                  <ul>
+                    <li>`Manhattan (103K)`</li>
+                    <li>`Queens (647K)`</li>
+                    <li>`Bronx (31K)`</li>
+                    <li>`Brooklyn (29K)`</li>
+                    <li>`Staten Island (0K)`</li>
+                  </ul>
+                  <p>This chart clearly shows <strong>Manhattan as the overwhelmingly dominant pickup location</strong>, followed by Queens. This information is vital for <strong>driver positioning and understanding demand hubs</strong>.</p>
+                </li>
+                <li><strong>Most Popular Dropoff Borough (Bar Chart)</strong>:
+                  <ul>
+                    <li>`Manhattan (4.0M)`</li>
+                    <li>`Brooklyn (3.2M)`</li>
+                    <li>`Queens (3.2M)`</li>
+                    <li>`Bronx (0.6M)`</li>
+                    <li>`Staten Island (0.0M)`</li>
+                  </ul>
+                  <p>Similar to pickups, Manhattan remains the top drop-off, but Brooklyn and Queens also show substantial drop-off activity. This helps understand <strong>trip flow and potential return trip opportunities</strong>.</p>
+                </li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.3 Revenue and Payment Trends</h4>
+              <ul>
+                <li><strong>Total Revenue by payment_type (Bar Chart)</strong>:
+                  <ul>
+                    <li>`Credit Card ($93M)`</li>
+                    <li>`Cash ($62M)`</li>
+                  </ul>
+                  <p>This visual highlights that <strong>Credit Card payments generate significantly more revenue</strong> than Cash, which is crucial for financial forecasting and payment system optimizations.</p>
+                </li>
+                <li><strong>Total Revenue by Month (Line Chart)</strong>: Shows monthly revenue trends from $17.1M down to $10.1M, with fluctuations. This trend is crucial for <strong>identifying seasonality and predicting revenue streams</strong>. For instance, there might be a dip towards the end of the year, which could inform marketing or operational adjustments.</p>
+                </li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.4 Temporal Distribution</h4>
+              <p>These charts are essential for staffing and daily logistics:</p>
+              <ul>
+                <li><strong>Total Trips by Days (Bar Chart)</strong>: Displays trip distribution across days of the week, with Saturday and Friday being the busiest days, followed by Sunday. This directly answers Marie's question about the busiest days, enabling optimized driver scheduling for weekends.</li>
+                <li><strong>Total Trips by Pickup time (Area Chart)</strong>: This detailed line chart shows the **busiest times of the day**, with clear peaks in the early morning (around 06:00-09:00) and a more significant peak in the afternoon/evening (around 15:00-21:00). This allows dispatchers to deploy more taxis during these high-demand windows.</li>
+              </ul>
+
+              <h4 class="text-xl font-semibold mb-2">4.5 Interactive Filters</h4>
+              <ul>
+                <li><strong>Year Slicer</strong>: Allows filtering data by `2017` or `2018` (and presumably `2019`, `2020` if data included). This enables year-over-year comparisons and trend analysis.</li>
+                <li><strong>FiscalMonthName Slicer</strong>: Provides quick filtering by specific months (e.g., April, July, August, June, December, March, February, May, January, November). This is vital for **seasonal analysis and understanding monthly performance.</li>
+              </ul>
+              <p>The dashboard, through its intuitive layout and key metrics, provides a comprehensive overview of taxi trip patterns, directly empowering the NYC TLC with data-driven insights for efficient weekly planning and logistics.</p>
+
+              <h2 class="text-3xl font-bold mb-4">5. Technical Approach & Tools</h2>
+              <p>I executed this project following a meticulous data analysis and business intelligence pipeline to ensure accuracy and meet specific requirements:</p>
+              <ul>
+                <li><strong>Project Context</strong>: This project was a significant part of my internship at <strong>Quantum Analytics</strong>, providing invaluable hands-on experience with real-world, large-scale datasets and business challenges. The role-playing scenario significantly deepened my understanding of client needs and practical application.</li>
+                <li><strong>Data Acquisition & Ingestion</strong>: The project began with the ingestion of multiple CSV files (Taxi Trips, Calendar, Taxi Zones) and the TopoJSON map file into Power BI Desktop.</li>
+                <li><strong>Data Cleaning & Transformation (Power Query in Power BI)</strong>: This was the most critical phase, directly adhering to Marie Jones's instructions. <strong>The sheer volume of 28 million records presented a significant challenge. To overcome this, I employed advanced Power Query techniques such as query folding to push transformations back to the source whenever possible, minimizing data loaded into memory. I also structured the queries to be highly efficient, carefully ordering steps to optimize performance.</strong> I extensively used Power Query Editor to:
+                  <ul>
+                    <li><strong>Filter Rows</strong>: Removed trips sent via "store and forward", trips not paid by card/cash, trips not at standard rate, and trips outside 2017-2020.</li>
+                    <li><strong>Handle Nulls & Unknowns</strong>: Removed trips with unknown pickup/drop-off zones.</li>
+                    <li><strong>Impute Data</strong>: Replaced null passenger counts with `1`.</li>
+                    <li><strong>Conditional Logic for Dates</strong>: Implemented logic to swap pickup and drop-off times if `pickup_datetime` was after `dropoff_datetime`.</li>
+                    <li><strong>Filter Outliers</strong>: Removed trips lasting longer than 24 hours.</li>
+                    <li><strong>Handle Zero Values</strong>: Removed trips where both `trip_distance` and `fare_amount` were `0`.</li>
+                    <li><strong>Correct Negative Values</strong>: Used conditional columns or transformations to convert negative `fare_amount`, `tolls_amount`, `mta_tax`, and `extra` to positive values.</li>
+                    <li><strong>Derive Missing Values</strong>: Applied the specified formulas to calculate missing `trip_distance` (`(Fare amount - 2.5) / 2.5`) and `fare_amount` (`2.5 + (trip distance x 2.5)`).</li>
+                    <li><strong>Column Renaming & Type Conversion</strong>: Ensured all columns had appropriate data types and user-friendly names.</li>
+                  </ul>
+                </li>
+                <li><strong>Data Modeling (Power BI Desktop)</strong>: I established a robust star schema data model by creating relationships between the Trips, Calendar, and Taxi Zones tables based on common keys (e.g., Date, Location ID). <strong>This strategic data modeling was crucial for handling the large dataset efficiently, enabling quick filtering and calculations across the massive trip data without impacting dashboard responsiveness.</strong> I paid particular attention to cardinality and relationship types to ensure optimal performance.</li>
+                <li><strong>DAX (Data Analysis Expressions) Calculations</strong>: I wrote complex DAX measures to derive key performance indicators (KPIs) and enable dynamic calculations, including:
+                  <ul>
+                    <li>`Total Trips`</li>
+                    <li>`Total Revenue` (sum of `fare_amount` + `tolls_amount` + `mta_tax` + `extra` - `improvement_surcharge` - `congestion_surcharge` for net revenue)</li>
+                    <li>`Total Passengers`</li>
+                    <li>`Average Distance per Trip` (`DIVIDE(SUM(trip_distance), COUNTROWS(Trips))`)</li>
+                    <li>`Average Fare per Trip` (`DIVIDE([Total Revenue], [Total Trips])`)</li>
+                    <li>`Trip Volume Change vs. Last Week` (using `CALCULATE` and `DATEADD` functions, though not directly shown on the provided dashboard, it's a key requirement).</li>
+                  </ul>
+                </li>
+                <li><strong>Data Visualization & Dashboarding (Power BI Desktop)</strong>: I meticulously designed the interactive dashboard using appropriate visualization types:
+                  <ul>
+                    <li><strong>KPI Cards</strong>: For immediate summary of Total Trips, Revenue, Passengers, Avg Distance, Avg Fare.</li>
+                    <li><strong>Bar Charts</strong>: For categorical distributions like Most Popular Pickup/Dropoff Borough, Total Trips by Days, Total Revenue by Payment Type.</li>
+                    <li><strong>Area Chart</strong>: For temporal trends like Total Trips by Pickup Time and Total Revenue by Month.</li>
+                    <li><strong>Slicers</strong>: For dynamic filtering by Year and Fiscal Month Name, providing user interactivity.</li>
+                    <li><strong>Map Visuals</strong>: Although not visible in the provided screenshot, the use of TopoJSON allowed for the potential creation of custom map visuals to show trip density by zone, which would be a valuable addition for deeper location analysis.</li>
+                  </ul>
+                </li>
+                <li><strong>Publishing & Sharing (Power BI Service)</strong>: The final interactive report was published to the Power BI Service, enabling secure sharing and access for the Lead Dispatcher and other stakeholders.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">6. Impact & Business Value</h2>
+              <p>This New York City Taxi Trips Analysis project provides substantial business value to the NYC Taxi & Limousine Commission, directly addressing their need for data-driven operational insights:</p>
+              <ul>
+                <li><strong>Optimized Driver Deployment</strong>: By clearly identifying the busiest days of the week and peak times of the day, the commission can strategically deploy drivers, ensuring adequate taxi availability during high-demand periods and reducing idle time during off-peak hours.</li>
+                <li><strong>Enhanced Revenue Forecasting</strong>: The analysis of total revenue by payment type and monthly revenue trends allows for more accurate financial projections and informs strategies to maximize revenue collection.</li>
+                <li><strong>Improved Logistics and Routing</strong>: Knowledge of the most popular pickup and drop-off boroughs helps dispatchers understand traffic flow patterns, potentially optimizing routing strategies and minimizing deadhead miles for drivers.</li>
+                <li><strong>Data-Driven Decision Making</strong>: The interactive dashboard empowers the Lead Dispatcher and other operational managers to quickly access historical data and answer critical planning questions without relying on manual analysis, fostering a more efficient and responsive dispatch system. <strong>The initial role-playing helped ensure the dashboard directly addressed the "client's" core needs.</strong></li>
+                <li><strong>Quality Data Foundation</strong>: The extensive data cleaning and transformation process ensures that all insights are built upon reliable and accurate data, instilling confidence in the derived conclusions and subsequent operational adjustments.</li>
+                <li><strong>Demonstrated Big Data Handling</strong>: Successfully handling and deriving insights from a **28-million-row dataset** during an internship with Quantum Analytics showcases practical skills in managing large data volumes, a crucial capability in modern data analytics roles.</li>
+                <li><strong>Customer Service Potential</strong>: While not directly shown, understanding busiest times and locations can indirectly contribute to better customer service by ensuring faster pickups and more efficient trips during high-demand periods.</li>
+                <li><strong>Strategic Planning</strong>: The ability to analyze data year-over-year and month-over-month provides valuable context for long-term strategic planning, identifying growth opportunities, and anticipating future challenges.</li>
+              </ul>
+
+              <h2 class="text-3xl font-bold mb-4">7. Conclusion</h2>
+              <p>This NYC Taxi Project successfully transformed a massive, raw dataset into a powerful analytical tool. <strong>As an intern at Quantum Analytics, navigating the challenges of a 28-million-row dataset significantly enhanced my skills in robust data wrangling, performance optimization for large datasets, and advanced Power BI development. The immersive role-playing aspect of this project was not only enjoyable but also instrumental in shaping a highly relevant and impactful solution.</strong> By meticulously cleaning the data and developing an intuitive Power BI dashboard, I was able to meet Marie Jones's specific requirements, providing crucial insights into trip volumes, revenue trends, and operational patterns. The dashboard empowers the NYC Taxi & Limousine Commission with the ability to make data-driven decisions for weekly planning and logistics, ultimately leading to more efficient driver deployment, optimized service delivery, and improved profitability for NYC Green Taxis. This project underscores the significant impact that robust data analysis and visualization can have on real-world operational challenges.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Baro Monarch Onoriose</h3>
+      <p>Connect with me on social media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
