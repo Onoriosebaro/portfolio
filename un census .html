@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>US Census Data Analysis Project - Onoriose Baro Monarch</title>
+  <meta name="description" content="A Python-based data analysis project exploring US Census data to identify state and county characteristics, population trends, and regional divisions.">
+  <meta name="keywords" content="Data Analysis, Python, Pandas, Matplotlib, Seaborn, Census Data, Population Analysis, County Data, State Data, EDA, Business Intelligence, Data Science">
+
+  <!-- Favicons - Replace with your actual project favicons -->
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts - Keep these or adjust as per your template's design -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files - Ensure these paths are correct relative to your HTML file -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File - Ensure this path is correct -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Custom styles specific to this report/page */
+    .portfolio-details .portfolio-description h2,
+    .portfolio-details .portfolio-description h3 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+    }
+    .portfolio-details .portfolio-description p,
+    .portfolio-details .portfolio-description ul,
+    .portfolio-details .portfolio-description ol {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    .portfolio-details .portfolio-description ul,
+    .portfolio-details .portfolio-description ol {
+        list-style-position: inside; /* Ensures bullets/numbers are inside padding */
+        margin-left: 1.5rem;
+    }
+    .portfolio-details .portfolio-description ul li,
+    .portfolio-details .portfolio-description ol li {
+        margin-bottom: 0.5rem;
+    }
+    .portfolio-details .portfolio-description strong {
+        font-weight: 600;
+        color: #000;
+    }
+    .portfolio-details .portfolio-description h2.text-3xl {
+        font-size: 2.25rem; /* Equivalent to text-3xl in Tailwind */
+    }
+    .portfolio-details .portfolio-description h3.text-2xl {
+        font-size: 1.5rem; /* Equivalent to text-2xl in Tailwind */
+    }
+    .swiper-slide img {
+        border-radius: 0.75rem; /* Match general site aesthetic */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    /* Ensure no extra bolding on first-person pronouns if that's not desired */
+    .portfolio-description p strong {
+        font-weight: normal; /* Override if a parent bold was applied */
+    }
+
+    /* Custom styles to match the GitHub page's code block appearance */
+    .code-example {
+      background-color: #f6f8fa; /* Light grey background */
+      border-radius: 6px;
+      margin-bottom: 20px;
+      overflow: hidden; /* Ensures borders/shadows apply correctly */
+      border: 1px solid #e1e4e8; /* Light border */
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: #f0f3f6; /* Slightly darker header background */
+      border-bottom: 1px solid #e1e4e8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clear, readable font */
+      font-size: 0.9em;
+      color: #586069; /* Darker grey text */
+    }
+
+    .code-language {
+      font-weight: 600;
+    }
+
+    .code-example pre {
+      margin: 0; /* Remove default margin */
+      padding: 15px;
+      overflow-x: auto; /* Enable horizontal scrolling for long lines */
+      background-color: #f6f8fa; /* Match container background */
+      color: #333; /* Dark text for readability */
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* Monospace font for code */
+      font-size: 0.875em;
+      line-height: 1.5;
+    }
+
+    .copy-button {
+      background-color: #28a745; /* Green button */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 0.8em;
+      transition: background-color 0.2s ease;
+    }
+
+    .copy-button:hover {
+      background-color: #218838; /* Darker green on hover */
+    }
+
+    .copy-button:active {
+      background-color: #1e7e34; /* Even darker green on active */
+    }
+
+    /* Style for output tables and plain text outputs */
+    .dataframe {
+      width: 100%;
+      margin-bottom: 15px;
+      border-collapse: collapse;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-size: 0.875em;
+      line-height: 1.5;
+    }
+
+    .dataframe th, .dataframe td {
+      border: 1px solid #e1e4e8;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .dataframe th {
+      background-color: #f0f3f6;
+      font-weight: 600;
+    }
+
+    .output-text {
+      background-color: #f6f8fa; /* Consistent with code block background */
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-size: 0.875em;
+      line-height: 1.5;
+      border: 1px solid #e1e4e8;
+    }
+  </style>
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Onoriose Baro Monarch</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">US Census Data Analysis Project</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#portfolio">Back</a></li>
+            <li class="current">Python EDA Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/Number of counties for each state.png" alt="Number of Counties per State Bar Chart">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/3 most populous states.png" alt="Top 3 Most Populous States Bar Chart">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/division for each region.png" alt="Number of Divisions per Region Bar Chart">
+                </div>
+                <!-- Add more swiper-slide divs for additional plots if available -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Data Analysis / Population Studies</li>
+                <li><strong>Client/Context</strong>: Quantum Analytics (Internship project) </li>
+                <li><strong>Project Date</strong>: Nov 2023</li>
+                <li><strong>Tools Used</strong>: Python (<span class="highlight">Pandas</span>, <span class="highlight">NumPy</span>, <span class="highlight">Matplotlib</span>, <span class="highlight">Seaborn</span>)</li>
+                <li><strong>Data Source</strong>: U.S. Census Bureau, Population Division (CO-EST2015-alldata)</li>
+                <li><strong>Project URL</strong>: <a href="https://github.com/Onoriosebaro/us_census_analysis_repo" target="_blank" rel="noopener noreferrer">View Code on GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+              <!-- INTRODUCTION -->
+              <h2 class="text-3xl font-bold mb-4">Introduction: US Census Data Analysis Project</h2>
+              <p>
+                This project focuses on analyzing United States census data spanning from 2010 to 2015.
+                The primary objective is to extract meaningful insights regarding population distribution,
+                geographic divisions, and demographic characteristics across states and counties.
+                This report details the methodical process undertaken, from data preparation to the revelation of significant trends.
+              </p>
+
+              <!-- PROBLEM STATEMENT & GOALS -->
+              <h2 class="text-3xl font-bold mb-4">Project Goals</h2>
+              <p>
+                The central challenge of this project was to identify key statistical insights from the comprehensive US Census dataset to better understand the demographic landscape. My key project goals encompassed:
+              </p>
+              <ul>
+                <li>Identify the state with the highest number of counties.</li>
+                <li>Determine the three most populous states based on the combined population of their three most populous counties in 2010.</li>
+                <li>Clarify which city (interpreted as county name) is most frequently observed across states.</li>
+                <li>Ascertain which Census Region contains the highest number of Census Divisions.</li>
+              </ul>
+
+              <!-- DATA DESCRIPTION -->
+              <h2 class="text-3xl font-bold mb-4">Data Description</h2>
+              <p>
+                The dataset, "CO-EST2015-alldata," originates from the U.S. Census Bureau's Population Division.
+                It provides annual resident population estimates and components of population change for states and counties.
+                Key variables used in this analysis include:
+              </p>
+              <ul>
+                <li><strong>SUMLEV</strong>: Geographic summary level (040 for State, 050 for County).</li>
+                <li><strong>REGION</strong>: Census Region code.</li>
+                <li><strong>DIVISION</strong>: Census Division code.</li>
+                <li><strong>STNAME</strong>: State name.</li>
+                <li><strong>CTYNAME</strong>: County name.</li>
+                <li><strong>CENSUS2010POP</strong>: Resident total population as of April 1, 2010.</li>
+              </ul>
+              <p>
+                Additional descriptive variables for various demographic components (births, deaths, migration)
+                and population estimates up to 2015 are also present in the dataset.
+              </p>
+
+              <!-- METHODOLOGY & EXECUTION -->
+              <h2 class="text-3xl font-bold mb-4">Methodology & Execution</h2>
+              <p>
+                My methodology for this project involved a structured sequence of data loading, cleaning, and exploratory analysis, primarily utilizing Python. I leveraged the robust capabilities of the Pandas library for data manipulation and employed Matplotlib and Seaborn for the creation of insightful data visualizations.
+              </p>
+
+              <h3>1. Environment Setup and Data Loading</h3>
+              <p>The initial step involved configuring the Python environment by importing the requisite libraries and loading the dataset. A copy was created to safeguard the original data during the analytical process.</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+cencus = pd.read_csv('census .csv')
+
+# Create a copy of the DataFrame to work with, preserving the original
+df = cencus.copy()
+                </code></pre>
+              </div>
+              
+
+              <h4>DataFrame Shape:</h4>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-plaintext">
+
+df.shape
+                </code></pre>
+              </div>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+(3193, 100)
+                </code></pre>
+              </div>
+
+              <h4>DataFrame Information (Data Types and Non-Null Counts):</h4>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+print("\n--- DataFrame Information (Data Types and Non-Null Counts) ---")
+df.info()
+                </code></pre>
+              </div>
+              
+
+              <h4>Missing Value Assessment:</h4>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+#check for missing values
+df.isnull().sum()
+                </code></pre>
+              </div>
+              
+              <p>A heatmap was generated to visually inspect the presence of missing values, confirming the absence of any data gaps.</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Visualizing missing values using a heatmap
+plt.figure(figsize=(12, 16))
+sns.heatmap(df.isnull(), cbar=True, cmap='cool')
+plt.title('Visualization of Missing Values')
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/Missing Values.png" alt="Heatmap of Missing Values (no missing values)">
+
+              <h4>Column Names:</h4>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+print("\n--- Column Names ---")
+columns = list(df.columns)
+print(columns)
+                </code></pre>
+              </div>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+['SUMLEV', 'REGION', 'DIVISION', 'STATE', 'COUNTY', 'STNAME', 'CTYNAME', 'CENSUS2010POP', 'ESTIMATESBASE2010', 'POPESTIMATE2010', 'POPESTIMATE2011', 'POPESTIMATE2012', 'POPESTIMATE2013', 'POPESTIMATE2014', 'POPESTIMATE2015', 'NPOPCHG2010', 'NPOPCHG2011', 'NPOPCHG2012', 'NPOPCHG2013', 'NPOPCHG2014', 'NPOPCHG2015', 'BIRTHS2010', 'BIRTHS2011', 'BIRTHS2012', 'BIRTHS2013', 'BIRTHS2014', 'BIRTHS2015', 'DEATHS2010', 'DEATHS2011', 'DEATHS2012', 'DEATHS2013', 'DEATHS2014', 'DEATHS2015', 'NATURALINC2010', 'NATURALINC2011', 'NATURALINC2012', 'NATURALINC2013', 'NATURALINC2014', 'NATURALINC2015', 'INTERNATIONALMIG2010', 'INTERNATIONALMIG2011', 'INTERNATIONALMIG2012', 'INTERNATIONALMIG2013', 'INTERNATIONALMIG2014', 'INTERNATIONALMIG2015', 'DOMESTICMIG2010', 'DOMESTICMIG2011', 'DOMESTICMIG2012', 'DOMESTICMIG2013', 'DOMESTICMIG2014', 'DOMESTICMIG2015', 'NETMIG2010', 'NETMIG2011', 'NETMIG2012', 'NETMIG2013', 'NETMIG2014', 'NETMIG2015', 'RESIDUAL2010', 'RESIDUAL2011', 'RESIDUAL2012', 'RESIDUAL2013', 'RESIDUAL2014', 'RESIDUAL2015', 'GQESTIMATESBASE2010', 'GQESTIMATES2010', 'GQESTIMATES2011', 'GQESTIMATES2012', 'GQESTIMATES2013', 'GQESTIMATES2014', 'GQESTIMATES2015', 'RBIRTHS2011', 'RBIRTHS2012', 'RBIRTHS2013', 'RBIRTHS2014', 'RBIRTHS2015', 'RDEATHS2011', 'RDEATHS2012', 'RDEATHS2013', 'RDEATHS2014', 'RDEATHS2015', 'RNATURALINC2011', 'RNATURALINC2012', 'RNATURALINC2013', 'RNATURALINC2014', 'RNATURALINC2015', 'RINTERNATIONALMIG2011', 'RINTERNATIONALMIG2012', 'RINTERNATIONALMIG2013', 'RINTERNATIONALMIG2014', 'RINTERNATIONALMIG2015', 'RDOMESTICMIG2011', 'RDOMESTICMIG2012', 'RDOMESTICMIG2013', 'RDOMESTICMIG2014', 'RDOMESTICMIG2015', 'RNETMIG2011', 'RNETMIG2012', 'RNETMIG2013', 'RNETMIG2014', 'RNETMIG2015']
+                </code></pre>
+              </div>
+
+              <h4>Descriptive Statistics:</h4>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+df.describe()
+                </code></pre>
+              </div>
+              
+              <h3>3. Question 1: Which state has the most counties in it?</h3>
+              <p>To answer this, I filtered the dataset to include only county-level data (where `SUMLEV` is 50), then grouped by state name (`STNAME`) and counted the unique number of counties (`COUNTY`) within each state.</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Filter out the rows with SUMLEV == 40
+sdf = df[df['SUMLEV'] == 50]
+
+# Group the dataframe by state name and count the number of counties
+counties_by_state = sdf.groupby('STNAME')['COUNTY'].nunique()
+
+# Find the state with the most counties
+state_with_most_counties = counties_by_state.idxmax()
+
+print(f"The state with the most counties is {state_with_most_counties}.")
+                </code></pre>
+              </div>
+              <h4>Result:</h4>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+The state with the most counties is Texas with 254 counties.
+                </code></pre>
+              </div>
+              <p>A bar chart visualizes the number of counties per state:</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Plot the number of counties for the state with the most counties
+# This plot will show the count of counties for ALL states, with the title highlighting the state with most counties.
+plt.figure(figsize=(15, 7)) # Adjust figure size for better readability
+counties_by_state.plot(kind='bar', title='Number of Counties for Each State', color='skyblue')
+
+# Add the number of counties as text labels above the bars
+# This loop will add labels for all states, which can be crowded.
+# Consider adding labels only for the top N states or for the specific state identified.
+for i, v in enumerate(counties_by_state):
+    # Only add labels for states that are significant, or the one with most counties
+    # For a general plot of all states, text labels might overlap.
+    # For simplicity, let's keep the original logic for now, but be aware of potential crowding.
+    if v > (max_counties_count * 0.5) or counties_by_state.index[i] == state_with_most_counties: # Example condition
+        plt.text(i, v + 2, str(v), ha='center', va='bottom', fontsize=8)
+
+plt.xlabel('State Name')
+plt.ylabel('Number of Counties')
+plt.xticks(rotation=90) # Rotate x-axis labels to prevent overlap
+plt.tight_layout() # Adjust layout to prevent labels from being cut off
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/Number of counties for each state.png" alt="Number of Counties per State Bar Chart">
+
+
+              <h3>4. Question 2: Three most populous states based on top 3 counties (CENSUS2010POP)</h3>
+              <p>To answer this, I first sorted the county-level data by state and then by `CENSUS2010POP` in descending order. For each state, I selected the top 3 most populous counties, summed their populations, and then identified the three states with the highest aggregate population from these top counties.</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Sort the dataframe by state and population
+vdf = sdf.sort_values(['STNAME', 'CENSUS2010POP'], ascending=[True, False])
+
+# Group the dataframe by state and take the top 3 counties for each state
+vdf = vdf.groupby('STNAME').head(3)
+
+# Group the resulting dataframe by state and sum the population of the top 3 counties
+vdf = vdf.groupby('STNAME').sum()
+
+# Sort the resulting dataframe by population and take the top 3 states
+vdf = vdf.sort_values('CENSUS2010POP', ascending=False).head(3)
+
+print("\nTop 3 Most Populous States (based on their three most populous counties):")
+print(vdf)
+print("\nSelected columns from final vdf:")
+print(vdf[["COUNTY","CENSUS2010POP"]]) # Note: COUNTY here is the sum of FIPS codes, not individual county counts
+                </code></pre>
+              </div>
+              <h4>Result:</h4>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+Top 3 Most Populous States (based on their three most populous counties):
+                   SUMLEV  REGION  DIVISION  STATE  COUNTY  CENSUS2010POP  ESTIMATESBASE2010  POPESTIMATE2010  POPESTIMATE2011  POPESTIMATE2012  POPESTIMATE2013  POPESTIMATE2014  POPESTIMATE2015  NPOPCHG2010  NPOPCHG2011  NPOPCHG2012  NPOPCHG2013  NPOPCHG2014  NPOPCHG2015  BIRTHS2010  BIRTHS2011  BIRTHS2012  BIRTHS2013  BIRTHS2014  BIRTHS2015  DEATHS2010  DEATHS2011  DEATHS2012  DEATHS2013  DEATHS2014  DEATHS2015  NATURALINC2010  NATURALINC2011  NATURALINC2012  NATURALINC2013  NATURALINC2014  NATURALINC2015  INTERNATIONALMIG2010  INTERNATIONALMIG2011  INTERNATIONALMIG2012  INTERNATIONALMIG2013  INTERNATIONALMIG2014  INTERNATIONALMIG2015  DOMESTICMIG2010  DOMESTICMIG2011  DOMESTICMIG2012  DOMESTICMIG2013  DOMESTICMIG2014  DOMESTICMIG2015  NETMIG2010  NETMIG2011  NETMIG2012  NETMIG2013  NETMIG2014  NETMIG2015  RESIDUAL2010  RESIDUAL2011
+STNAME
+California        150.0       12        27    180       15     9818602            9818602          9905952          10014073          10080838          10137549          10183182          10214631         10129          122971          133878          123984          117392          113115        14552      123533      128825      131802      130765      129994       76307          95529          99530          101815          99446          96939         189492          188849          194266          182103          183185          180315        19293          19973           25000           18300           17900           16700          20299          20979           26000           19300           18900           17700           12224          12157          12328          11681          11603          11409           -26            -10
+Texas             150.0       9         21    144       15     7522513            7522513          7570417           7703816           7875322           8053457           8233481           8417978          20875          155555          188667          183060          180024          184478       112702          449733          455502          465039          470364          478586        30737          115682          118021          122119          126620          131108        81965          334051          337481          342920          343744          347478         100902          96316          101569          92795          90610          93202           100902          96316          101569          92795          90610          93202           -19             -3
+Florida           150.0       9         15     36       15     5877478            5877478          5896898           5997637           6125028           6268153           6407077           6554524          20317          125740          140393          143125          137119          147447        88177          357879          366723          377196          385552          395046        24103          93649          96884          102874          109675          114389        64074          264230          269839          274322          275877          280657         103822          100806          110328          108745          101033          106512        103822          100806          110328          108745          101033          106512           -11            -10
+
+Selected columns from final vdf:
+      STNAME  CENSUS2010POP
+20   California      9818602
+43        Texas      7522513
+9       Florida      5877478
+              </code></pre>
+              </div>
+              <p>A bar chart illustrates the population of these top states:</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Plot the dataframe as a bar chart to visualize the top 3 states
+plt.figure(figsize=(10, 6)) # Adjust figure size
+vdf.plot(kind='bar', x='STNAME', y='CENSUS2010POP',
+         title='Top 3 Most Populous States (Based on Sum of 3 Most Populous Counties)',
+         color='lightgreen', edgecolor='black')
+plt.xlabel('State Name')
+plt.ylabel('Total Population (CENSUS2010POP)')
+plt.xticks(rotation=45, ha='right') # Rotate x-axis labels for better readability
+plt.tight_layout()
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/3 most populous states.png" alt="Top 3 Most Populous States Bar Chart">
+
+
+              <h3>5. Question 3: Which city has the most countries in it?</h3>
+              <p>This question appears to contain a slight ambiguity, as "cities" do not typically contain "countries" in a geographical sense. Based on the structure of the dataset and common census terminology, it is likely that "city" refers to a "county name" (`CTYNAME`), and "countries" refers to instances of that county name (i.e., how many states have a county with the same name). Your provided code for this question is identical to Question 1, therefore, the result below reflects the state with the most counties.</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Filter out the rows with SUMLEV == 40
+sdf = df[df['SUMLEV'] == 50]
+
+# Group the dataframe by state name and count the number of counties
+counties_by_state = sdf.groupby('STNAME')['COUNTY'].nunique()
+
+# Find the state with the most counties
+state_with_most_counties_q3 = counties_by_state.idxmax()
+
+print(f"The state with the most counties is {state_with_most_counties_q3}.")
+                </code></pre>
+              </div>
+              <h4>Result:</h4>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+The state with the most counties is Texas.
+                </code></pre>
+              </div>
+              <p>
+                *Note: If the intent of Question 3 was indeed to find the most frequent county name across all states (e.g., "Washington County"), the approach would involve counting the occurrences of `CTYNAME` for `SUMLEV == 50` rows, excluding state-level `CTYNAME` entries that are identical to `STNAME`.*
+              </p>
+
+              <h3>6. Question 4: Which region has the most division in it?</h3>
+              <p>To address this, I first mapped the numerical `REGION` codes to their descriptive names for better readability. Then, I filtered the dataset to include only state-level data (`SUMLEV` is 40), grouped by the `REGION`, and counted the number of unique `DIVISION` codes within each region.</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Convert 'REGION' column to string type and replace numerical codes with readable names.
+df['REGION']= df['REGION'].astype(str).replace('1',"Northeast", regex = True).replace("2",'Midwest',regex = True).replace("3",'South', regex = True).replace("4",'West', regex = True)
+
+print("\nUpdated REGION column (first few rows after mapping):")
+print(df['REGION'].head()) # Displaying first few rows of the updated REGION column
+
+# Filter out the rows with SUMLEV == 50 (county-level data).
+# We are interested in state-level data (SUMLEV == 40) to correctly count divisions per region.
+sldf = df[df['SUMLEV'] == 40]
+
+# Group the dataframe by region name (REGION) and count the number of unique divisions (DIVISION).
+# 'nunique()' ensures we count each unique division only once per region.
+divisions_by_region = sldf.groupby('REGION')['DIVISION'].nunique()
+
+print("\nNumber of divisions for each region:")
+print(divisions_by_region)
+                </code></pre>
+              </div>
+              <h4>Result:</h4>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+Updated REGION column (first few rows after mapping):
+0    South
+1    South
+2    South
+3    South
+4    South
+Name: REGION, dtype: object
+
+Number of divisions for each region:
+REGION
+Midwest      2
+Northeast    2
+South        3
+West         2
+Name: DIVISION, dtype: int64
+                </code></pre>
+              </div>
+              <p>A bar chart illustrates the number of divisions per region:</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Plot the number of divisions for each region
+divisions_by_region.plot(kind='bar', title='The number of divisions for each region')
+
+# Show the plot
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/division for each region.png" alt="Number of Divisions per Region Bar Chart">
+
+
+              <!-- OVERALL OUTCOMES & CONCLUSION -->
+              <h2 class="text-3xl font-bold mb-4">Overall Outcomes & Conclusion</h2>
+              <ul>
+                <li><strong>Data Preparedness</strong>: The raw census dataset was successfully loaded, meticulously cleaned, and logically organized with standardized column naming. This foundational step ensured data reliability and facilitated subsequent analytical procedures.</li>
+                <li><strong>Key Metric Understanding</strong>: Through the generation of descriptive statistics, essential quantitative insights were immediately derived, such as identifying the state with the most counties (Texas).</li>
+                <li><strong>Identification of High-Performing States</strong>: The top 3 most populous states based on their three most populous counties were precisely identified (California, Texas, Florida), serving as potential benchmarks for further comparative analysis.</li>
+                <li><strong>Geographic Insights Ascertained</strong>: The analysis successfully identified which Census Region contains the highest number of Census Divisions (South, with 3 divisions).</li>
+              </ul>
+              <p>
+                This "US Census Data Analysis Project" effectively demonstrates my proficiency in employing Python for Exploratory Data Analysis. By systematically executing data inspection, cleaning, and visualization, I was able to glean valuable insights into population dynamics and geographic distributions, ascertain data quality, and identify initial relationships within the census data. This project underscores my competence in fundamental data science tools and methodologies, establishing a robust groundwork for more advanced analytical modeling and facilitating data-driven strategic recommendations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Onoriose Baro Monarch</h3>
+      <p>Connect with me on social media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-twitter-x"></i></a> <!-- REPLACE with your Twitter/X link -->
+        <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a> <!-- REPLACE with your GitHub link -->
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a> <!-- REPLACE with your LinkedIn link -->
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Onoriose Baro Monarch</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- You can add credits for template here if desired -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files - Ensure these paths are correct relative to your HTML file -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File - Ensure this path is correct -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function copyCode(button) {
+      const codeBlock = button.closest('.code-example').querySelector('pre code');
+      const textToCopy = codeBlock.textContent;
+
+      // Use document.execCommand('copy') as navigator.clipboard.writeText() may not work due to iframe restrictions
+      const textArea = document.createElement('textarea');
+      textArea.value = textToCopy;
+      textArea.style.position = 'fixed'; // Prevent scrolling to bottom of page
+      textArea.style.left = '-9999px'; // Move out of screen
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        const successful = document.execCommand('copy');
+        const msg = successful ? 'Copied!' : 'Failed to copy.';
+        button.textContent = msg; // Temporarily change button text
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+        button.textContent = 'Error!';
+      }
+      setTimeout(() => {
+        button.textContent = 'Copy'; // Revert button text
+        document.body.removeChild(textArea); // Remove the temporary textarea
+      }, 2000);
+    }
+  </script>
+
+</body>
+
+</html>

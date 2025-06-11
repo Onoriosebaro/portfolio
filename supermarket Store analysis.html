@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Supermarket Store Branches' Sales Analysis - Onoriose Baro Monarch</title>
+  <meta name="description" content="An exploratory data analysis (EDA) project on supermarket store branches' sales, examining dependence on store area and daily customer count using Python.">
+  <meta name="keywords" content="Data Analysis, Python, Pandas, Matplotlib, Seaborn, Store Analysis, Sales Forecasting, Retail Analytics, EDA, Business Intelligence, Data Science">
+
+  <!-- Favicons - Updated paths as per your input -->
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts - Keep these or adjust as per your template's design -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files - Ensure these paths are correct relative to your HTML file -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File - Ensure this path is correct -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Custom styles specific to this report/page */
+    .portfolio-details .portfolio-description h2,
+    .portfolio-details .portfolio-description h3 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+    }
+    .portfolio-details .portfolio-description p,
+    .portfolio-details .portfolio-description ul,
+    .portfolio-details .portfolio-description ol {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    .portfolio-details .portfolio-description ul,
+    .portfolio-details .portfolio-description ol {
+        list-style-position: inside; /* Ensures bullets/numbers are inside padding */
+        margin-left: 1.5rem;
+    }
+    .portfolio-details .portfolio-description ul li,
+    .portfolio-details .portfolio-description ol li {
+        margin-bottom: 0.5rem;
+    }
+    .portfolio-details .portfolio-description strong {
+        font-weight: 600;
+        color: #000;
+    }
+    .portfolio-details .portfolio-description h2.text-3xl {
+        font-size: 2.25rem; /* Equivalent to text-3xl in Tailwind */
+    }
+    .portfolio-details .portfolio-description h3.text-2xl {
+        font-size: 1.5rem; /* Equivalent to text-2xl in Tailwind */
+    }
+    .swiper-slide img {
+        border-radius: 0.75rem; /* Match general site aesthetic */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    /* Ensure no extra bolding on first-person pronouns if that's not desired */
+    .portfolio-description p strong {
+        font-weight: normal; /* Override if a parent bold was applied */
+    }
+
+    /* Custom styles to match the GitHub page's code block appearance */
+    .code-example {
+      background-color: #f6f8fa; /* Light grey background */
+      border-radius: 6px;
+      margin-bottom: 20px;
+      overflow: hidden; /* Ensures borders/shadows apply correctly */
+      border: 1px solid #e1e4e8; /* Light border */
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: #f0f3f6; /* Slightly darker header background */
+      border-bottom: 1px solid #e1e4e8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clear, readable font */
+      font-size: 0.9em;
+      color: #586069; /* Darker grey text */
+    }
+
+    .code-language {
+      font-weight: 600;
+    }
+
+    .code-example pre {
+      margin: 0; /* Remove default margin */
+      padding: 15px;
+      overflow-x: auto; /* Enable horizontal scrolling for long lines */
+      background-color: #f6f8fa; /* Match container background */
+      color: #333; /* Dark text for readability */
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* Monospace font for code */
+      font-size: 0.875em;
+      line-height: 1.5;
+    }
+
+    .copy-button {
+      background-color: #28a745; /* Green button */
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 0.8em;
+      transition: background-color 0.2s ease;
+    }
+
+    .copy-button:hover {
+      background-color: #218838; /* Darker green on hover */
+    }
+
+    .copy-button:active {
+      background-color: #1e7e34; /* Even darker green on active */
+    }
+
+    /* Style for output tables and plain text outputs */
+    .dataframe {
+      width: 100%;
+      margin-bottom: 15px;
+      border-collapse: collapse;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-size: 0.875em;
+      line-height: 1.5;
+    }
+
+    .dataframe th, .dataframe td {
+      border: 1px solid #e1e4e8;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .dataframe th {
+      background-color: #f0f3f6;
+      font-weight: 600;
+    }
+
+    .output-text {
+      background-color: #f6f8fa; /* Consistent with code block background */
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-size: 0.875em;
+      line-height: 1.5;
+      border: 1px solid #e1e4e8;
+    }
+  </style>
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Onoriose Baro Monarch</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Supermarket Store Branches' Sales Analysis</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#portfolio">Back</a></li>
+            <li class="current">Python EDA Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                  <img src="assets/img/Distribution of Store sales.png" alt="Distribution of Store Sales">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/store area vs store sales.png" alt="Store Area vs. Sales Scatter Plot">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/correllation heat map.png" alt="Correlation Heatmap">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/daily customer count vs store sales.png" alt="Daily Customer Count vs. Store Sales Scatter Plot">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/Top 10 stores with the most saves.png" alt="Top 10 Stores by Sales Bar Chart">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Data Analysis / Exploratory Data Analysis (EDA)</li>
+                <li><strong>Client/Context</strong>: Quantum Analytics (Internship Project)</li>
+                <li><strong>Project Date</strong>: Nov 2023</li>
+                <li><strong>Tools Used</strong>: Python (<span class="highlight">Pandas</span>, <span class="highlight">NumPy</span>, <span class="highlight">Matplotlib</span>, <span class="highlight">Seaborn</span>)</li>
+                <li><strong>Data Source</strong>: Supermarket Store Branches Sales Dataset</li>
+                <li><strong>Project URL</strong>: <a href="https://github.com/Onoriosebaro/supermarket_sales_analysis_repo" target="_blank" rel="noopener noreferrer">View Code on GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+              <!-- INTRODUCTION / MY ROLE -->
+              <h2 class="text-3xl font-bold mb-4">Introduction: My Role in the Supermarket Sales Analysis Project</h2>
+              <p>
+                In my capacity as a Data Analyst at Quantum Analytics, my primary responsibility for this project was to conduct a comprehensive Exploratory Data Analysis (EDA) on a provided dataset of supermarket store sales. The core objective was to discern the performance characteristics of various store branches, identify influential factors affecting their sales, and subsequently extract actionable insights to inform strategic business decisions. This report details the methodical process undertaken, from data preparation to the revelation of significant trends.
+              </p>
+
+              <!-- PROBLEM STATEMENT & GOALS -->
+              <h2 class="text-3xl font-bold mb-4">Project Goals</h2>
+              <p>
+                The central challenge of this project was to identify the drivers of sales performance across diverse supermarket branches. Specifically, the analysis aimed to ascertain the direct impact of physical store dimensions (`Store_Area`) and average daily customer traffic (`Daily_Customer_Count`) on a store's total sales revenue (`Store_Sales`).
+              </p>
+              <p>My key project goals encompassed:</p>
+              <ul>
+                <li>To load and meticulously clean the raw sales data, ensuring its integrity and readiness for precise analysis.</li>
+                <li>To explore the fundamental statistical characteristics of the dataset, including average sales figures, store dimensions, and customer traffic metrics.</li>
+                <li>To visually represent the relationships between salient store attributes (such as area and customer footfall) and their corresponding sales performance.</li>
+                <li>To systematically identify top-performing stores and analyze their common attributes to establish performance benchmarks.</li>
+                <li>To derive substantiated and actionable insights capable of informing effective strategies for enhancing sales across the entire network of branches.</li>
+              </ul>
+
+              <!-- DATA DESCRIPTION -->
+              <h2 class="text-3xl font-bold mb-4">Data Description</h2>
+              <p>
+                The dataset employed for this analysis furnished detailed information pertaining to 896 supermarket store branches. Each record uniquely identified a store and incorporated the following critical attributes that characterize both its physical properties and operational performance:
+              </p>
+              <ul>
+                <li><strong>Store ID</strong>: A singular identification number assigned to each supermarket branch.</li>
+                <li><strong>Store_Area</strong>: The physical expanse of the store, quantified in square yards, providing an indication of its spatial capacity.</li>
+                <li><strong>Items_Available</strong>: The total count of distinct product items stocked within the corresponding store, reflecting the breadth of its product offerings.</li>
+                <li><strong>Daily_Customer_Count</strong>: The average number of customers who frequented the store per day over a designated monthly period.</li>
+                <li><strong>Store_Sales</strong>: The cumulative sales revenue generated by the store, denominated in US dollars.</li>
+              </ul>
+
+              <!-- METHODOLOGY & EXECUTION -->
+              <h2 class="text-3xl font-bold mb-4">Methodology & Execution</h2>
+              <p>
+                My methodology for this project involved a structured sequence of data loading, cleaning, and exploratory analysis, primarily utilizing Python. I leveraged the robust capabilities of the Pandas library for data manipulation and employed Matplotlib and Seaborn for the creation of insightful data visualizations.
+              </p>
+
+              <h3>1. Environment Setup</h3>
+              <p>The initial step involved configuring the Python environment by importing the requisite libraries:</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+                </code></pre>
+              </div>
+
+              <h3>2. Data Loading & Initial Inspection</h3>
+              <p>The `stores.csv` dataset was loaded, and a copy was created to safeguard the original data during the analytical process. </p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+stores = pd.read_csv('stores.csv')
+df = stores.copy()
+print(df.head()) # Display first few rows to confirm loading
+                </code></pre>
+              </div>
+              <div class="output-text">
+                <style scoped>
+                    .dataframe tbody tr th:only-of-type {
+                        vertical-align: middle;
+                    }
+
+                    .dataframe tbody tr th {
+                        vertical-align: top;
+                    }
+
+                    .dataframe thead th {
+                        text-align: right;
+                    }
+                </style>
+                <table border="1" class="dataframe">
+                  <thead>
+                    <tr style="text-align: right;">
+                      <th></th>
+                      <th>Store ID</th>
+                      <th>Store_Area</th>
+                      <th>Items_Available</th>
+                      <th>Daily_Customer_Count</th>
+                      <th>Store_Sales</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>0</th>
+                      <td>1</td>
+                      <td>1659</td>
+                      <td>1961</td>
+                      <td>530</td>
+                      <td>66490</td>
+                    </tr>
+                    <tr>
+                      <th>1</th>
+                      <td>2</td>
+                      <td>1461</td>
+                      <td>1752</td>
+                      <td>210</td>
+                      <td>39820</td>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <td>3</td>
+                      <td>1340</td>
+                      <td>1609</td>
+                      <td>720</td>
+                      <td>54010</td>
+                    </tr>
+                    <tr>
+                      <th>3</th>
+                      <td>4</td>
+                      <td>1451</td>
+                      <td>1748</td>
+                      <td>620</td>
+                      <td>53730</td>
+                    </tr>
+                    <tr>
+                      <th>4</th>
+                      <td>5</td>
+                      <td>1770</td>
+                      <td>2111</td>
+                      <td>450</td>
+                      <td>46620</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+              <h3>3. Data Cleaning & Preprocessing</h3>
+              <p>To enhance data usability and consistency, the column names were systematically renamed:</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+columns_names = ("Store_id","Store_area","Item_Available","Daily_customer_count","Store_sales")
+                </code></pre>
+              </div>
+              <h4>Renamed Columns:</h4>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+df.columns = columns_names
+df.columns
+                </code></pre>
+              </div>
+              <h4>DataFrame after Renaming (Head):</h4>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+Index(['Store_id', 'Store_area', 'Item_Available', 'Daily_customer_count', 'Store_sales'], dtype='object')
+                </code></pre>
+              </div>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+df.head()
+                </code></pre>
+              </div>
+              <div class="output-text">
+                <style scoped>
+                    .dataframe tbody tr th:only-of-type {
+                        vertical-align: middle;
+                    }
+
+                    .dataframe tbody tr th {
+                        vertical-align: top;
+                    }
+
+                    .dataframe thead th {
+                        text-align: right;
+                    }
+                </style>
+                <table border="1" class="dataframe">
+                  <thead>
+                    <tr style="text-align: right;">
+                      <th></th>
+                      <th>Store_id</th>
+                      <th>Store_area</th>
+                      <th>Item_Available</th>
+                      <th>Daily_customer_count</th>
+                      <th>Store_sales</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>0</th>
+                      <td>1</td>
+                      <td>1659</td>
+                      <td>1961</td>
+                      <td>530</td>
+                      <td>66490</td>
+                    </tr>
+                    <tr>
+                      <th>1</th>
+                      <td>2</td>
+                      <td>1461</td>
+                      <td>1752</td>
+                      <td>210</td>
+                      <td>39820</td>
+                    </tr>
+                    <tr>
+                      <th>2</th>
+                      <td>3</td>
+                      <td>1340</td>
+                      <td>1609</td>
+                      <td>720</td>
+                      <td>54010</td>
+                    </tr>
+                    <tr>
+                      <th>3</th>
+                      <td>4</td>
+                      <td>1451</td>
+                      <td>1748</td>
+                      <td>620</td>
+                      <td>53730</td>
+                    </tr>
+                    <tr>
+                      <th>4</th>
+                      <td>5</td>
+                      <td>1770</td>
+                      <td>2111</td>
+                      <td>450</td>
+                      <td>46620</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>DataFrame Shape:</h4>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+df.shape
+                </code></pre>
+              </div>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+(896, 5)
+                </code></pre>
+              </div>
+
+              <h4>Missing Value Assessment:</h4>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+df.isnull().sum()
+                </code></pre>
+              </div>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+Store_id                  0
+Store_area                0
+Item_Available            0
+Daily_customer_count      0
+Store_sales               0
+dtype: int64
+                </code></pre>
+              </div>
+
+              <h3>4. Specific Analysis: Identifying Top Performers</h3>
+              <p>Initially, I confirmed the total count of unique store identifiers present within the dataset:</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Count of Store ID
+count_of_store_id = df["Store_id"].count()
+print(f"\nThe total count of unique store IDs is: {count_of_store_id}.")
+                </code></pre>
+              </div>
+              <h4>Output:</h4>
+              <div class="output-text">
+                <pre><code class="language-plaintext">
+The total count of unique store IDs is: 896.
+                </code></pre>
+              </div>
+
+              <p>Subsequently, I identified and extracted the top 10 stores distinguished by their highest sales performance:</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Top 10 Stores with the Most Store Sales
+print("\n--- Top 10 Stores by Sales ---")
+top_store_sales = df.sort_values('Store_sales', ascending=False)
+top_10_stores = top_store_sales.head(10)
+print(top_10_stores)
+                </code></pre>
+              </div>
+              <h4>Top 10 Stores by Sales:</h4>
+              <div class="output-text">
+                <style scoped>
+                    .dataframe tbody tr th:only-of-type {
+                        vertical-align: middle;
+                    }
+
+                    .dataframe tbody tr th {
+                        vertical-align: top;
+                    }
+
+                    .dataframe thead th {
+                        text-align: right;
+                    }
+                </style>
+                <table border="1" class="dataframe">
+                  <thead>
+                    <tr style="text-align: right;">
+                      <th></th>
+                      <th>Store_id</th>
+                      <th>Store_area</th>
+                      <th>Item_Available</th>
+                      <th>Daily_customer_count</th>
+                      <th>Store_sales</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>704</th>
+                      <td>705</td>
+                      <td>1766</td>
+                      <td>2106</td>
+                      <td>1460</td>
+                      <td>116320</td>
+                    </tr>
+                    <tr>
+                      <th>243</th>
+                      <td>244</td>
+                      <td>2229</td>
+                      <td>2667</td>
+                      <td>890</td>
+                      <td>105150</td>
+                    </tr>
+                    <tr>
+                      <th>123</th>
+                      <td>124</td>
+                      <td>1800</td>
+                      <td>2154</td>
+                      <td>1380</td>
+                      <td>102820</td>
+                    </tr>
+                    <tr>
+                      <th>649</th>
+                      <td>650</td>
+                      <td>2093</td>
+                      <td>2505</td>
+                      <td>1040</td>
+                      <td>102710</td>
+                    </tr>
+                    <tr>
+                      <th>491</th>
+                      <td>492</td>
+                      <td>1537</td>
+                      <td>1851</td>
+                      <td>1560</td>
+                      <td>102310</td>
+                    </tr>
+                    <tr>
+                      <th>176</th>
+                      <td>177</td>
+                      <td>1806</td>
+                      <td>2159</td>
+                      <td>1390</td>
+                      <td>102140</td>
+                    </tr>
+                    <tr>
+                      <th>187</th>
+                      <td>188</td>
+                      <td>1763</td>
+                      <td>2106</td>
+                      <td>1400</td>
+                      <td>101880</td>
+                    </tr>
+                    <tr>
+                      <th>20</th>
+                      <td>21</td>
+                      <td>1955</td>
+                      <td>2334</td>
+                      <td>1090</td>
+                      <td>101650</td>
+                    </tr>
+                    <tr>
+                      <th>887</th>
+                      <td>888</td>
+                      <td>1842</td>
+                      <td>2200</td>
+                      <td>1430</td>
+                      <td>101180</td>
+                    </tr>
+                    <tr>
+                      <th>848</th>
+                      <td>849</td>
+                      <td>1748</td>
+                      <td>2089</td>
+                      <td>1340</td>
+                      <td>100860</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>A bar chart was then generated to facilitate a direct visual comparison of the sales performance among these top 10 stores:</p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+# Plotting Top 10 Stores with the Most Store Sales
+plt.figure(figsize=(12, 7))
+top_10_stores.plot(kind='bar', x='Store_id', y='Store_sales',
+                   title='Top 10 Stores with the Most Store Sales',
+                   color='darkred', edgecolor='black', figsize=(12,7))
+plt.xlabel('Store ID')
+plt.ylabel('Store Sales (US $)')
+plt.xticks(rotation=45) # Rotate x-axis labels for enhanced readability
+plt.tight_layout()
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/Top 10 stores with the most saves.png" alt="Top 10 Stores by Sales Bar Chart">
+
+
+              <!-- RESULTS & KEY INSIGHTS -->
+              <h2 class="text-3xl font-bold mb-4">Results & Key Insights</h2>
+              <p>
+                The visualizations generated provided critical insights into the underlying patterns and relationships within the sales data. Each chart contributed distinct findings:
+              </p>
+
+              <h3>Distribution of Store Sales (Histogram)</h3>
+              <p>
+                This histogram illustrates the frequency distribution of `Store_sales` values, allowing for an understanding of typical sales ranges and the identification of any distributional skewness or multiple peaks.
+              </p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+plt.figure(figsize=(10, 6))
+sns.histplot(df['Store_sales'], kde=True, bins=30, color='skyblue')
+plt.title('Distribution of Store Sales')
+plt.xlabel('Store Sales (US $)')
+plt.ylabel('Number of Stores')
+plt.grid(axis='y', alpha=0.75)
+plt.tight_layout()
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/Distribution of Store sales.png" alt="Distribution of Store Sales">
+              <p>
+                Analysis: The majority of stores exhibit sales figures concentrated within a central range, indicating a relatively consistent performance across the bulk of the branches. A smaller proportion of stores register exceptionally high or notably low sales. This observation suggests that while most stores operate within expected parameters, there is potential to gain valuable insights from high-performing outliers to replicate success, and from underperforming ones to address underlying challenges and improve overall sales efficacy.
+              </p>
+
+              <h3>Store Area vs. Sales (Scatter Plot)</h3>
+              <p>
+                This scatter plot visually examines the correlation between `Store_area` and `Store_sales`. Each data point represents a store, and the plot's pattern reveals whether larger store sizes generally correspond to higher sales.
+              </p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='Store_area', y='Store_sales', data=df, alpha=0.7, color='coral')
+plt.title('Store Area vs. Store Sales')
+plt.xlabel('Store Area (sq. yards)')
+plt.ylabel('Store Sales (US $)')
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/store area vs store sales.png" alt="Store Area vs. Sales Scatter Plot">
+              <p>
+                Analysis: A moderately positive correlation is observed: as store area increases, there is a general tendency for store sales to increase. However, this relationship is not perfectly linear, indicating that store size is one contributing factor, but not the sole determinant of sales performance. The presence of smaller stores achieving high sales, and larger stores not maximizing their potential, implies that other variables, such as efficient space utilization or strategic product placement, significantly influence a store's success.
+              </p>
+
+              <h3>Daily Customer Count vs. Sales (Scatter Plot)</h3>
+              <p>
+                This scatter plot directly illustrates the relationship between the `Daily_customer_count` and `Store_sales`. It provides clear evidence of whether a higher volume of daily customer visits translates into increased sales revenue.
+              </p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='Daily_customer_count', y='Store_sales', data=df, alpha=0.7, color='lightgreen')
+plt.title('Daily Customer Count vs. Store Sales')
+plt.xlabel('Daily Customer Count')
+plt.ylabel('Store Sales (US $)')
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/daily customer count vs store sales.png" alt="Daily Customer Count vs. Sales Scatter Plot">
+              <p>
+                Analysis: A strong positive correlation is clearly evident: an increase in daily customer count is consistently associated with higher store sales. This intuitive finding underscores the critical impact of customer footfall on revenue. Consequently, strategic initiatives aimed at attracting and retaining customers, such as targeted marketing campaigns or promotional activities, are highly likely to yield substantial improvements in store revenue.
+              </p>
+
+              <h3>Correlation Heatmap</h3>
+              <p>
+                This heatmap offers a concise visual representation of the correlation matrix among the numerical variables in the dataset. It enables rapid identification of the strength and direction (positive or negative) of linear relationships between variable pairs. Correlation coefficients closer to +1 signify a strong positive correlation, while values near -1 indicate a strong negative correlation, and values approaching 0 suggest a weak or negligible linear relationship.
+              </p>
+              <div class="code-example">
+                <div class="code-header">
+                  <span class="code-language">Python</span>
+                  <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code class="language-python">
+plt.figure(figsize=(10, 8))
+# Select only numerical columns for correlation calculation
+numerical_cols = ['Store_area', 'Item_Available', 'Daily_customer_count', 'Store_sales']
+correlation_matrix = df[numerical_cols].corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5, cbar_kws={'label': 'Correlation Coefficient'})
+plt.title('Correlation Heatmap of Store Data')
+plt.tight_layout()
+plt.show()
+                </code></pre>
+              </div>
+              <img src="assets/img/correllation heat map.png" alt="Correlation Heatmap of Store Data">
+              <p>
+                Analysis: The heatmap explicitly reinforces a strong positive correlation between `Daily_customer_count` and `Store_sales`, consistent with observations from the scatter plot. A moderate positive correlation between `Store_area` and `Store_sales` was also confirmed. Furthermore, `Items_Available` demonstrated a positive correlation with sales (approximately 0.5), suggesting that a broader product variety may also contribute to increased sales. These correlation patterns collectively indicate that optimizing customer traffic is the most impactful immediate strategy for sales enhancement, followed by considerations of store size and merchandise diversity.
+              </p>
+
+              <!-- OVERALL OUTCOMES & CONCLUSION -->
+              <h2 class="text-3xl font-bold mb-4">Overall Outcomes & Conclusion</h2>
+              <ul>
+                <li><strong>Data Preparedness</strong>: The raw sales dataset was successfully loaded, meticulously cleaned, and logically organized with standardized column naming. This foundational step ensured data reliability and facilitated subsequent analytical procedures.</li>
+                <li><strong>Key Metric Understanding</strong>: Through the generation of descriptive statistics, essential quantitative insights were immediately derived. For instance, the analysis revealed an average store sales figure of approximately $59,351 and an average daily customer count of approximately 786.</li>
+                <li><strong>Identification of High-Performing Branches</strong>: The top 10 stores based on sales performance were precisely identified, serving as potential benchmarks for best practices and further comparative analysis.</li>
+                <li><strong>Sales Drivers Ascertained</strong>: The comprehensive analysis strongly indicates that customer traffic is the predominant factor influencing store sales. Store size and the breadth of item availability were also identified as significant, albeit secondary, contributing factors.</li>
+              </ul>
+              <p>
+                This "Supermarket Store Branches' Sales Analysis" project effectively demonstrates my proficiency in employing Python for Exploratory Data Analysis. By systematically executing data inspection, cleaning, and visualization, I was able to glean valuable insights into sales dynamics, ascertain data quality, and identify initial relationships between store attributes and sales performance. This project underscores my competence in fundamental data science tools and methodologies, establishing a robust groundwork for more advanced analytical modeling and facilitating data-driven strategic recommendations for businesses.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Onoriose Baro Monarch</h3>
+      <p>Connect with me on social media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-twitter-x"></i></a> <!-- REPLACE with your Twitter/X link -->
+        <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a> <!-- REPLACE with your GitHub link -->
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a> <!-- REPLACE with your LinkedIn link -->
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Onoriose Baro Monarch</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- You can add credits for template here if desired -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files - Ensure these paths are correct relative to your HTML file -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File - Ensure this path is correct -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function copyCode(button) {
+      const codeBlock = button.closest('.code-example').querySelector('pre code');
+      const textToCopy = codeBlock.textContent;
+
+      // Use document.execCommand('copy') as navigator.clipboard.writeText() may not work due to iframe restrictions
+      const textArea = document.createElement('textarea');
+      textArea.value = textToCopy;
+      textArea.style.position = 'fixed'; // Prevent scrolling to bottom of page
+      textArea.style.left = '-9999px'; // Move out of screen
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        const successful = document.execCommand('copy');
+        const msg = successful ? 'Copied!' : 'Failed to copy.';
+        button.textContent = msg; // Temporarily change button text
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+        button.textContent = 'Error!';
+      }
+      setTimeout(() => {
+        button.textContent = 'Copy'; // Revert button text
+        document.body.removeChild(textArea); // Remove the temporary textarea
+      }, 2000);
+    }
+  </script>
+
+</body>
+
+</html>

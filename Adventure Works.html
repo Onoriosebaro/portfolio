@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SQL Project: AdventureWorks Business Analysis - Baro Monarch Onoriose</title>
+  <meta name="description" content="A SQL project demonstrating business analysis skills using the AdventureWorks database, focusing on complex queries, data manipulation, and insights extraction.">
+  <meta name="keywords" content="SQL, T-SQL, AdventureWorks, Database Analysis, Business Intelligence, Data Filtering, Joins, CTEs, Window Functions, Data Manipulation">
+
+  <link href="assets/img/passport pic.jpg" rel="icon">
+  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Baro Monarch Onoriose</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">SQL Project: AdventureWorks Business Analysis</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#portfolio">Back</a></li>
+            <li class="current">SQL Project</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                    {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                        "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                    }
+                    }
+                </script>
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide">
+                        <img src="assets/img/adventure works.png" alt="AdventureWorks Database" class="img-fluid">
+                    </div>
+                    </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Data Analysis / Database Management / SQL</li>
+                <li><strong>Client</strong>: Quantum Analytics</li>
+                <li><strong>Project Date</strong>: Nov 2023</li>
+                <li><strong>Tools Used</strong>: SQL Server, T-SQL</li>
+                <li><strong>Data Source</strong>: AdventureWorks Database</li>
+                <li><strong>Project URL</strong>: <a href="https://github.com/Onoriosebaro/SQL-Project-AdventureWorks-Business-Analysis" target="_blank" rel="noopener noreferrer">View on GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-lg-12">
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+              <h2 class="text-3xl font-bold mb-4">Project Overview</h2>
+              <p>Hey there! Welcome to my SQL project. I got to dive into the classic AdventureWorks database to solve some common business problems. It was a great chance to show off my SQL skills! My main goal was to write clean, efficient queries to dig up specific info, run some calculations, and organize data in useful ways.</p>
+
+              <h3 class="text-2xl font-semibold mb-3">Here's a peek at the skills I used:</h3>
+              <ul>
+                <li><strong>Complex Joins</strong> (INNER, LEFT)</li>
+                <li><strong>Conditional Logic</strong> (CASE statements)</li>
+                <li><strong>Data Filtering and Sorting</strong></li>
+                <li><strong>Aggregate Functions</strong> (COUNT, SUM)</li>
+                <li><strong>Date and String Manipulation</strong> (YEAR, LEFT, CONCAT)</li>
+                <li><strong>Common Table Expressions (CTE) and Window Functions</strong> (ROW_NUMBER)</li>
+                <li><strong>View Creation</strong> (CREATE VIEW)</li>
+              </ul>
+
+              ---
+
+              <h2 class="text-3xl font-bold mb-4">The Challenges & My Solutions</h2>
+              <p>So, here are the challenges I was given and the SQL code I used to figure them out.</p>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">1. Finding the Right Products</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> The team wanted a product list, but with a few rules: nothing Red, Silver/Black, or White. The price had to be between £75 and £750. Oh, and I had to rename a column to 'Price' and sort the list from most to least expensive.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    Name,
+    Color,
+    ListPrice,
+    StandardCost AS Price
+FROM
+    Production.Product
+WHERE
+    Color IS NOT NULL
+    AND Color NOT IN ('Red', 'Silver/Black', 'White')
+    AND ListPrice BETWEEN 75 AND 750
+ORDER BY
+    ListPrice DESC;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">2. Finding Specific Employee Groups</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> This one was a people search! I needed to find two groups of employees: men born from 1962-1970 who were hired after 2001, and women born from 1972-1975 who were hired in 2001 or 2002.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+-- Query for Male Employees
+SELECT Gender, BirthDate, HireDate
+FROM HumanResources.Employee
+WHERE Gender = 'M'
+  AND YEAR(BirthDate) BETWEEN 1962 AND 1970
+  AND YEAR(HireDate) > 2001
+
+UNION ALL
+
+-- Query for Female Employees
+SELECT Gender, BirthDate, HireDate
+FROM HumanResources.Employee
+WHERE Gender = 'F'
+  AND YEAR(BirthDate) BETWEEN 1972 AND 1975
+  AND YEAR(HireDate) BETWEEN 2001 AND 2002;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">3. Listing the Priciest 'BK' Products</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> Simple enough—find the top 10 most expensive products whose product number starts with 'BK'. I just needed to show the Product ID, Name, and Color.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT TOP 10
+    ProductID,
+    Name,
+    Color
+FROM
+    Production.Product
+WHERE
+    ProductNumber LIKE 'BK%'
+ORDER BY
+    StandardCost DESC;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">4. Matching Up Contacts</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> I needed to pull a list of contacts where the first four letters of their last name also happened to be the first four letters of their email address. As a bonus, if their first and last names started with the same letter, I was asked to create a new 'FullName' column and show how long the full name was.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    p.FirstName,
+    p.LastName,
+    ea.EmailAddress,
+    CASE
+        WHEN LEFT(p.FirstName, 1) = LEFT(p.LastName, 1)
+        THEN CONCAT(p.FirstName, ' ', p.LastName)
+        ELSE NULL
+    END AS FullName,
+    CASE
+        WHEN LEFT(p.FirstName, 1) = LEFT(p.LastName, 1)
+        THEN LEN(CONCAT(p.FirstName, ' ', p.LastName))
+        ELSE NULL
+    END AS FullNameLength
+FROM
+    Person.Person AS p
+INNER JOIN
+    Person.EmailAddress AS ea ON p.BusinessEntityID = ea.BusinessEntityID
+WHERE
+    LEFT(p.LastName, 4) = LEFT(ea.EmailAddress, 4);
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">5. Finding Products That Take Longer to Make</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> The goal here was to find all product subcategories that take, on average, 3 days or more to manufacture.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT DISTINCT
+    psc.Name,
+    p.DaysToManufacture
+FROM
+    Production.ProductSubcategory AS psc
+LEFT JOIN
+    Production.Product AS p ON p.ProductSubcategoryID = psc.ProductSubcategoryID
+WHERE
+    p.DaysToManufacture >= 3;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">6. Sorting Products into Value Tiers</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> Time to segment! I had to label products based on their price: "Low Value," "Mid Value," "Mid to High Value," or "Higher Value." Then, I had to filter the final list to only show Black, Silver, or Red products.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    Name,
+    ListPrice,
+    Color,
+    CASE
+        WHEN ListPrice < 200 THEN 'Low Value'
+        WHEN ListPrice BETWEEN 201 AND 750 THEN 'Mid Value'
+        WHEN ListPrice BETWEEN 751 AND 1250 THEN 'Mid to High Value'
+        ELSE 'Higher Value'
+    END AS ProductSegmentation
+FROM
+    Production.Product
+WHERE
+    Color IN ('Black', 'Silver', 'Red');
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">7. Counting Job Titles</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> A quick question: just how many unique job titles do we have for our employees?</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    COUNT(DISTINCT JobTitle) AS DistinctJobTitleCount
+FROM
+    HumanResources.Employee;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">8. Calculating Age When Hired</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> For every employee, I needed to figure out how old they were when they joined the company.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    BusinessEntityID,
+    DATEDIFF(YEAR, BirthDate, HireDate) AS AgeAtHiring
+FROM
+    HumanResources.Employee;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">9. Seeing Who Gets a Service Award Soon</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> Who's getting a long-service award (for 20 years of work) within the next five years? I needed to get a headcount.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    COUNT(*) AS EligibleForAward
+FROM
+    HumanResources.Employee
+WHERE
+    DATEDIFF(YEAR, HireDate, GETDATE()) BETWEEN 15 AND 19;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">10. Calculating Years Left Until Retirement</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> Assuming retirement is at age 65, how many more years does each employee have left to work?</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    BusinessEntityID,
+    DATEDIFF(YEAR, BirthDate, GETDATE()) AS CurrentAge,
+    65 - DATEDIFF(YEAR, BirthDate, GETDATE()) AS YearsToRetirement
+FROM
+    HumanResources.Employee;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">11. Rolling Out a New Price and Commission Plan</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> This was a bigger one! I had to apply a new pricing rule based on color and then figure out the commission on that new price. The rules for the new price were pretty specific, and the commission was a flat 37.5% of whatever the new price turned out to be.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+WITH NewPriceCTE AS (
+    SELECT
+        ProductID,
+        Name,
+        Color,
+        StandardCost,
+        CASE
+            WHEN Color = 'White' THEN StandardCost * 1.08
+            WHEN Color = 'Yellow' THEN StandardCost * 0.925
+            WHEN Color = 'Black' THEN StandardCost * 1.172
+            WHEN Color IN ('Multi', 'Silver', 'Silver/Black', 'Blue') THEN SQRT(StandardCost) * 2
+            ELSE StandardCost
+        END AS NewPrice
+    FROM
+        Production.Product
+)
+SELECT
+    *,
+    NewPrice * 0.375 AS Commission
+FROM
+    NewPriceCTE;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">12. Getting the Scoop on Salespeople</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> I needed to create a handy list of all the salespeople. It had to include their full name, hire date, sick leave hours, sales quota, and the region they work in.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    p.FirstName,
+    p.LastName,
+    e.HireDate,
+    e.SickLeaveHours,
+    st.Name AS Region,
+    sp.SalesQuota
+FROM
+    Sales.SalesPerson AS sp
+JOIN
+    HumanResources.Employee AS e ON sp.BusinessEntityID = e.BusinessEntityID
+JOIN
+    Person.Person AS p ON e.BusinessEntityID = p.BusinessEntityID
+JOIN
+    Sales.SalesTerritory AS st ON sp.TerritoryID = st.TerritoryID
+ORDER BY
+    p.LastName, p.FirstName;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">13. Building a Big Sales Report</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> This was a request for a detailed sales report. They wanted to see everything in one place: the product's name, its category and subcategory, who sold it, how much revenue it brought in, the month and quarter of the sale, and the sales region.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    p.Name AS ProductName,
+    pc.Name AS ProductCategoryName,
+    psc.Name AS ProductSubcategoryName,
+    CONCAT(pp.FirstName, ' ', pp.LastName) AS SalesPerson,
+    SUM(sod.LineTotal) AS Revenue,
+    DATEPART(month, soh.OrderDate) AS MonthOfTransaction,
+    DATEPART(quarter, soh.OrderDate) AS QuarterOfTransaction,
+    st.Name AS Region
+FROM
+    Sales.SalesOrderHeader AS soh
+JOIN Sales.SalesOrderDetail AS sod ON soh.SalesOrderID = sod.SalesOrderID
+JOIN Production.Product AS p ON sod.ProductID = p.ProductID
+JOIN Production.ProductSubcategory AS psc ON p.ProductSubcategoryID = psc.ProductSubcategoryID
+JOIN Production.ProductCategory AS pc ON psc.ProductCategoryID = pc.ProductCategoryID
+JOIN Sales.SalesPerson AS sp ON soh.SalesPersonID = sp.BusinessEntityID
+JOIN Person.Person AS pp ON sp.BusinessEntityID = pp.BusinessEntityID
+JOIN Sales.SalesTerritory AS st ON sp.TerritoryID = st.TerritoryID
+GROUP BY
+    p.Name, pc.Name, psc.Name, pp.FirstName, pp.LastName,
+    DATEPART(month, soh.OrderDate), DATEPART(quarter, soh.OrderDate), st.Name
+ORDER BY
+    pp.LastName, pp.FirstName;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">14. Showing Order Details</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> I needed to pull all the important details for an order: the order number and date, the total amount, who the customer was, which salesperson handled it, and what their commission percentage is.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    soh.SalesOrderNumber,
+    soh.OrderDate,
+    soh.TotalDue AS OrderAmount,
+    soh.CustomerID,
+    CONCAT(p.FirstName, ' ', p.LastName) AS SalespersonName,
+    sp.CommissionPct AS CommissionPercentage
+FROM
+    Sales.SalesOrderHeader AS soh
+JOIN
+    Sales.SalesPerson AS sp ON soh.SalesPersonID = sp.BusinessEntityID
+JOIN
+    Person.Person AS p ON sp.BusinessEntityID = p.BusinessEntityID;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">15. Calculating Commissions and Margins</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> Another calculation-heavy task! I needed to figure out two things for all products: a commission (14.79% of the standard cost) and the margin, which was based on some special cost adjustments for different colors.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+SELECT
+    ProductID,
+    Name,
+    Color,
+    StandardCost,
+    StandardCost * 0.14790 AS Commission,
+    (CASE
+        WHEN Color = 'Black' THEN StandardCost * 1.22
+        WHEN Color = 'Red' THEN StandardCost * 0.88
+        WHEN Color = 'Silver' THEN StandardCost * 1.15
+        WHEN Color = 'Multi' THEN StandardCost * 1.05
+        WHEN Color = 'White' AND StandardCost > 0 THEN (2 * StandardCost) / SQRT(StandardCost)
+        ELSE StandardCost
+     END) - StandardCost AS Margin
+FROM
+    Production.Product;
+                </code></pre>
+              </div>
+
+              <div class="challenge-section">
+                <h3 class="text-2xl font-semibold mb-3">16. Creating a Reusable "Top 5" List</h3>
+                <p class="challenge-ask"><strong>The Ask:</strong> To make things easier for the team in the future, they asked me to create a "view." This view would always show the top 5 most expensive products for each color. That way, they can just look at the view instead of running a query every time.</p>
+                <p><strong>SQL Solution:</strong></p>
+                <pre><code class="language-sql">
+CREATE VIEW vTop5ProductsByColor AS
+WITH ProductRankCTE AS (
+    SELECT
+        ProductID,
+        Name,
+        Color,
+        ListPrice,
+        ROW_NUMBER() OVER(PARTITION BY Color ORDER BY ListPrice DESC) AS PriceRank
+    FROM
+        Production.Product
+    WHERE
+        Color IS NOT NULL
+)
+SELECT
+    ProductID,
+    Name,
+    Color,
+    ListPrice
+FROM
+    ProductRankCTE
+WHERE
+    PriceRank <= 5;
+                </code></pre>
+              </div>
+
+              ---
+
+              <h2 class="text-3xl font-bold mb-4">Conclusion</h2>
+              <p>This SQL project successfully demonstrates a practical application of advanced SQL skills using the AdventureWorks database. By tackling a range of business challenges, I've showcased proficiency in complex joins, conditional logic, data filtering, aggregation, and advanced T-SQL features like CTEs and window functions. The solutions provided not only address specific business needs but also highlight the importance of writing clean, efficient, and well-structured queries. This experience reinforced my ability to extract meaningful insights from large datasets, a critical skill for any data professional aiming to drive informed decision-making within an organization.</p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <h3 class="sitename">Baro Monarch Onoriose</h3>
+      <p>Connect with me on social media.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
