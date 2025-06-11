@@ -83,7 +83,7 @@
               </script>
               <div class="swiper-wrapper align-items-center">
                 <div class="swiper-slide">
-                  <img src="assets/img/10 companies.png" alt="Historical Stock Price of 10 Popular Companies Power BI Dashboard Overview">
+                  <img src="assets/img/10 companies.png" alt=" Historical Stock Price of 10 Popular Companies Power BI Dashboard Overview">
                 </div>
                 </div>
               <div class="swiper-pagination"></div>
@@ -99,7 +99,7 @@
                 <li><strong>Project Date</strong>: December 2023</li>
                 <li><strong>Tools Used</strong>: Power BI (Power Query, DAX)</li>
                 <li><strong>Data Source</strong>: Historical Stock Prices (2015-2021) for 10 Popular Companies</li>
-                <li><strong>Project URL</strong>: <a href="#" target="_blank" rel="noopener noreferrer">View Live Dashboard (If available)</a></li>
+                <li><strong>Project URL</strong>: <a href="https://app.powerbi.com/groups/me/reports/5cd4f0fb-8825-403a-a482-096a3311df95/ReportSection?experience=power-bi" target="_blank" rel="noopener noreferrer">View Live Dashboard </a></li>
               </ul>
             </div>
           </div>
@@ -111,10 +111,10 @@
               <h2 class="text-3xl font-bold mb-4">Historical Stock Price Analysis: Growth, Volume, and Volatility of Top Companies (2015-2021)</h2>
 
               <h2 class="text-3xl font-bold mb-4">Summary</h2>
-              <p>This Power BI project provides an in-depth analysis of the daily historical stock prices for 10 popular companies (Apple, Amazon, Netflix, Microsoft, Google, Facebook, Tesla, Walmart, Uber, and Zoom) from 2015 to 2021. The dashboard offers comprehensive insights into stock price growth, trading volumes, and volatility for each company. It leverages Open, High, Low, Close (OHLC), Volume, and Adjusted Close prices. The project involved extensive data cleaning and transformation to ensure accurate time-series analysis and enable comparisons between companies. Through interactive visualizations, this analysis aims to empower investors, financial analysts, and market enthusiasts with a clear understanding of these companies' stock performance and market dynamics over a significant period.</p>
+              <p>This Power BI project analyzes the daily historical stock prices for 10 popular companies (Apple, Amazon, Netflix, Microsoft, Google, Facebook, Tesla, Walmart, Uber, and Zoom) from 2015 to 2021. The dashboard offers comprehensive insights into each company's stock price growth, trading volumes, and volatility. It leverages Open, High, Low, Close (OHLC), Volume, and Adjusted Close prices. The project involved extensive data cleaning and transformation to ensure accurate time-series analysis and enable comparisons between companies. Through interactive visualizations, this analysis aims to empower investors, financial analysts, and market enthusiasts with a clear understanding of these companies' stock performance and market dynamics over a significant period.</p>
 
               <h2 class="text-3xl font-bold mb-4">1. Introduction: Navigating the Dynamics of Top Company Stocks</h2>
-              <p>Understanding the historical performance of leading companies is crucial for informed investment decisions and market analysis. This project focuses on a dataset containing daily stock prices for 10 globally recognized companies from 2015 to 2021. The objective is to conduct thorough exploratory data analysis, compare stock price growth, analyze volume trends, and identify periods of high volatility. By presenting this complex financial data in an intuitive Power BI dashboard, the aim is to provide clear insights into the past performance of these market giants, offering a foundation for future predictions and strategic financial planning.</p>
+              <p>Understanding the historical performance of leading companies is crucial for informed investment decisions and market analysis. This project focuses on a daily stock price dataset for 10 globally recognized companies from 2015 to 2021. The objective is to conduct thorough exploratory data analysis, compare stock price growth, analyze volume trends, and identify periods of high volatility. By presenting this complex financial data in an intuitive Power BI dashboard, the aim is to provide clear insights into the past performance of these market giants, offering a foundation for future predictions and strategic financial planning.</p>
 
               <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
               <p>The primary objectives for this Power BI project were defined to provide comprehensive insights into the historical stock prices of popular companies:</p>
@@ -145,7 +145,7 @@
               <h3 class="text-2xl font-semibold mb-3">Data Source:</h3>
               <ul>
                 <li>Historical Stock Price Dataset: Contains daily stock prices for Apple, Amazon, Netflix, Microsoft, Google, Facebook, Tesla, Walmart, Uber, and Zoom.</li>
-                <li>Time Period: 2015 to 2021 (day level)</li>
+                <li> Period: 2015 to 2021 (day level)</li>
                 <li>Key Columns:
                   <ul>
                     <li>Date</li>
@@ -164,7 +164,7 @@
                 <li>Total Volume: 487bn</li>
                 <li>Count of Companies: 10</li>
                 <li>No of Years: 11 </li>
-                <li>Max of High and Min of Low by Company: Shows Amazon with the highest peak (3.8K) and also significant volatility range, followed by Tesla. Others like Walmart, Uber, Zoom show smaller ranges.</li>
+                <li>Max of High and Min of Low by Company: Shows Amazon with the highest peak (3.8K) and also a significant volatility range, followed by Tesla. Others like Walmart, Uber, Zoom show smaller ranges.</li>
                 <li>Total Volume by Company: Apple (243bn), Microsoft (90bn), Tesla (53bn), Facebook (39bn), Netflix (17bn), Uber (15bn), Walmart (7bn), Amazon (4bn), Zoom (3bn), Google (2bn). </li>
                 <li>Total Volume by Quarter: Q1 (132bn), Q2 (120bn), Q3 (120bn), Q4 (115bn)</li>
                 <li>Sum of Volume by Year and Company: Visualizes annual volume contribution per company, showing shifts over time.</li>
@@ -206,7 +206,7 @@
 
               <h4 class="text-xl font-semibold mb-2">4.3 Price Growth Trends</h4>
               <ul>
-                <li>Average Open by Year and Company (Line Chart): This chart clearly demonstrates the upward trend in average opening prices for the tech and EV companies (Apple, Microsoft, Google, Amazon, Tesla), reflecting their strong growth during the period. Walmart shows a more gradual increase.</li>
+                <li>Average Open by Year and Company (Line Chart): This chart demonstrates the upward trend in average opening prices for the tech and EV companies (Apple, Microsoft, Google, Amazon, Tesla), reflecting their strong growth during the period. Walmart shows a more gradual increase.</li>
               </ul>
 
               <h4 class="text-xl font-semibold mb-2">4.4 Interactive Filtering</h4>
@@ -236,7 +236,7 @@
                     <li>Measures for Max of High, Min of Low per company, Total Volume by Quarter, Sum of Volume by Year, and Average Open by Year were calculated. These often involved CALCULATE with ALL or ALLEXCEPT to correctly aggregate across different dimensions as needed for the visualizations.</li>
                   </ul>
                 </li>
-                <li>Data Visualization & Dashboarding (Power BI Desktop): The dashboard was designed with a focus on clear and intuitive representation of global energy trends:
+                <li>Data Visualization & Dashboarding (Power BI Desktop): The dashboard was designed with a focus on a clear and intuitive representation of global energy trends:
                   <ul>
                     <li>KPI Cards: For high-level summaries.</li>
                     <li>Company Selection Cards: Acting as visual filters for specific companies.</li>
