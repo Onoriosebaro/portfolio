@@ -6,7 +6,7 @@ Welcome to the GitHub repository for my personal portfolio website!
 
 This repository hosts all the code and assets that bring my online portfolio to life. This website serves as a central hub where I showcase my capabilities in data analytics and business intelligence. Here, you'll find examples of how I approach data challenges, from cleaning and transformation (ETL) to modeling and developing interactive dashboards.
 
-My passion lies in leveraging powerful tools like Power BI, Python, and SQL to uncover meaningful insights and empower data-driven decision-making.
+My passion lies in leveraging powerful tools like Power BI, Python, Tableau, SQL, and Excel to uncover meaningful insights and empower data-driven decision-making.
 
 Feel free to browse the code, understand the website's structure, and most importantly, visit the live site to explore my work firsthand!
 
