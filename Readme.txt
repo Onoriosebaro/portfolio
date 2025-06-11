@@ -16,56 +16,11 @@ Live Portfolio Website
 
 The best way to experience my projects and learn more about my expertise is to visit my live portfolio website:
 
-Visit Baro Monarch Onoriose's Portfolio: YOUR_PORTFOLIO_WEBSITE_URL_HERE
+Visit https://onoriosebaro.github.io/portfolio/
 
 ---
 
-Repository Structure
 
-This repository is organized to contain all the necessary files for my portfolio website:
-
-- index.html: The main landing page of the portfolio.
-- portfolio-details-page.html: A template page used to display detailed information on individual projects.
-- assets/: Houses all static resources for the website.
-    - assets/css/: Custom CSS files for styling.
-    - assets/js/: JavaScript files to enable website interactivity.
-    - assets/img/: Images used throughout the site, including project screenshots and personal visuals.
-    - assets/vendor/: External libraries and frameworks utilized (e.g., Bootstrap, AOS, Swiper).
-
----
-
-Technologies Used for the Website
-
-The website itself is built using standard web technologies:
-
-- HTML5: For content structure.
-- CSS3: For styling and layout.
-- JavaScript: For interactive features.
-- Bootstrap: A robust CSS framework for responsive design.
-- AOS (Animate On Scroll): For engaging scroll-based animations.
-- Swiper.js: For creating interactive image sliders on project detail pages.
-
-The data analysis projects showcased on the website primarily utilize:
-
-- Power BI: For building interactive dashboards and reports.
-- Tableau: For creating compelling data visualizations and dashboards.
-- Python: For data manipulation, analysis, and scripting.
-- SQL: For database querying and management.
-- Excel: For data cleaning, analysis, and basic reporting.
-
----
-
-Getting Started (For Developers/Reviewers)
-
-If you wish to run this website locally on your machine:
-
-1. Clone the repository:
-   git clone https://github.com/Onoriosebaro/YOUR-REPO-NAME.git
-2. Navigate into the cloned directory:
-   cd YOUR-REPO-NAME
-3. Open index.html in your preferred web browser.
-
----
 
 Let's Connect!
 
@@ -74,8 +29,6 @@ I'm always open to connecting with fellow data enthusiasts, discussing new oppor
 - LinkedIn: https://ng.linkedin.com/in/baro-onoriose-ba7184299
 - GitHub: https://github.com/Onoriosebaro (You're already here!)
 - Email: Baroonoriose@gmail.com
-- Twitter/X: YOUR_TWITTER_HANDLE_URL_HERE
-
 ---
 
 Thank you for visiting my portfolio repository!
