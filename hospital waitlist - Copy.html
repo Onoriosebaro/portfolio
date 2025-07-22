@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Real Estate Property Management Dashboard - Overview - Baro Monarch Onoriose</title>
+    <meta name="description" content="A comprehensive Power BI dashboard for real estate property management, offering insights into property conditions, locations, and renovation status.">
+    <meta name="keywords" content="Power BI, Data Analysis, Real Estate, Property Management, Business Intelligence, Data Visualization, Portfolio Analysis">
+    <link href="assets/img/passport pic.jpg" rel="icon">
+    <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        /* Custom styles for the portfolio description to match the report formatting */
+        .portfolio-details .portfolio-description h2,
+        .portfolio-details .portfolio-description h3,
+        .portfolio-details .portfolio-description h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50; /* Darker heading color */
+        }
+        .portfolio-details .portfolio-description p,
+        .portfolio-details .portfolio-description ul,
+        .portfolio-details .portfolio-description ol {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .portfolio-details .portfolio-description ul,
+        .portfolio-details .portfolio-description ol {
+            list-style-position: inside; /* Ensures bullets/numbers are inside padding */
+            margin-left: 1.5rem;
+        }
+        .portfolio-details .portfolio-description ul li,
+        .portfolio-details .portfolio-description ol li {
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-details .portfolio-description strong {
+            font-weight: 600;
+            color: #000;
+        }
+        /* Adjust heading sizes to match markdown h1, h2, h3 */
+        .portfolio-details .portfolio-description h2.report-heading-1 {
+            font-size: 2.5rem; /* Equivalent to a large h1 in markdown */
+            margin-top: 2rem;
+        }
+        .portfolio-details .portfolio-description h3.report-heading-2 {
+            font-size: 2rem; /* Equivalent to h2 in markdown */
+            margin-top: 1.5rem;
+        }
+        .portfolio-details .portfolio-description h4.report-heading-3 {
+            font-size: 1.5rem; /* Equivalent to h3 in markdown */
+            margin-top: 1rem;
+        }
+
+        /* Style for the embedded Power BI dashboard */
+        .powerbi-embed-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio (height / width * 100%) */
+            margin-bottom: 20px;
+            border-radius: 0.75rem; /* Match general site aesthetic */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden; /* Ensures iframe respects border-radius */
+        }
+
+        .powerbi-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body class="portfolio-details-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <h1 class="sitename">Baro Monarch Onoriose</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#resume">Resume</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="page-title light-background">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">Real Estate Property Management Dashboard - Overview</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="index.html#portfolio">Back</a></li>
+                        <li class="current">Power BI Project</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="portfolio-details" class="portfolio-details section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+                    <div class="col-lg-8">
+                        <div class="powerbi-embed-container">
+                            <!-- Your Power BI Dashboard Embedded Here -->
+                            <iframe title="Real Estate Property Management Dashboard" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNjRiZDJhYWUtZjU2OS00NGIxLTg3YTgtNjE1MjNlMGZmMjg0IiwidCI6ImIyMWZjNDRmLThjNmItNDY4Zi1iOGQ4LWY3NzU2ZmU1ODM5OCJ9" frameborder="0" allowFullScreen="true"></iframe>
+                        </div>
+                        <p class="text-center mt-3">
+                            <small>The interactive dashboard is embedded above. Use its built-in navigation to explore different views and apply filters.</small>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Project Information</h3>
+                            <ul>
+                                <li><strong>Category</strong>: Data Analytics / Business Intelligence / Real Estate</li>
+                                <li><strong>Client</strong>: Personal Project</li>
+                                <li><strong>Project Date</strong>: July 2025</li>
+                                <li><strong>Tools Used</strong>: Power BI, Microsoft Excel</li>
+                                <li><strong>Data Source</strong>: Real Estate Property Data (Kaggle)</li>
+                                <li><strong>Project URL</strong>: <a href="https://app.powerbi.com/view?r=eyJrIjoiNjRiZDJhYWUtZjU2OS00NGIxLTg3YTgtNjE1MjNlMGZmMjg0IiwidCI6ImIyMWZjNDRmLThjNmItNDY4Zi1iOGQ4LWY3NzU2ZmU1ODM5OCJ9" target="_blank" rel="noopener noreferrer">View Live Dashboard (Embedded Above)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="report-heading-1">Real Estate Property Management Dashboard: Comprehensive Portfolio Analysis</h2>
+
+                            <h3 class="report-heading-2">Executive Summary</h3>
+                            <p>This dashboard is a powerful tool designed to give real estate investors and property managers a clear and simple view of their property investments. It helps them make smart decisions by showing key information about property conditions, where properties are located, their features, and if they've been renovated. This helps optimize the portfolio and plan for the future.</p>
+
+                            <h3 class="report-heading-2">Project Objectives</h3>
+                            <p>The main goals for creating this Real Estate Property Management Dashboard were to:</p>
+                            <ul>
+                                <li>Provide an easy-to-use platform for investors and managers to see all their property information in one place.</li>
+                                <li>Help make better decisions by showing clear insights into property conditions, renovation status, and locations.</li>
+                                <li>Make it simpler to track important property numbers and spot trends over time.</li>
+                                <li>Support strategic planning for buying, renovating, or selling properties based on solid data.</li>
+                                <li>Improve how efficiently operations are run by giving quick access to key details about individual properties and the entire portfolio.</li>
+                            </ul>
+
+                            <h3 class="report-heading-2">Dashboard Overview</h3>
+                            <p>The dashboard is organized into two main sections: an Overview and a Locations view. Each section offers different but complementary insights into the property portfolio.</p>
+
+                            <h3 class="report-heading-2">1. Overview Page Analysis</h3>
+                            <p>The "Overview" page gives a high-level summary of the entire property portfolio, focusing on key features and overall health.</p>
+                            <ul>
+                                <li><strong>Total Properties:</strong> The dashboard manages a large portfolio of 22,000 properties.</li>
+                                <li><strong>Property Condition Distribution:</strong> Properties are grouped by their condition:
+                                    <ul>
+                                        <li>Very Good: 15,000 properties (69.73%) - This shows that most properties are in excellent shape.</li>
+                                        <li>Good: 3,057 properties (14.21%)</li>
+                                        <li>Bad: 3,485 properties (16.06%) - This highlights properties that may need attention.</li>
+                                    </ul>
+                                    This breakdown immediately shows the strong overall quality of the portfolio, with the majority of properties in "Very Good" condition.
+                                </li>
+                                <li><strong>Waterfront vs. Non-Waterfront:</strong>
+                                    <ul>
+                                        <li>Properties without Waterfront: 21,000 (99.25%)</li>
+                                        <li>Properties with Waterfront: 163 (0.75%)</li>
+                                    </ul>
+                                    This indicates that the portfolio is mostly made up of properties not on the waterfront, which can affect market strategy or risk assessment.
+                                </li>
+                                <li><strong>Renovation Status:</strong>
+                                    <ul>
+                                        <li>Renovated Properties: 10,000 (48%)</li>
+                                        <li>Unrenovated Properties: 11,000 (52.07%)</li>
+                                    </ul>
+                                    The nearly even split suggests there's a good opportunity to add value through more renovations, or it shows a balanced approach to managing both types of assets.
+                                </li>
+                                <li><strong>Distribution of Bedrooms in Properties:</strong>
+                                    <ul>
+                                        <li>3 bedrooms: 9,824 (most common)</li>
+                                        <li>4 bedrooms: 6,882</li>
+                                        <li>2 bedrooms: 2,760</li>
+                                        <li>5 bedrooms: 1,601</li>
+                                        <li>1 bedroom: 274</li>
+                                        <li>6 bedrooms: 272</li>
+                                    </ul>
+                                    This information is vital for understanding what types of properties are most in demand and for targeting specific buyers or renters.
+                                </li>
+                                <li><strong>Total Properties by Floors:</strong>
+                                    <ul>
+                                        <li>1 Floor(s): 10,680 (most common)</li>
+                                        <li>2 Floor(s): 8,241</li>
+                                        <li>1.5 Floor(s): 1,910</li>
+                                        <li>3 Floor(s): 613</li>
+                                        <li>3.5 Floor(s): 161</li>
+                                        <li>0.5 Floor(s): 8</li>
+                                    </ul>
+                                    The high number of single and two-story properties tells us about the common types of homes in the portfolio.
+                                </li>
+                                <li><strong>Properties Built and Renovated over the Years:</strong> A chart shows how many properties were built and renovated each year, revealing periods of high activity and potential market trends over time.</li>
+                            </ul>
+
+                            <h3 class="report-heading-2">Tools and Technology</h3>
+                            <p>This dashboard was developed using Microsoft Power BI, leveraging its capabilities for:</p>
+                            <ul>
+                                <li>Data Integration and Transformation: (Power Query for data cleaning and shaping)</li>
+                                <li>Data Modeling: Creating robust relationships between various data tables.</li>
+                                <li>DAX (Data Analysis Expressions): For complex calculations and custom measures.</li>
+                                <li>Interactive Visualizations: Designing intuitive charts, maps, and tables for easy data exploration.</li>
+                                <li>Dashboard Navigation and Filtering: Implemented interactive navigation between the "Overview" and "Locations" pages, and dynamic filter menus, using Power BI's built-in bookmarks and buttons.</li>
+                                <li>Dashboard Background Design: The visual background for the dashboard was meticulously designed using PowerPoint to enhance aesthetics and user experience.</li>
+                            </ul>
+
+                            <h3 class="report-heading-2">Technical Approach</h3>
+                            <p>The development of this Power BI dashboard followed a structured and iterative approach, ensuring data accuracy, robust modeling, and intuitive visualization. The process began with a single, raw dataset from Kaggle and involved several key stages:</p>
+                            <ol>
+                                <li><strong>Data Acquisition & Initial Inspection:</strong>
+                                    <ul>
+                                        <li>Connected Power BI to the raw real estate property data source obtained from Kaggle.</li>
+                                        <li>Performed an initial review of the single table to understand its structure and content.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Data Transformation & Cleaning (Power Query):</strong>
+                                    <ul>
+                                        <li>Column Selection: Removed unnecessary columns that were not relevant to the analysis or dashboard objectives.</li>
+                                        <li>Dimension Table Creation: To create separate dimension tables for categorical data (such as Waterfront status, Renovation status, Number of Floors, and Number of Bedrooms), I duplicated the main dataset for each category. From each duplicated table, I then removed all columns except the specific category column (e.g., 'Waterfront') to isolate the distinct values for that dimension. (Note: The original dataset did not contain a 'Property Type' column.)</li>
+                                        <li>Duplicate Removal: Ensured data integrity by removing duplicate entries from both the main dataset and the newly created dimension tables.</li>
+                                        <li>ID Column Generation: Added a unique ID column (index column) to each newly created dimension table to serve as a primary key.</li>
+                                        <li>Fact Table Formation: Merged each new dimension table back to the main dataset using the distinct categorical columns as primary keys. This process added the new ID columns from the dimension tables to the main dataset, transforming it into a robust fact table.</li>
+                                        <li>Redundant Column Removal: Removed the original categorical columns from the fact table, as their corresponding ID columns from the dimension tables now served as the linking keys.</li>
+                                        <li>Data Type Optimization: Selected appropriate data types for all columns to ensure data accuracy and optimize performance within Power BI.</li>
+                                        <li>Load & Apply: Applied the transformations and loaded the cleaned and structured data into the Power BI data model.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Data Modeling (Power BI Desktop - Star Schema):</strong>
+                                    <ul>
+                                        <li>Star Schema Design: Formed a star schema in the data model, with the main transformed dataset serving as the central fact table and the newly created dimension tables radiating out from it.</li>
+                                        <li>Relationship Establishment: Joined the dimension tables to the fact table using their respective ID columns, ensuring proper data relationships for accurate filtering and aggregation.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>DAX (Data Analysis Expressions):</strong>
+                                    <ul>
+                                        <li>Developed custom DAX measures to calculate key performance indicators (KPIs) such as "Total Properties," "Renovated Properties %," and dynamic calculations for condition distribution.</li>
+                                        <li>Implemented time intelligence functions to analyze trends over years for properties built and renovated.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Interactive Dashboard Design & Visualization:</strong>
+                                    <ul>
+                                        <li>Created two main interactive pages: "Overview" for high-level summaries and "Locations" for geographical and detailed breakdowns.</li>
+                                        <li>Employed a variety of Power BI visuals, including bar charts, pie charts, line charts, and maps, chosen for their effectiveness in conveying specific insights.</li>
+                                        <li>Incorporated slicers and filters to allow users to dynamically explore data based on various criteria (e.g., property type, condition, location).</li>
+                                        <li>Designed and implemented interactive navigation buttons and bookmarks within Power BI to seamlessly switch between the "Overview" and "Locations" pages, and to show/hide filter menus for dynamic data exploration.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Performance Optimization:</strong> Ensured the dashboard was optimized for performance, even with large datasets, by using efficient DAX patterns and appropriate data storage modes.</li>
+                            </ol>
+
+                            <h3 class="report-heading-2">Business Value and Impact</h3>
+                            <p>This Real Estate Property Management Dashboard offers significant value by:</p>
+                            <ul>
+                                <li>Enabling Data-Driven Decisions: Providing a central source of reliable information for all property-related numbers.</li>
+                                <li>Optimizing Portfolio Performance: Helping to identify areas for renovations, smart property purchases, or focused marketing based on property condition, location, and type.</li>
+                                <li>Improving Operational Efficiency: Making reporting processes smoother and allowing quick access to important insights.</li>
+                                <li>Supporting Strategic Planning: Offering a clear view of trends in property construction and renovation, as well as strengths and weaknesses in different geographical areas.</li>
+                            </ul>
+
+                            <h3 class="report-heading-2">Conclusion</h3>
+                            <p>The Real Estate Property Management Dashboard is a powerful analytical tool that turns raw property data into useful information. By providing clear insights into property conditions, locations, and features, it helps real estate professionals make more informed decisions, ultimately leading to increased portfolio value and better operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <footer id="footer" class="footer light-background">
+            <div class="container">
+                <h3 class="sitename">Baro Monarch Onoriose</h3>
+                <p>Connect with me on social media.</p>
+                <div class="social-links d-flex justify-content-center">
+                    <a href="#"><i class="bi bi-twitter-x"></i></a> <!-- Placeholder for Twitter/X link -->
+                    <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+                    </div>
+                    <div class="credits">
+                        <!-- You can add credits for template here if desired -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <div id="preloader"></div>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

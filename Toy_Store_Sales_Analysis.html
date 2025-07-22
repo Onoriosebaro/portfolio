@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Toy Sales Dashboard - Overview - Baro Monarch Onoriose</title>
+    <meta name="description" content="A comprehensive Power BI dashboard for toy sales analysis, offering insights into sales performance, product categories, and regional trends.">
+    <meta name="keywords" content="Power BI, Data Analysis, Toy Sales, Sales Performance, Business Intelligence, Data Visualization, Retail Analytics">
+    <link href="assets/img/passport pic.jpg" rel="icon">
+    <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        /* Custom styles for the portfolio description to match the report formatting */
+        .portfolio-details .portfolio-description h2,
+        .portfolio-details .portfolio-description h3,
+        .portfolio-details .portfolio-description h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50; /* Darker heading color */
+        }
+        .portfolio-details .portfolio-description p,
+        .portfolio-details .portfolio-description ul,
+        .portfolio-details .portfolio-description ol {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .portfolio-details .portfolio-description ul,
+        .portfolio-details .portfolio-description ol {
+            list-style-position: inside; /* Ensures bullets/numbers are inside padding */
+            margin-left: 1.5rem;
+        }
+        .portfolio-details .portfolio-description ul li,
+        .portfolio-details .portfolio-description ol li {
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-details .portfolio-description strong {
+            font-weight: 600;
+            color: #000;
+        }
+        /* Adjust heading sizes to match markdown h1, h2, h3 */
+        .portfolio-details .portfolio-description h2.report-heading-1 {
+            font-size: 2.5rem; /* Equivalent to a large h1 in markdown */
+            margin-top: 2rem;
+        }
+        .portfolio-details .portfolio-description h3.report-heading-2 {
+            font-size: 2rem; /* Equivalent to h2 in markdown */
+            margin-top: 1.5rem;
+        }
+        .portfolio-details .portfolio-description h4.report-heading-3 {
+            font-size: 1.5rem; /* Equivalent to h3 in markdown */
+            margin-top: 1rem;
+        }
+
+        /* Style for the embedded Power BI dashboard */
+        .powerbi-embed-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio (height / width 100%) */
+            margin-bottom: 20px;
+            border-radius: 0.75rem; /* Match general site aesthetic */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden; /* Ensures iframe respects border-radius */
+        }
+
+        .powerbi-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body class="portfolio-details-page">
+
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <h1 class="sitename">Baro Monarch Onoriose</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#resume">Resume</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="page-title light-background">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">Toy Sales Dashboard - Overview</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="index.html#portfolio">Back</a></li>
+                        <li class="current">Power BI Project</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <section id="portfolio-details" class="portfolio-details section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-4">
+                    <div class="col-lg-9"> <!-- Dashboard in 9 columns -->
+                        <div class="powerbi-embed-container">
+                            <!-- Your Power BI Dashboard Embedded Here -->
+                            <iframe title="Toy sales Dashboard" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiZmM0YjdlNjAtMTQxYy00ZWIzLTg2NmYtNGYxZWZjMGE5OWZkIiwidCI6ImIyMWZjNDRmLThjNmItNDY4Zi1iOGQ4LWY3NzU2ZmU1ODM5OCJ9" frameborder="0" allowFullScreen="true"></iframe>
+                        </div>
+                        <p class="text-center mt-3">
+                            <small>The interactive dashboard is embedded above. Use its-built in navigation to explore different views and apply filters.</small>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3"> <!-- Project Information box on the right in 3 columns -->
+                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Project Information</h3>
+                            <ul>
+                                <li><strong>Category</strong>: Data Analytics / Business Intelligence / Retail</li>
+                                <li><strong>Client</strong>: Personal Project</li>
+                                <li><strong>Project Date</strong>: July 2025</li>
+                                <li><strong>Tools Used</strong>: Power BI, Microsoft Excel</li>
+                                <li><strong>Data Source</strong>: Toy Sales Dataset (e.g., Kaggle, internal data)</li>
+                                <li><strong>Project URL</strong>: <a href="https://app.powerbi.com/view?r=eyJrIjoiZmM0YjdlNjAtMTQxYy00ZWIzLTg2NmYtNGYxZWZjMGE5OWZkIiwidCI6ImIyMWZjNDRmLThjNmItNDY4Zi1iOGQ4LWY3NzU2ZmU1ODM5OCJ9" target="_blank" rel="noopener noreferrer">View Live Dashboard (Embedded Above)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="report-heading-1">Toy Sales Dashboard: Driving Revenue Across Stores and Cities</h2>
+
+                            <h3 class="report-heading-2">Executive Summary</h3>
+                            <p>This Toy Sales Dashboard is a Power BI solution I designed to provide a clear, data-driven understanding of sales performance across all stores and cities. This dashboard is built to empower stakeholders with critical insights into which products are driving revenue, how sales trends are evolving monthly, and how different regions are performing. Ultimately, this tool will enable strategic decisions to boost sales, optimize product offerings, and refine marketing efforts.</p>
+
+                            <h3 class="report-heading-2">Project Objectives: What I Aimed to Achieve</h3>
+                            <p>My primary goals for developing this dashboard were straightforward and focused on business impact:</p>
+                            <ul>
+                                <li>Comprehensive Revenue Analysis: To provide a transparent and complete view of total sales revenue generated across every sales channel, store, and city.</li>
+                                <li>Dynamic Product Performance Insights: To allow for quick identification and comparison of the revenue contribution of top-performing products, offering flexibility to analyze the top 5, 10, or any 'N' number of products.</li>
+                                <li>Monthly Sales Trend Visualization: To clearly illustrate how sales performance changes month-over-month, helping to spot seasonal patterns, growth opportunities, or areas needing intervention.</li>
+                                <li>Regional Sales Comparison: To offer a clear comparison of revenue across different sales regions, highlighting strong markets and those that may require additional strategic focus.</li>
+                                <li>Intuitive Data Exploration: To provide easy-to-use filters for month, year, and region, ensuring that all visuals and information update instantly, allowing for granular analysis.</li>
+                            </ul>
+
+                            <h3 class="report-heading-2">Dashboard Overview: Key Insights from Unfiltered Data</h3>
+                            <p>This dashboard is designed for highly interactive and dynamic exploration, focusing on actionable revenue-centric insights. Let's walk through the key components and what they tell us, specifically looking at the unfiltered data:</p>
+                            <ul>
+                                <li>Overall Revenue Snapshot:
+                                    <ul>
+                                        <li>My analysis shows a Total Revenue across all periods and regions of a substantial $8.76M.</li>
+                                        <li>The "Previous Month Revenue" is currently $0.00, indicating a cumulative view without a prior period selected for comparison. Both Total Revenue and Previous Month Revenue dynamically change color to provide immediate visual feedback on performance trends (e.g., green for positive, red for negative, or based on comparison).</li>
+                                    </ul>
+                                </li>
+                                <li>Weekly Revenue Overview:
+                                    <ul>
+                                        <li>Weekly revenue fluctuates significantly. Wednesday shows the highest weekly revenue at $2.11M, followed by Tuesday at $1.66M.</li>
+                                        <li>Sunday ($1.42M) and Saturday ($705K) are among the lower performing days, highlighting opportunities to drive sales on these days.</li>
+                                    </ul>
+                                </li>
+                                <li>Regional Revenue Performance:
+                                    <ul>
+                                        <li>Los Angeles leads in regional revenue with $5.43M.</li>
+                                        <li>Chicago follows with $2.04M.</li>
+                                        <li>New York shows $1.29M in revenue. This indicates Los Angeles is our strongest market, while New York has room for growth compared to other major cities.</li>
+                                    </ul>
+                                </li>
+                                <li>Top-5 Highest Revenue by Products:
+                                    <ul>
+                                        <li>The top 5 products collectively contribute 69% of the overall revenue, showing a strong concentration of sales in a few key items.</li>
+                                        <li>The "Others" category accounts for a significant $271K of revenue, suggesting a long tail of diverse products contributing to sales beyond the top 5.</li>
+                                        <li>Specific top products include Dinosaur Figures ($434K), Lego Bricks ($713K), Colorbuds ($441K), Magic Sand ($291K), and Rubik's Cube ($271K). This clearly identifies our star performers and areas for potential promotional focus.</li>
+                                    </ul>
+                                </li>
+                                <li>Revenue Trend 2020 vs 2021:
+                                    <ul>
+                                        <li>The trend line shows noticeable seasonality, with revenue peaks typically observed around April-May and again towards the end of the year (October-November) for both 2020 and 2021.</li>
+                                        <li>In 2021, revenue generally shows higher performance compared to 2020 during peak months, indicating positive year-over-year growth in those periods.</li>
+                                    </ul>
+                                </li>
+                                <li>Interactive Filters: Dedicated slicers for `Period` (All) and `Region` (All) allow users to drill down into specific periods or geographical areas, providing a highly customizable view of the data. All dashboard visuals and accompanying text information dynamically update in real-time as these slicers are adjusted. Furthermore, dynamic text elements provide quick information on the currently applied filters, enhancing user understanding of the data context.</li>
+                                <li>Performance Indicator: The dashboard includes a prominent thumbs up (👍) or thumbs down (👎) indicator, which would typically provide an immediate visual cue on whether the current month's revenue performance is better or worse than the previous month. In this unfiltered view, it is blank as no specific period is selected for comparison. This indicator's color also dynamically changes based on the comparison, offering quick visual insights into performance.</li>
+                            </ul>
+
+                            <h3 class="report-heading-2">Tools and Technology</h3>
+                            <p>This dashboard was developed using Microsoft Power BI for data integration, modeling, DAX calculations, and interactive visualizations. Microsoft Excel was used for initial data handling.</p>
+
+                            <h3 class="report-heading-2">Technical Approach: How I Built It</h3>
+                            <p>My development process for this Power BI dashboard followed a structured and iterative methodology, ensuring accuracy, performance, and a user-centric design:</p>
+                            <ol>
+                                <li>Data Acquisition & Understanding: I connected to the raw toy sales data and performed an initial review to understand its structure and content.</li>
+                                <li>Data Transformation (Power Query): I cleaned and transformed the raw data, handling missing values, correcting data types, and standardizing formats. I also created separate dimension tables for `Regions` and `Store Types` to optimize the data model.</li>
+                                <li>Data Modeling (Power BI Desktop - Star Schema): I designed a robust star schema, with the main sales data as the central fact table, connected to the newly created dimension tables, including a dedicated Date Table created using DAX for comprehensive time intelligence.</li>
+                                <li>DAX Measure Development: I wrote complex DAX expressions to calculate key revenue metrics, implement dynamic Top-N product ranking, create dynamic text, and develop the thumbs up/down performance indicator for month-over-month revenue change.</li>
+                                <li>Interactive Dashboard Design & Visualization: I designed two main interactive pages, utilizing a variety of Power BI visuals and integrating interactive slicers for flexible data exploration. The dashboard background was meticulously designed using PowerPoint to enhance aesthetics.</li>
+                                <li>Performance Optimization & Publishing: I optimized the dashboard for performance and published it to Power BI Service, making it accessible for live viewing.</li>
+                            </ol>
+
+                            <h3 class="report-heading-2">Recommendations for Driving Sales Growth</h3>
+                            <p>Based on the insights derived from this dashboard, here are key recommendations to optimize sales performance:</p>
+                            <ul>
+                                <li>Boost Weekend Sales: Given that Sunday ($1,415K) and Saturday ($705K) are lower-performing days compared to weekdays like Wednesday ($2,106K) and Tuesday ($1,656K), consider implementing targeted weekend promotions, special in-store events, or increased staffing to capitalize on potential foot traffic and boost sales during these periods.</li>
+                                <li>Regional Growth Strategy for New York: New York's revenue ($1.29M) is significantly lower than Los Angeles ($5.43M) and Chicago ($2.04M). Conduct a deeper dive into the market dynamics of Los Angeles and Chicago to identify successful strategies (e.g., product mix, marketing campaigns, operational efficiencies) that could be adapted and applied to the New York market to drive growth.</li>
+                                <li>Capitalize on Top Products: The top 5 products (Dinosaur Figures, Lego Bricks, Colorbuds, Magic Sand, Rubik's Cube) contribute a substantial 69% of overall revenue. Continue to prioritize these products in marketing efforts, ensure consistent stock availability, and explore cross-selling opportunities with related items to maximize their impact.</li>
+                                <li>Strategic Seasonal Planning: The revenue trend shows clear seasonality with peaks typically observed around April-May and October-November. Align marketing campaigns, inventory management, and promotional activities to these peak periods to fully capitalize on increased consumer demand. Conversely, analyze off-peak periods for opportunities to stimulate sales through targeted discounts or new product introductions.</li>
+                                <li>Address "Others" Category: While the "Others" category contributes a significant $271K, a deeper analysis of these diverse products could reveal emerging trends or niche markets. Consider categorizing the top-performing items within "Others" to identify potential new "star" products for focused promotion.</li>
+                            </ul>
+
+                            <h3 class="report-heading-2">Business Value and Impact: Why This Matters</h3>
+                            <p>This Toy Sales Dashboard offers significant, tangible value to a retail business by:</p>
+                            <ul>
+                                <li>Optimizing Revenue Growth: By directly identifying top-performing products and regions, sales efforts can be focused where they will yield the greatest return, supported by dynamic Top-N analysis.</li>
+                                <li>Informing Strategic Decisions: The clear data on revenue trends and regional disparities will directly guide marketing campaigns, inventory management, and overall operational strategies. The dynamic text provides crucial context to these insights.</li>
+                                <li>Improving Product Management: Gaining a deeper understanding of which products consistently drive revenue and how their performance compares across the portfolio, enhanced by interactive exploration.</li>
+                                <li>Enhancing Forecasting: Offering robust historical monthly revenue data for more accurate future sales predictions. The immediate feedback from the performance indicator allows for swift reactions to recent trends.</li>
+                                <li>Driving Operational Efficiency: This dashboard streamlines sales performance analysis, allowing for quicker, more informed responses to market changes through its highly interactive and dynamic elements.</li>
+                            </ul>
+
+                            <h3 class="report-heading-2">Conclusion</h3>
+                            <p>The Toy Sales Dashboard is more than just a collection of charts; it is a powerful analytical asset that transforms raw sales data into actionable business intelligence. By providing clear, interactive insights into product performance, monthly trends, and regional comparisons, and by including dynamic elements like switchable Top-N lists, updating narratives, and indicators, it empowers toy retailers to make smart, data-driven decisions. This will undoubtedly enhance operational efficiency and drive sustainable revenue growth in the competitive toy market. Thank you.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <footer id="footer" class="footer light-background">
+            <div class="container">
+                <h3 class="sitename">Baro Monarch Onoriose</h3>
+                <p>Connect with me on social media.</p>
+                <div class="social-links d-flex justify-content-center">
+                    <a href="#"><i class="bi bi-twitter-x"></i></a> <!-- Placeholder for Twitter/X link -->
+                    <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+                    </div>
+                    <div class="credits">
+                        <!-- You can add credits for template here if desired -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <div id="preloader"></div>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
