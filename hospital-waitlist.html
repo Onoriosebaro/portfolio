@@ -2,230 +2,315 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Hospital Waitlist Analysis - Baro Monarch Onoriose</title> <meta name="description" content="An in-depth Power BI project analyzing hospital waitlists using real-world healthcare data to optimize resource allocation and improve patient experience."> <meta name="keywords" content="Power BI, Data Analysis, Healthcare, Hospital Waitlist, Patient Management, Business Intelligence, Data Visualization, Healthcare Analytics"> <link href="assets/img/passport pic.jpg" rel="icon">
-  <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hospital Waitlist Analysis - Baro Monarch Onoriose</title>
+    <meta name="description" content="An in-depth Power BI project analyzing hospital waitlists using real-world healthcare data to optimize resource allocation and improve patient experience.">
+    <meta name="keywords" content="Power BI, Data Analysis, Healthcare, Hospital Waitlist, Patient Management, Business Intelligence, Data Visualization, Healthcare Analytics">
+    <link href="assets/img/passport pic.jpg" rel="icon">
+    <link href="assets/img/favicon.jpg" rel="apple-touch-icon">
 
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
 
-  </head>
+    <style>
+        /* Custom styles for the portfolio description to match the report formatting */
+        .portfolio-details .portfolio-description h2,
+        .portfolio-details .portfolio-description h3,
+        .portfolio-details .portfolio-description h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50; /* Darker heading color */
+        }
+        .portfolio-details .portfolio-description p,
+        .portfolio-details .portfolio-description ul,
+        .portfolio-details .portfolio-description ol {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .portfolio-details .portfolio-description ul,
+        .portfolio-details .portfolio-description ol {
+            list-style-position: inside; /* Ensures bullets/numbers are inside padding */
+            margin-left: 1.5rem;
+        }
+        .portfolio-details .portfolio-description ul li,
+        .portfolio-details .portfolio-description ol li {
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-details .portfolio-description strong {
+            font-weight: 600;
+            color: #000;
+        }
+        /* Adjust heading sizes to match markdown h1, h2, h3 */
+        .portfolio-details .portfolio-description h2.report-heading-1 {
+            font-size: 2.5rem; /* Equivalent to a large h1 in markdown */
+            margin-top: 2rem;
+        }
+        .portfolio-details .portfolio-description h3.report-heading-2 {
+            font-size: 2rem; /* Equivalent to h2 in markdown */
+            margin-top: 1.5rem;
+        }
+        .portfolio-details .portfolio-description h4.report-heading-3 {
+            font-size: 1.5rem; /* Equivalent to h3 in markdown */
+            margin-top: 1rem;
+        }
+
+        /* Style for the embedded Power BI dashboard */
+        .powerbi-embed-container {
+            position: relative;
+            width: 100%;
+            /* 16:9 Aspect Ratio (height / width * 100%) - this is the common aspect ratio for Power BI embeds */
+            padding-top: 56.25%;
+            margin-bottom: 20px;
+            border-radius: 0.75rem; /* Match general site aesthetic */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden; /* Ensures iframe respects border-radius */
+        }
+
+        .powerbi-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Adjustments for headings to match the specified text-3xl, text-2xl */
+        /* These classes were in your HTML, adjusting them to the existing style structure */
+        .portfolio-description .text-3xl {
+            font-size: 2.5rem; /* Matches .report-heading-1 or can be adjusted */
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .portfolio-description .text-2xl {
+            font-size: 2rem; /* Matches .report-heading-2 or can be adjusted */
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .portfolio-description ul.list-decimal {
+            list-style-type: decimal;
+        }
+        .portfolio-description ul.list-decimal.list-inside {
+            list-style-position: inside;
+        }
+        .portfolio-description ul.ml-4 {
+            margin-left: 1.5rem; /* Equivalent to ml-4 in Tailwind */
+        }
+
+    </style>
+</head>
 
 <body class="portfolio-details-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <h1 class="sitename">Baro Monarch Onoriose</h1>
-      </a>
+            <a href="index.html" class="logo d-flex align-items-center">
+                <h1 class="sitename">Baro Monarch Onoriose</h1>
+            </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#resume">Resume</a></li>
-          <li><a href="index.html#portfolio">Portfolio</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#resume">Resume</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
 
-    </div>
-  </header>
+        </div>
+    </header>
 
-  <main class="main">
+    <main class="main">
 
-    <div class="page-title light-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Hospital Waitlist Analysis</h1> <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html#portfolio">Back</a></li>
-            <li class="current">Power BI Project</li> </ol>
-        </nav>
-      </div>
-    </div><section id="portfolio-details" class="portfolio-details section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-              <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide">
-                  <img src="assets/img/Hospital waitlist.png" alt="Power BI Hospital Waitlist Dashboard Summary Page">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/hospital waitlist 2.png" alt="Hospital Waitlist Dashboard - Detailed Analysis Page">
-                </div>
-                </div>
-              <div class="swiper-pagination"></div>
+        <div class="page-title light-background">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">Hospital Waitlist Analysis</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="index.html#portfolio">Back</a></li>
+                        <li class="current">Power BI Project</li>
+                    </ol>
+                </nav>
             </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project Information</h3>
-              <ul>
-                <li><strong>Category</strong>: Data Analytics / Business Intelligence / Healthcare</li> <li><strong>Client</strong>: Personal Project</li>
-                <li><strong>Project Date</strong>: March 2024</li> <li><strong>Tools Used</strong>: Power BI, Microsoft Excel</li> <li><strong>Data Source</strong>: Publicly Available Healthcare Dataset (2018-2021)</li> <li><strong>Project URL</strong>: <a href="https://app.powerbi.com/groups/me/reports/c8acdb44-dd0c-4f2b-af7c-5ea92149425f/94712f060de7d9a7876b?experience=power-bi" target="_blank" rel="noopener noreferrer">View live Dashboard</a></li>
-              </ul>
-            </div>
-          </div>
-        </div> <div class="row mt-4">
-          <div class="col-lg-12">
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2 class="text-3xl font-bold mb-4">Healthcare Patient Waiting List Analysis</h2>
-
-              <h2 class="text-3xl font-bold mb-4">Summary</h2>
-              <p>This report details my data analysis project, where I focused on understanding and optimizing patient waiting lists within a healthcare setting. Utilizing a publicly available dataset from 2018 to 2021, my core objective was to transform raw waiting list data into actionable insights that could improve resource allocation, enhance patient satisfaction, and enable more proactive planning. Through detailed analysis and interactive Power BI dashboards, I illuminated key metrics such as average median waiting times and current total waitlists. I also provided granular breakdowns by patient category (Inpatient vs. Outpatient), specialty, and age profile. My findings aim to empower healthcare administrators to make data-driven decisions that alleviate pressure on services and enhance overall operational efficiency.</p>
-
-              <h2 class="text-3xl font-bold mb-4">1. Introduction</h2>
-              <p>Long patient waiting lists are a pervasive and critical challenge within healthcare systems worldwide. They not only directly impact patient outcomes, increasing anxiety and potentially delaying essential care, but also strain operational efficiency and contribute to reduced patient satisfaction. Without robust systems for tracking and analyzing these wait times, healthcare providers operate at a disadvantage, struggling to understand historical trends, identify bottlenecks, and strategically allocate scarce resources.</p>
-              <p>For this project, I addressed this challenge by analyzing a publicly available dataset on healthcare patient waiting lists. My focus was specifically on two distinct categories of patients:</p>
-              <ul>
-                <li>Inpatients: Patients who are admitted and stay in a hospital for treatment.</li>
-                <li>Outpatients: Patients who receive medical treatment without requiring hospital admission.</li>
-              </ul>
-              <p>By dissecting the dynamics of waitlists for both categories, my analysis aimed to provide a holistic view of the demand for healthcare services and pinpoint areas ripe for intervention.</p>
-
-              <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
-              <p>I structured this project around clear objectives and actionable goals, designed to provide a comprehensive understanding of the patient waiting list landscape:</p>
-
-              <h3 class="text-2xl font-semibold mb-3">Overall Objectives:</h3>
-              <ul>
-                <li>To track the current status of patient waiting lists: My goal was to provide an up-to-date snapshot of the total number of patients awaiting treatment at any given time.</li>
-                <li>To analyze historical monthly trends: I aimed to identify significant patterns, seasonal variations, and shifts in waitlist numbers over time for both Inpatient and Outpatient categories.</li>
-                <li>To conduct detailed specialty-level and age profile analysis: My objective was to uncover specific medical specialties experiencing high demand and to understand how wait times are distributed across different patient age demographics.</li>
-              </ul>
-
-              <h3 class="text-2xl font-semibold mb-3">Project Goals & Deliverables:</h3>
-              <ol class="list-decimal list-inside ml-4">
-                <li>Current Waitlist Tracking: I developed a robust system within the dashboard to accurately track and display the current total waiting list, offering an immediate, high-level overview of healthcare service demand. The dashboard clearly presents "Latest Month Wait List" (e.g., 640K patients) against a "PY Latest Wait List" (e.g., 709K patients), providing crucial comparison points that I found to be highly insightful.</li>
-                <li>Historical Trend Analysis: I performed in-depth time-series analysis on monthly waitlist data from 2018-2021. The dashboard visually presents the "Monthly Trend - Day Care/Inpatients vs Outpatients," showcasing fluctuations and highlighting key periods of increase or decrease, such as the noticeable rise in Outpatient waitlists towards late 2020/early 2021. This trend analysis was vital for my forecasting.</li>
-                <li>Granular Specialty & Age Profile Insights: I executed detailed analysis to segment waitlists by medical specialty and patient age groups. The dashboard's "Time Band VS Age Profile (Average)" chart visually represents wait times across different age demographics (0-15, 16-64, 65+) and time bands (e.g., 18+ Months, 0-3 Months), while the "Top 5 Specialty" section immediately identifies specialties like "Paediatric Dermatology" (168) and "Paediatric ENT" (148), with high average waitlists, enabling targeted resource allocation, which was a key output of my analysis.</li>
-              </ol>
-
-              <h2 class="text-3xl font-bold mb-4">3. Data Scope & Metrics</h2>
-              <p>My analysis was conducted on a publicly available healthcare dataset covering the period from 2018 to 2021. This four-year historical window provided ample data for me to identify trends, understand seasonality, and assess the long-term evolution of patient waiting lists.</p>
-
-              <h3 class="text-2xl font-semibold mb-3">Key Metrics & Insights Derived:</h3>
-              <ul>
-                <li>Average Median Waiting List: I calculated and visualized this metric to provide a representative measure of the typical waiting duration for patients. I chose this metric as it offers a more robust central tendency measure than the mean when dealing with potentially skewed waiting time distributions.</li>
-                <li>Current Total Wait List: A critical operational metric providing the immediate number of patients currently on the waiting list. I prominently displayed this figure on the dashboard, alongside a comparison to previous periods, which I believe adds significant value.</li>
-                <li>Case Type Split: The dashboard clearly quantifies the distribution of the overall waitlist by case type, highlighting that Outpatients constitute a significant majority (e.g., 72.49%), followed by Day Cases (e.g., 16.89%) and Inpatients (e.g., 10.62%). This breakdown was crucial for my understanding of demand.</li>
-              </ul>
-
-              <h2 class="text-3xl font-bold mb-4">4. Dashboard Design & Key Insights (Based on Visual Analysis)</h2>
-              <p>My project culminated in the creation of intuitive and informative Power BI dashboards, which I structured to provide both a high-level overview and granular analytical capabilities.</p>
-
-              <h3 class="text-2xl font-semibold mb-3">4.1 Summary Page (Main Dashboard View)</h3>
-              <p>The dashboard image displayed represents a well-designed summary page that I created, offering immediate insights into critical aspects of the patient waiting list:</p>
-              <ul>
-                <li>Header Filters: I included prominent filters for "Calc Method" (Average, Median), "Specialty Name" (All), "Case Type" (All), and "Archive Date" (1/31/2018 - 3/31/2021), indicating user interactivity and the ability to drill down.</li>
-                <li>Key Indicators - Patient Wait List (Average):
-                  <ul>
-                    <li>Total Wait List Comparison: I ensured this section clearly displays the "Latest Month Wait List" (640K) against the "PY Latest Wait List" (709K), providing an instant performance comparison.</li>
-                    <li>Case Type Split: I used a doughnut chart to vividly illustrate that Outpatient cases dominate the overall waitlist (72.49%), followed by Day Cases (16.89%) and Inpatients (10.62%). This was a crucial insight for my resource planning recommendations.</li>
-                    <li>Time Band VS Age Profile (Average): I designed a stacked bar chart to provide a detailed breakdown of average waitlist numbers across various age profiles (0-15, 16-64, 65+) and time bands (e.g., 18+ Months, 0-3 Months). This allowed me to identify age groups disproportionately affected by longer waits. For example, I observed the 16-64 age group showing a notable number in the "18+ Months" waiting band.</li>
-                    <li>Top 5 Specialty: I included a concise list to highlight the specialties with the highest average waitlist numbers, such as "Paediatric Dermatology" (168) and "Paediatric ENT" (148), indicating areas of significant demand.</li>
-                  </ul>
-                </li>
-                <li>Monthly Trend - Day Care/Inpatients vs Outpatients: I used a line chart to effectively visualize the temporal trends for these categories. It clearly shows a generally stable trend for Inpatients and Day Cases, while Outpatient waitlists demonstrate a significant increase, particularly from late 2019 through 2020 into 2021, reaching 629K. This trend analysis was vital for my forecasting efforts.</li>
-              </ul>
-
-              <h3 class="text-2xl font-semibold mb-3">4.2 Detailed Page for Granular Analysis</h3>
-              <p>My project's goal included developing a "Detailed Page for Granular Analysis." This page would feature:</p>
-              <ul>
-                <li>Further drill-down capabilities on specialties, allowing users to select a specific specialty and view its waitlist distribution across age, time bands, and monthly trends.</li>
-                <li>More in-depth analysis of patient demographics or specific types of procedures contributing to wait times within each category (Inpatient/Outpatient).</li>
-                <li>Potentially showing raw data or specific patient-level details (anonymized) to support operational decision-making.</li>
-              </ul>
-
-              <h2 class="text-3xl font-bold mb-4">5. Technical Approach & Tools</h2>
-              <p>I developed this project by following a structured data analysis pipeline:</p>
-              <ul>
-                <li>Data Cleaning & Preprocessing: The initial phase involved ingesting the raw publicly available dataset. This included meticulous cleaning to handle missing values, correct inconsistencies, and ensure data integrity. I performed data transformations to prepare the dataset for effective analysis and visualization.</li>
-                <li>Exploratory Data Analysis (EDA): I conducted extensive EDA to understand the underlying structure, distributions, and initial patterns within the waiting list data. This involved statistical summaries and preliminary visualizations to formulate hypotheses and identify key areas for deeper investigation.</li>
-                <li>Data Modeling & Visualization (Power BI): The core of my project's analytical delivery was built using Power BI. I leveraged this powerful business intelligence tool for:
-                  <ul>
-                    <li>Data Modeling: Establishing relationships between different data tables to create a robust and flexible data model.</li>
-                    <li>DAX (Data Analysis Expressions) Calculations: Developing custom measures and calculated columns to derive key metrics such as "Average Median Waiting List" and enable complex comparisons like "Total Wait List Comparison."</li> <li>Interactive Dashboard Creation: Designing visually appealing and interactive dashboards, as exemplified by the summary page, allowing users to filter, drill down, and explore data dynamically to uncover insights tailored to their specific needs.</li>
-                  </ul>
-                </li>
-              </ul>
-
-              <h2 class="text-3xl font-bold mb-4">6. Impact & Business Value</h2>
-              <p>I believe this "Healthcare Patient Waiting List Analysis" project delivers significant value to healthcare administrators and policymakers by providing:</p>
-              <ul>
-                <li>Optimized Resource Allocation: By clearly identifying high-demand specialties and understanding the distribution of wait times across different age groups, the insights I generated enable strategic allocation of resources (staff, beds, equipment) to areas most in need, thereby reducing bottlenecks.</li>
-                <li>Improved Patient Experience: Understanding the factors contributing to long wait times allows for the development of targeted interventions aimed at shortening queues and improving patient flow, ultimately enhancing overall patient satisfaction and trust in the healthcare system.</li>
-                <li>Proactive Planning: The historical trend analysis provides a solid foundation for forecasting future demand. This enables healthcare facilities to anticipate increases in patient volume and proactively plan for staffing, infrastructure, and policy adjustments, preventing the accumulation of large backlogs.</li>
-                <li>Data-Driven Decision Making: The project equips stakeholders with objective, evidence-based insights derived from real data. This shifts decision-making from intuition to a more informed, strategic approach for operational improvements, policy formulation, and long-term healthcare planning.</li>
-              </ul>
-
-              <h2 class="text-3xl font-bold mb-4">7. Conclusion</h2>
-              <p>By successfully transforming complex, raw healthcare waiting list data into clear, interactive, and actionable insights, this project demonstrates my strong command of data analysis principles, robust technical skills in Power BI, and a keen understanding of real-world healthcare challenges. The resulting dashboards serve as a powerful tool for monitoring, analyzing, and ultimately improving patient access to care, underscoring the critical role of data in modern healthcare management.</p>
-            </div>
-          </div>
         </div>
 
-      </div>
-    </section>
+        <section id="portfolio-details" class="portfolio-details section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
 
+                <div class="row gy-4">
+                    <div class="col-lg-8">
+                        <div class="powerbi-embed-container">
+                            <iframe title="Hospital Waitlist Analysis" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNjJjNmQ3OWItNDllZi00OWU4LWE0YWMtOWVmM2RhNWQ4NTI5IiwidCI6ImIyMWZjNDRmLThjNmItNDY4Zi1iOGQ4LWY3NzU2ZmU1ODM5OCJ9" frameborder="0" allowFullScreen="true"></iframe>
+                        </div>
+                        <p class="text-center mt-3">
+                            <small>The interactive dashboard is embedded above. Use its built-in navigation to explore different views and apply filters.</small>
+                        </p>
+                    </div>
 
-    <footer id="footer" class="footer light-background">
-      <div class="container">
-        <h3 class="sitename">Baro Monarch Onoriose</h3>
-        <p>Connect with me on social media.</p> <div class="social-links d-flex justify-content-center">
-          <a href="#"><i class="bi bi-linkedin"></i></a> <a href="https://www.linkedin.com/in/baro-monarch-onoriose" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a> <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a> </div>
-        <div class="container">
-          <div class="copyright">
-            <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span> </div>
-          <div class="credits">
+                    <div class="col-lg-4">
+                        <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Project Information</h3>
+                            <ul>
+                                <li><strong>Category</strong>: Data Analytics / Business Intelligence / Healthcare</li>
+                                <li><strong>Client</strong>: Personal Project</li>
+                                <li><strong>Project Date</strong>: March 2024</li>
+                                <li><strong>Tools Used</strong>: Power BI, Microsoft Excel</li>
+                                <li><strong>Data Source</strong>: Publicly Available Healthcare Dataset (2018-2021)</li>
+                                <li><strong>Project URL</strong>: <a href="https://app.powerbi.com/view?r=eyJrIjoiNjJjNmQ3OWItNDllZi00OWU4LWE0YWMtOWVmM2RhNWQ4NTI5IiwidCI6ImIyMWZjNDRmLThjNmItNDY4Zi1iOGQ4LWY3NzU2ZmU1ODM5OCJ9" target="_blank" rel="noopener noreferrer">View Live Dashboard</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="text-3xl font-bold mb-4">Healthcare Patient Waiting List Analysis</h2>
+
+                            <h2 class="text-3xl font-bold mb-4">Summary</h2>
+                            <p>This project transforms raw healthcare waiting list data (2018-2021) into actionable insights using Power BI. My objective was to improve resource allocation, enhance patient satisfaction, and enable proactive planning by analyzing key metrics like average median waiting times and total waitlists. The analysis provides granular breakdowns by patient category (Inpatient vs. Outpatient), specialty, and age profile, empowering administrators to make data-driven decisions that alleviate service pressure and enhance operational efficiency.</p>
+
+                            <h2 class="text-3xl font-bold mb-4">1. Introduction</h2>
+                            <p>Long patient waiting lists are a critical challenge globally, impacting patient outcomes, operational efficiency, and satisfaction. Without robust analysis, healthcare providers struggle to understand trends, identify bottlenecks, and strategically allocate resources. This project addresses this by analyzing a publicly available dataset focusing on Inpatient (admitted) and Outpatient (no admission) categories. My analysis aimed to provide a holistic view of demand and pinpoint areas for intervention.</p>
+
+                            <h2 class="text-3xl font-bold mb-4">2. Project Objectives & Goals</h2>
+                            <p>My project aimed to provide a comprehensive understanding of patient waiting lists through clear objectives:</p>
+
+                            <h3 class="text-2xl font-semibold mb-3">Objectives:</h3>
+                            <ul>
+                                <li>Track current patient waiting list status for an up-to-date overview.</li>
+                                <li>Analyze historical monthly trends for Inpatient and Outpatient categories to identify patterns.</li>
+                                <li>Conduct detailed specialty-level and age profile analysis to uncover demand hotspots and demographic impacts.</li>
+                            </ul>
+
+                            <h3 class="text-2xl font-semibold mb-3">Key Deliverables:</h3>
+                            <ol class="list-decimal list-inside ml-4">
+                                <li>Current Waitlist Tracking: A dashboard system accurately displays the "Latest Month Wait List" (e.g., 640K patients) against "PY Latest Wait List" (e.g., 709K patients) for immediate comparison.</li>
+                                <li>Historical Trend Analysis: In-depth time-series analysis (2018-2021) visualizes "Monthly Trend - Day Care/Inpatients vs Outpatients," highlighting fluctuations like the notable rise in Outpatient waitlists towards late 2020/early 2021 for forecasting.</li>
+                                <li>Granular Specialty & Age Profile Insights: Detailed analysis segments waitlists by medical specialty and age groups. The "Time Band VS Age Profile (Average)" chart visually represents wait times across demographics (0-15, 16-64, 65+) and time bands (e.g., 18+ Months, 0-3 Months), identifying age groups disproportionately affected. (e.g., 16-64 age group notable in "18+ Months").</li>
+                            </ol>
+
+                            <h2 class="text-3xl font-bold mb-4">3. Data Scope & Metrics</h2>
+                            <p>My analysis used a publicly available healthcare dataset from 2018 to 2021, providing a four-year window for trend identification and assessing waiting list evolution.</p>
+
+                            <h3 class="text-2xl font-semibold mb-3">Key Metrics & Insights:</h3>
+                            <ul>
+                                <li>Average Median Waiting List: Calculated and visualized as a robust measure of typical waiting duration.</li>
+                                <li>Current Total Wait List: A critical operational metric prominently displayed with comparisons to previous periods.</li>
+                                <li>Case Type Split: Dashboard clearly shows Outpatients as the majority (e.g., 72.49%), followed by Day Cases (e.g., 16.89%) and Inpatients (e.g., 10.62%), crucial for understanding demand.</li>
+                            </ul>
+
+                            <h2 class="text-3xl font-bold mb-4">4. Dashboard Design & Key Insights (Based on Visual Analysis)</h2>
+                            <p>My Power BI dashboards provide both high-level overviews and granular analytical capabilities:</p>
+
+                            <h3 class="text-2xl font-semibold mb-3">4.1 Summary Page (Main Dashboard View)</h3>
+                            <p>The dashboard summary page offers immediate insights:</p>
+                            <ul>
+                                <li>Header Filters: Include "Calc Method" (Average, Median), "Specialty Name" (All), "Case Type" (All), and "Archive Date" (1/31/2018 - 3/31/2021) for interactive drill-down.</li>
+                                <li>Total Wait List Comparison: Displays "Latest Month Wait List" (640K) vs. "PY Latest Wait List" (709K) for instant performance comparison.</li>
+                                <li>Case Type Split: Doughnut chart vividly shows Outpatient cases dominating (72.49%), followed by Day Cases (16.89%) and Inpatients (10.62%)—crucial for resource planning.</li>
+                                <li>Time Band VS Age Profile (Average): Stacked bar chart breaks down waitlist numbers across age profiles (0-15, 16-64, 65+) and time bands (e.g., 18+ Months, 0-3 Months), identifying age groups disproportionately affected. (e.g., 16-64 age group notable in "18+ Months").</li>
+                                <li>Top 5 Specialty: Concise list highlights specialties with highest average waitlist numbers (e.g., "Paediatric Dermatology" (168), "Paediatric ENT" (148)) for demand identification.</li>
+                                <li>Monthly Trend - Day Care/Inpatients vs Outpatients: Line chart visualizes temporal trends, showing stable Inpatient/Day Case trends but a significant Outpatient increase (late 2019 through 2020 into 2021, reaching 629K), vital for forecasting.</li>
+                            </ul>
+
+                            <h3 class="text-2xl font-semibold mb-3">4.2 Detailed Page for Granular Analysis</h3>
+                            <p>This page facilitates in-depth exploration, featuring:</p>
+                            <ul>
+                                <li>Further drill-down on specialties to view waitlist distribution across age, time bands, and monthly trends.</li>
+                                <li>More in-depth analysis of patient demographics or specific procedures contributing to wait times.</li>
+                                <li>Potential for anonymized patient-level details to support operational decisions.</li>
+                            </ul>
+
+                            <h2 class="text-3xl font-bold mb-4">5. Technical Approach & Tools</h2>
+                            <p>I developed this project using a structured data analysis pipeline:</p>
+                            <ul>
+                                <li>Data Cleaning & Preprocessing: Ingested and meticulously cleaned raw public dataset, handling missing values, inconsistencies, and preparing it for analysis.</li>
+                                <li>Exploratory Data Analysis (EDA): Conducted extensive EDA with statistical summaries and preliminary visualizations to understand data structure, distributions, and initial patterns.</li>
+                                <li>Data Modeling & Visualization (Power BI): Leveraged Power BI for:
+                                    <ul>
+                                        <li>Data Modeling: Established robust relationships between tables for flexible analysis.</li>
+                                        <li>DAX Calculations: Developed custom measures (e.g., "Average Median Waiting List") and calculated columns for complex comparisons.</li>
+                                        <li>Interactive Dashboard Creation: Designed visually appealing and interactive dashboards, enabling dynamic filtering and drill-down for tailored insights.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h2 class="text-3xl font-bold mb-4">6. Recommendations for Improving Patient Flow</h2>
+                            <p>Based on the insights derived from this analysis, here are key recommendations to optimize hospital operations and improve patient flow:</p>
+                            <ul>
+                                <li>Target Bottleneck Specialties: Prioritize resource allocation and process improvements for specialties consistently showing the highest wait times (e.g., Paediatric Dermatology, Paediatric ENT). This might involve increasing staff, optimizing scheduling, or reviewing specific procedural steps.</li>
+                                <li>Optimize Outpatient Scheduling: Given the significant increase in Outpatient waitlists, reassess current outpatient scheduling models. Consider implementing dynamic scheduling, virtual consultations where appropriate, or expanding clinic hours during peak demand periods.</li>
+                                <li>Leverage Age-Specific Insights: Use the age profile analysis to tailor interventions. For instance, if a specific age group faces disproportionately long waits for certain procedures, explore dedicated clinics or specialized support for that demographic.</li>
+                                <li>Enhance Patient Communication: Implement proactive communication strategies to keep patients informed about their waitlist status and estimated waiting times. Clear communication can manage expectations and improve patient satisfaction even when waits are unavoidable.</li>
+                                <li>Continuous Monitoring & Feedback Loop: Establish a system for continuous monitoring of the dashboard's key metrics. Regularly review trends and implement a feedback loop with clinical and administrative staff to identify emerging issues and assess the effectiveness of implemented changes.</li>
+                                <li>Investigate Root Causes of Delays: For persistent long waits, conduct deeper dives into the underlying reasons. Is it resource unavailability, lack of specific equipment, staff shortages, or inefficiencies in patient handovers? Addressing these root causes is crucial for sustainable improvement.</li>
+                            </ul>
+
+                            <h2 class="text-3xl font-bold mb-4">7. Impact & Business Value</h2>
+                            <p>This "Healthcare Patient Waiting List Analysis" project delivers significant value to healthcare administrators and policymakers by providing:</p>
+                            <ul>
+                                <li>Optimized Resource Allocation: Identifies high-demand specialties and wait time distribution by age, enabling strategic allocation of resources (staff, beds, equipment) to reduce bottlenecks.</li>
+                                <li>Improved Patient Experience: Insights into long wait times allow for targeted interventions, shortening queues, improving patient flow, and enhancing satisfaction.</li>
+                                <li>Proactive Planning: Historical trend analysis forms a solid foundation for forecasting future demand, enabling proactive planning for staffing, infrastructure, and policy to prevent backlogs.</li>
+                                <li>Data-Driven Decision Making: Equips stakeholders with objective, evidence-based insights, shifting decision-making from intuition to a more informed, strategic approach for operational and long-term planning.</li>
+                            </ul>
+
+                            <h2 class="text-3xl font-bold mb-4">8. Conclusion</h2>
+                            <p>This project showcases my strong command of data analysis, robust Power BI skills, and understanding of healthcare challenges. By transforming complex waiting list data into clear, interactive, and actionable insights, the dashboards serve as a powerful tool for monitoring, analyzing, and improving patient access to care, highlighting data's critical role in modern healthcare management.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-      </div>
-    </footer>
+        </section>
 
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <div id="preloader"></div>
+        <footer id="footer" class="footer light-background">
+            <div class="container">
+                <h3 class="sitename">Baro Monarch Onoriose</h3>
+                <p>Connect with me on social media.</p>
+                <div class="social-links d-flex justify-content-center">
+                    <a href="#"><i class="bi bi-twitter-x"></i></a> <a href="https://github.com/Onoriosebaro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                    <a href="https://ng.linkedin.com/in/baro-onoriose-ba7184299" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        <span>Copyright</span> <strong class="px-1 sitename">Baro Monarch Onoriose</strong> <span>All Rights Reserved</span>
+                    </div>
+                    <div class="credits">
+                        </div>
+                </div>
+            </div>
+        </footer>
 
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <script src="assets/js/main.js"></script>
+        <div id="preloader"></div>
+
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <script src="assets/js/main.js"></script>
 
 </body>
 
